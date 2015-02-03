@@ -686,7 +686,16 @@
 
     <!-- http://www.semanticweb.org/ontology#Data -->
 
-    <owl:Class rdf:about="&ontology;Data"/>
+    <owl:Class rdf:about="&ontology;Data">
+        <owl:disjointWith rdf:resource="&ontology;Project"/>
+        <owl:disjointWith rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </owl:Class>
     
 
 
@@ -780,7 +789,15 @@
 
     <!-- http://www.semanticweb.org/ontology#Project -->
 
-    <owl:Class rdf:about="&ontology;Project"/>
+    <owl:Class rdf:about="&ontology;Project">
+        <owl:disjointWith rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </owl:Class>
     
 
 
@@ -818,13 +835,25 @@
 
     <!-- http://www.semanticweb.org/ontology#Resource -->
 
-    <owl:Class rdf:about="&ontology;Resource"/>
+    <owl:Class rdf:about="&ontology;Resource">
+        <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/ontology#ResourceConfiguration -->
 
-    <owl:Class rdf:about="&ontology;ResourceConfiguration"/>
+    <owl:Class rdf:about="&ontology;ResourceConfiguration">
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </owl:Class>
     
 
 
@@ -884,11 +913,55 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+    <rdf:Description rdf:about="&prov;Activity">
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+    <rdf:Description rdf:about="&prov;Agent">
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <rdf:Description rdf:about="&prov;Entity">
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Location -->
+
+    <rdf:Description rdf:about="&prov;Location">
+        <owl:disjointWith rdf:resource="&prov;Role"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.w3.org/ns/prov#Person -->
 
     <rdf:Description rdf:about="&prov;Person">
         <rdfs:subClassOf rdf:resource="&prov;Agent"/>
     </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Role -->
+
+    <rdf:Description rdf:about="&prov;Role"/>
     
 
 
