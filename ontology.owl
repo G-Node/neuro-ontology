@@ -858,6 +858,16 @@
         <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
         <owl:disjointWith rdf:resource="&prov;Role"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
     </owl:Class>
     
 
