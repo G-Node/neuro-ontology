@@ -60,10 +60,16 @@
     <!-- http://www.semanticweb.org/ontology#configuresResource -->
 
     <owl:ObjectProperty rdf:about="&ontology;configuresResource">
-        <rdfs:range rdf:resource="&ontology;Resource"/>
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
-        <rdfs:range rdf:resource="&ontology;Trial"/>
         <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Resource"/>
+                    <rdf:Description rdf:about="&ontology;Trial"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -89,9 +95,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range rdf:resource="&ontology;Cell"/>
-        <rdfs:domain rdf:resource="&ontology;Organ"/>
-        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasCell"/>
@@ -99,6 +102,14 @@
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Organ"/>
+                    <rdf:Description rdf:about="&ontology;RecordingSession"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -198,9 +209,15 @@
     <!-- http://www.semanticweb.org/ontology#hasResourceConfiguration -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasResourceConfiguration">
-        <rdfs:domain rdf:resource="&ontology;Resource"/>
         <rdfs:range rdf:resource="&ontology;ResourceConfiguration"/>
-        <rdfs:domain rdf:resource="&ontology;Trial"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Resource"/>
+                    <rdf:Description rdf:about="&ontology;Trial"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
