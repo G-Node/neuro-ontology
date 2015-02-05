@@ -127,6 +127,7 @@
 
     <owl:ObjectProperty rdf:about="&ontology;hasElectrode">
         <rdfs:range rdf:resource="&ontology;Electrode"/>
+        <rdfs:domain rdf:resource="&ontology;Hardware"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -657,6 +658,10 @@
 
     <owl:Class rdf:about="&ontology;Amplifier">
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;Camera"/>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
     </owl:Class>
     
 
@@ -697,6 +702,9 @@
 
     <owl:Class rdf:about="&ontology;Camera">
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
     </owl:Class>
     
 
@@ -736,6 +744,8 @@
 
     <owl:Class rdf:about="&ontology;Electrode">
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
     </owl:Class>
     
 
@@ -744,6 +754,7 @@
 
     <owl:Class rdf:about="&ontology;ElectrodeGroup">
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
     </owl:Class>
     
 
@@ -1027,11 +1038,46 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#ElectrodeGroup_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ElectrodeGroup_1">
+        <rdf:type rdf:resource="&ontology;ElectrodeGroup"/>
+        <hasElectrode rdf:resource="&ontology;Electrode_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Electrode_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Electrode_1">
+        <rdf:type rdf:resource="&ontology;Electrode"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#Experiment_1 -->
 
     <owl:NamedIndividual rdf:about="&ontology;Experiment_1">
         <rdf:type rdf:resource="&ontology;Experiment"/>
         <hasResearchActivity rdf:resource="&ontology;Trial_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Hardware_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Hardware_1">
+        <rdf:type rdf:resource="&ontology;Hardware"/>
+        <hasElectrode rdf:resource="&ontology;Electrode_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Tetrode_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Tetrode_1">
+        <rdf:type rdf:resource="&ontology;Tetrode"/>
+        <hasElectrode rdf:resource="&ontology;Electrode_1"/>
     </owl:NamedIndividual>
     
 
