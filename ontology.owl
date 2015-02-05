@@ -199,9 +199,17 @@
     <!-- http://www.semanticweb.org/ontology#hasResearchActivity -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasResearchActivity">
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
-        <rdfs:range rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;ResearchActivity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Experiment"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -254,9 +262,17 @@
     <!-- http://www.semanticweb.org/ontology#isPartOfExperiment -->
 
     <owl:ObjectProperty rdf:about="&ontology;isPartOfExperiment">
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
         <rdfs:range rdf:resource="&ontology;Experiment"/>
-        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;ResearchActivity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Experiment"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
