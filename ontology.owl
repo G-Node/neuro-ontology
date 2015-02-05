@@ -57,9 +57,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontology#configuresResource -->
+    <!-- http://www.semanticweb.org/ontology#configures -->
 
-    <owl:ObjectProperty rdf:about="&ontology;configuresResource">
+    <owl:ObjectProperty rdf:about="&ontology;configures">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
         <rdfs:range>
@@ -95,13 +95,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCell"/>
-                <owl:onClass rdf:resource="&ontology;Cell"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -110,6 +103,13 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
