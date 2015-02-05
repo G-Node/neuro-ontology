@@ -127,8 +127,14 @@
 
     <owl:ObjectProperty rdf:about="&ontology;hasElectrode">
         <rdfs:range rdf:resource="&ontology;Electrode"/>
-        <rdfs:domain rdf:resource="&ontology;ElectrodeGroup"/>
-        <rdfs:domain rdf:resource="&ontology;Tetrode"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;ElectrodeGroup"/>
+                    <rdf:Description rdf:about="&ontology;Tetrode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -200,6 +206,7 @@
 
     <owl:ObjectProperty rdf:about="&ontology;hasResearchActivity">
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <owl:inverseOf rdf:resource="&ontology;isPartOfExperiment"/>
         <rdfs:range>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
