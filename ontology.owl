@@ -277,6 +277,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#isPartOfProject -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isPartOfProject">
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:range rdf:resource="&ontology;Project"/>
+        <owl:inverseOf rdf:resource="&ontology;hasExperiment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#isPartOfRecordingSession -->
 
     <owl:ObjectProperty rdf:about="&ontology;isPartOfRecordingSession">
