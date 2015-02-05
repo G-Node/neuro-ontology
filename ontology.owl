@@ -643,6 +643,14 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#atTime -->
+
+    <rdf:Description rdf:about="&prov;atTime">
+        <rdfs:domain rdf:resource="&ontology;Event"/>
+    </rdf:Description>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1060,15 +1068,6 @@
     <owl:NamedIndividual rdf:about="&ontology;Experiment_1">
         <rdf:type rdf:resource="&ontology;Experiment"/>
         <hasResearchActivity rdf:resource="&ontology;Trial_1"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontology#Hardware_1 -->
-
-    <owl:NamedIndividual rdf:about="&ontology;Hardware_1">
-        <rdf:type rdf:resource="&ontology;Hardware"/>
-        <hasElectrode rdf:resource="&ontology;Electrode_1"/>
     </owl:NamedIndividual>
     
 
