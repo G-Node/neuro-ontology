@@ -310,6 +310,7 @@
     <owl:ObjectProperty rdf:about="&ontology;producesData">
         <rdfs:range rdf:resource="&ontology;Data"/>
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <owl:inverseOf rdf:resource="&ontology;isProducedBy"/>
     </owl:ObjectProperty>
     
 
