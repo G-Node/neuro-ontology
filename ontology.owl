@@ -1021,6 +1021,35 @@
     <rdf:Description rdf:about="&prov;SoftwareAgent">
         <rdfs:subClassOf rdf:resource="&ontology;SetupEquipment"/>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Experiment_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Experiment_1">
+        <rdf:type rdf:resource="&ontology;Experiment"/>
+        <hasResearchActivity rdf:resource="&ontology;Trial_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Trial_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Trial_1">
+        <rdf:type rdf:resource="&ontology;Trial"/>
+        <isPartOfExperiment rdf:resource="&ontology;Experiment_1"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
