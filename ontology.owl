@@ -676,6 +676,12 @@
 
     <owl:Class rdf:about="&ontology;Amplifier">
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAmplifierSetting"/>
+                <owl:someValuesFrom rdf:resource="&ontology;AmplifierSetting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Camera"/>
         <owl:disjointWith rdf:resource="&ontology;Electrode"/>
         <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
@@ -805,12 +811,6 @@
 
     <owl:Class rdf:about="&ontology;Hardware">
         <rdfs:subClassOf rdf:resource="&ontology;SetupEquipment"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasAmplifierSetting"/>
-                <owl:someValuesFrom rdf:resource="&ontology;AmplifierSetting"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -858,6 +858,12 @@
     <!-- http://www.semanticweb.org/ontology#Project -->
 
     <owl:Class rdf:about="&ontology;Project">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasExperiment"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Experiment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Resource"/>
         <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
         <owl:disjointWith rdf:resource="&prov;Activity"/>
