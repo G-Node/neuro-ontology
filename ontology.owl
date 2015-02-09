@@ -95,13 +95,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCell"/>
-                <owl:onClass rdf:resource="&ontology;Cell"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -110,6 +103,13 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -199,6 +199,15 @@
     <owl:ObjectProperty rdf:about="&ontology;hasPrincipalInvestigator">
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
         <rdfs:range rdf:resource="&prov;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasProtocolAdjustment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasProtocolAdjustment">
+        <rdfs:domain rdf:resource="&ontology;Protocol"/>
+        <rdfs:range rdf:resource="&ontology;ProtocolAdjustment"/>
     </owl:ObjectProperty>
     
 
