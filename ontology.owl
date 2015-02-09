@@ -74,11 +74,169 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#configuresAmplifierHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresAmplifierHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Amplifier"/>
+        <rdfs:domain rdf:resource="&ontology;AmplifierSetting"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresCameraHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresCameraHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Camera"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresElectrodeGroupHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresElectrodeGroupHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresElectrodeHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresElectrodeHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Electrode"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Hardware"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresMedication -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresMedication">
+        <rdfs:range rdf:resource="&ontology;Medication"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresProtocol -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
+        <rdfs:range rdf:resource="&ontology;Protocol"/>
+        <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresSetup -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresSetup">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresSetupEquipment">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;SetupEquipment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresSoftwareAgentSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresSoftwareAgentSetupEquipment">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresSetupEquipment"/>
+        <rdfs:range rdf:resource="&prov;SoftwareAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresStimulus -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresStimulus">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Stimulus"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresTetrodeHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresTetrodeHardwareSetupEquipment">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Tetrode"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configuresHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresTrial -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresTrial">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Trial"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAmplifierHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasAmplifierHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Amplifier"/>
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#hasAmplifierSetting -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasAmplifierSetting">
-        <rdfs:domain rdf:resource="&ontology;Amplifier"/>
         <rdfs:range rdf:resource="&ontology;AmplifierSetting"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Amplifier"/>
+                    <rdf:Description rdf:about="&ontology;Trial"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAnalysisResearchActivity -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasAnalysisResearchActivity">
+        <rdfs:range rdf:resource="&ontology;Analysis"/>
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
     </owl:ObjectProperty>
     
 
@@ -88,6 +246,16 @@
     <owl:ObjectProperty rdf:about="&ontology;hasAnimalLogEntry">
         <rdfs:domain rdf:resource="&ontology;Animal"/>
         <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasCameraHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasCameraHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Camera"/>
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasHardwareSetupEquipment"/>
     </owl:ObjectProperty>
     
 
@@ -140,6 +308,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#hasElectrodeGroupHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasElectrodeGroupHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasElectrodeHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasElectrodeHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Electrode"/>
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#hasExperiment -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasExperiment">
@@ -154,6 +342,16 @@
     <owl:ObjectProperty rdf:about="&ontology;hasExperimenter">
         <rdfs:range rdf:resource="&ontology;Experimenter"/>
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasHardwareSetupEquipment">
+        <rdfs:range rdf:resource="&ontology;Hardware"/>
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasSetupEquipment"/>
     </owl:ObjectProperty>
     
 
@@ -206,8 +404,26 @@
     <!-- http://www.semanticweb.org/ontology#hasProtocolAdjustment -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasProtocolAdjustment">
-        <rdfs:domain rdf:resource="&ontology;Protocol"/>
         <rdfs:range rdf:resource="&ontology;ProtocolAdjustment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Protocol"/>
+                    <rdf:Description rdf:about="&ontology;Trial"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasRecordingSessionResearchActivity -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasRecordingSessionResearchActivity">
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:range rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
     </owl:ObjectProperty>
     
 
@@ -252,12 +468,42 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#hasSoftwareAgentSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasSoftwareAgentSetupEquipment">
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasSetupEquipment"/>
+        <rdfs:range rdf:resource="&prov;SoftwareAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasTetrodeHardwareSetupEquipment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasTetrodeHardwareSetupEquipment">
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:range rdf:resource="&ontology;Tetrode"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasHardwareSetupEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#hasTrial -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasTrial">
         <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
         <rdfs:range rdf:resource="&ontology;Trial"/>
         <owl:inverseOf rdf:resource="&ontology;isPartOfRecordingSession"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasTrialResearchActivity -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasTrialResearchActivity">
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:range rdf:resource="&ontology;Trial"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
     </owl:ObjectProperty>
     
 
@@ -314,12 +560,62 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#isProducedByAnalysis -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isProducedByAnalysis">
+        <rdfs:range rdf:resource="&ontology;Analysis"/>
+        <rdfs:domain rdf:resource="&ontology;Data"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isProducedByExperiment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isProducedByExperiment">
+        <rdfs:domain rdf:resource="&ontology;Data"/>
+        <rdfs:range rdf:resource="&ontology;Experiment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isProducedByRecordingSession -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isProducedByRecordingSession">
+        <rdfs:domain rdf:resource="&ontology;Data"/>
+        <rdfs:range rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isProducedByTrial -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isProducedByTrial">
+        <rdfs:domain rdf:resource="&ontology;Data"/>
+        <rdfs:range rdf:resource="&ontology;Trial"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#isUsedInAnalysis -->
 
     <owl:ObjectProperty rdf:about="&ontology;isUsedInAnalysis">
         <rdfs:range rdf:resource="&ontology;Analysis"/>
         <rdfs:domain rdf:resource="&ontology;Data"/>
         <owl:inverseOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#producesAnimalLogEntryData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;producesAnimalLogEntryData">
+        <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
     </owl:ObjectProperty>
     
 
@@ -334,6 +630,66 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#producesEventData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;producesEventData">
+        <rdfs:range rdf:resource="&ontology;Event"/>
+        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#producesPermitData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;producesPermitData">
+        <rdfs:range rdf:resource="&ontology;Permit"/>
+        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#producesSignalData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;producesSignalData">
+        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:range rdf:resource="&ontology;Signal"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesAmplifierHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesAmplifierHardwareSetupEquipmentResource">
+        <rdfs:range rdf:resource="&ontology;Amplifier"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesHardwareSetupEquipmentResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesAnimalLogEntryData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesAnimalLogEntryData">
+        <rdfs:domain rdf:resource="&ontology;Analysis"/>
+        <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesCameraHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesCameraHardwareSetupEquipmentResource">
+        <rdfs:range rdf:resource="&ontology;Camera"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesHardwareSetupEquipmentResource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#usesData -->
 
     <owl:ObjectProperty rdf:about="&ontology;usesData">
@@ -343,11 +699,141 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#usesElectrodeGroupHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesElectrodeGroupHardwareSetupEquipmentResource">
+        <rdfs:range rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesHardwareSetupEquipmentResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesElectrodeHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesElectrodeHardwareSetupEquipmentResource">
+        <rdfs:range rdf:resource="&ontology;Electrode"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesHardwareSetupEquipmentResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesEventData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesEventData">
+        <rdfs:domain rdf:resource="&ontology;Analysis"/>
+        <rdfs:range rdf:resource="&ontology;Event"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesHardwareSetupEquipmentResource">
+        <rdfs:range rdf:resource="&ontology;Hardware"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesSetupEquipmentResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesMedicationResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesMedicationResource">
+        <rdfs:range rdf:resource="&ontology;Medication"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesPermitData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesPermitData">
+        <rdfs:domain rdf:resource="&ontology;Analysis"/>
+        <rdfs:range rdf:resource="&ontology;Permit"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesProtocolResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesProtocolResource">
+        <rdfs:range rdf:resource="&ontology;Protocol"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#usesResource -->
 
     <owl:ObjectProperty rdf:about="&ontology;usesResource">
         <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
         <rdfs:range rdf:resource="&ontology;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSetupEquipmentResource">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;SetupEquipment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSetupResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSetupResource">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSignalData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSignalData">
+        <rdfs:domain rdf:resource="&ontology;Analysis"/>
+        <rdfs:range rdf:resource="&ontology;Signal"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSoftwareAgentSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSoftwareAgentSetupEquipmentResource">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesSetupEquipmentResource"/>
+        <rdfs:range rdf:resource="&prov;SoftwareAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesStimulusResouce -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesStimulusResouce">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Stimulus"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesTetrodeHardwareSetupEquipmentResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesTetrodeHardwareSetupEquipmentResource">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Tetrode"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesHardwareSetupEquipmentResource"/>
     </owl:ObjectProperty>
     
 
