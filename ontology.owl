@@ -1440,6 +1440,10 @@
 
     <owl:Class rdf:about="&ontology;Medication">
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;Protocol"/>
+        <owl:disjointWith rdf:resource="&ontology;Setup"/>
+        <owl:disjointWith rdf:resource="&ontology;SetupEquipment"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
     </owl:Class>
     
 
@@ -1500,6 +1504,15 @@
 
     <owl:Class rdf:about="&ontology;Protocol">
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasProtocolAdjustment"/>
+                <owl:someValuesFrom rdf:resource="&ontology;ProtocolAdjustment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Setup"/>
+        <owl:disjointWith rdf:resource="&ontology;SetupEquipment"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
     </owl:Class>
     
 
@@ -1566,6 +1579,8 @@
 
     <owl:Class rdf:about="&ontology;Setup">
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;SetupEquipment"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
     </owl:Class>
     
 
@@ -1574,6 +1589,7 @@
 
     <owl:Class rdf:about="&ontology;SetupEquipment">
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
     </owl:Class>
     
 
@@ -1689,6 +1705,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#AmplifierSetting_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;AmplifierSetting_1">
+        <rdf:type rdf:resource="&ontology;AmplifierSetting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Amplifier_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Amplifier_1">
+        <rdf:type rdf:resource="&ontology;Amplifier"/>
+        <hasAmplifierSetting rdf:resource="&ontology;AmplifierSetting_1"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#ElectrodeGroup_1 -->
 
     <owl:NamedIndividual rdf:about="&ontology;ElectrodeGroup_1">
@@ -1711,6 +1744,14 @@
     <owl:NamedIndividual rdf:about="&ontology;Experiment_1">
         <rdf:type rdf:resource="&ontology;Experiment"/>
         <hasResearchActivity rdf:resource="&ontology;Trial_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ProtocolAdjustment_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ProtocolAdjustment_1">
+        <rdf:type rdf:resource="&ontology;ProtocolAdjustment"/>
     </owl:NamedIndividual>
     
 
