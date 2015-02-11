@@ -479,6 +479,9 @@
         <NamedIndividual IRI="#Trial_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Trial_2"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty abbreviatedIRI="prov:atTime"/>
     </Declaration>
     <SubClassOf>
@@ -607,6 +610,13 @@
     <SubClassOf>
         <Class IRI="#ResearchActivity"/>
         <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResourceConfiguration"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#configures"/>
+            <Class IRI="#Resource"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
@@ -913,9 +923,17 @@
         <Class IRI="#Trial"/>
         <NamedIndividual IRI="#Trial_1"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trial"/>
+        <NamedIndividual IRI="#Trial_2"/>
+    </ClassAssertion>
     <DifferentIndividuals>
         <NamedIndividual IRI="#Protocol_1"/>
         <NamedIndividual IRI="#Protocol_2"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Trial_1"/>
+        <NamedIndividual IRI="#Trial_2"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
