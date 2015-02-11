@@ -186,6 +186,11 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
         <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -194,11 +199,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -269,11 +269,6 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresStimulus">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -282,6 +277,11 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -357,6 +357,11 @@
         <rdfs:range rdf:resource="&ontology;Analysis"/>
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isPartOfExperiment"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -383,13 +388,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCell"/>
-                <owl:onClass rdf:resource="&ontology;Cell"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -398,6 +396,13 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -550,6 +555,11 @@
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
         <rdfs:range rdf:resource="&ontology;RecordingSession"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isPartOfExperiment"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -630,6 +640,11 @@
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
         <rdfs:range rdf:resource="&ontology;Trial"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isPartOfExperiment"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -692,6 +707,11 @@
         <rdfs:range rdf:resource="&ontology;Analysis"/>
         <rdfs:domain rdf:resource="&ontology;Data"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;producesData"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -702,6 +722,11 @@
         <rdfs:domain rdf:resource="&ontology;Data"/>
         <rdfs:range rdf:resource="&ontology;Experiment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;producesData"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -712,6 +737,11 @@
         <rdfs:domain rdf:resource="&ontology;Data"/>
         <rdfs:range rdf:resource="&ontology;RecordingSession"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;producesData"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -722,6 +752,11 @@
         <rdfs:domain rdf:resource="&ontology;Data"/>
         <rdfs:range rdf:resource="&ontology;Trial"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;isProducedBy"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;producesData"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -742,6 +777,11 @@
         <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isProducedBy"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -762,6 +802,11 @@
         <rdfs:range rdf:resource="&ontology;Event"/>
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isProducedBy"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -772,6 +817,11 @@
         <rdfs:range rdf:resource="&ontology;Permit"/>
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isProducedBy"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -782,6 +832,11 @@
         <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
         <rdfs:range rdf:resource="&ontology;Signal"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;producesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isProducedBy"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -802,6 +857,11 @@
         <rdfs:domain rdf:resource="&ontology;Analysis"/>
         <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isUsedInAnalysis"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -851,6 +911,11 @@
         <rdfs:domain rdf:resource="&ontology;Analysis"/>
         <rdfs:range rdf:resource="&ontology;Event"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isUsedInAnalysis"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -881,6 +946,11 @@
         <rdfs:domain rdf:resource="&ontology;Analysis"/>
         <rdfs:range rdf:resource="&ontology;Permit"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isUsedInAnalysis"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -930,6 +1000,11 @@
         <rdfs:domain rdf:resource="&ontology;Analysis"/>
         <rdfs:range rdf:resource="&ontology;Signal"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;isUsedInAnalysis"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 

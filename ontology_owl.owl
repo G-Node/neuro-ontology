@@ -1017,6 +1017,12 @@
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isPartOfExperiment"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCameraHardwareSetupEquipment"/>
         <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
     </SubObjectPropertyOf>
@@ -1047,6 +1053,12 @@
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isPartOfExperiment"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSoftwareAgentSetupEquipment"/>
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
@@ -1059,36 +1071,90 @@
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTrialResearchActivity"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isPartOfExperiment"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByAnalysis"/>
         <ObjectProperty IRI="#isProducedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducedByAnalysis"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#producesData"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByExperiment"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducedByExperiment"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#producesData"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByRecordingSession"/>
         <ObjectProperty IRI="#isProducedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducedByRecordingSession"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#producesData"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByTrial"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducedByTrial"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#producesData"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#producesAnimalLogEntryData"/>
         <ObjectProperty IRI="#producesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#producesEventData"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#producesPermitData"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#producesSignalData"/>
         <ObjectProperty IRI="#producesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesAmplifierHardwareSetupEquipmentResource"/>
@@ -1097,6 +1163,12 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesAnimalLogEntryData"/>
         <ObjectProperty IRI="#usesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isUsedInAnalysis"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesCameraHardwareSetupEquipmentResource"/>
@@ -1115,6 +1187,12 @@
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isUsedInAnalysis"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
         <ObjectProperty IRI="#usesSetupEquipmentResource"/>
     </SubObjectPropertyOf>
@@ -1125,6 +1203,12 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesPermitData"/>
         <ObjectProperty IRI="#usesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isUsedInAnalysis"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesProtocolResource"/>
@@ -1141,6 +1225,12 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesSignalData"/>
         <ObjectProperty IRI="#usesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="#isUsedInAnalysis"/>
+        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
