@@ -1390,6 +1390,12 @@
 
     <owl:Class rdf:about="&ontology;AmplifierSetting">
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresAmplifierHardwareSetupEquipment"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Amplifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1596,6 +1602,13 @@
 
     <owl:Class rdf:about="&ontology;ProtocolAdjustment">
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
+                <owl:onClass rdf:resource="&ontology;Protocol"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1827,6 +1840,23 @@
 
     <owl:NamedIndividual rdf:about="&ontology;ProtocolAdjustment_1">
         <rdf:type rdf:resource="&ontology;ProtocolAdjustment"/>
+        <configuresProtocol rdf:resource="&ontology;Protocol_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Protocol_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Protocol_1">
+        <rdf:type rdf:resource="&ontology;Protocol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Protocol_2 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Protocol_2">
+        <rdf:type rdf:resource="&ontology;Protocol"/>
     </owl:NamedIndividual>
     
 
@@ -1846,6 +1876,24 @@
         <rdf:type rdf:resource="&ontology;Trial"/>
         <isPartOfExperiment rdf:resource="&ontology;Experiment_1"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Protocol_1"/>
+            <rdf:Description rdf:about="&ontology;Protocol_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
 </rdf:RDF>
 
 

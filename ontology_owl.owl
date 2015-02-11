@@ -467,6 +467,12 @@
         <NamedIndividual IRI="#ProtocolAdjustment_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Protocol_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Protocol_2"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Tetrode_1"/>
     </Declaration>
     <Declaration>
@@ -489,6 +495,13 @@
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <Class IRI="#ResourceConfiguration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+            <Class IRI="#Amplifier"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Analysis"/>
@@ -579,6 +592,13 @@
     <SubClassOf>
         <Class IRI="#ProtocolAdjustment"/>
         <Class IRI="#ResourceConfiguration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProtocolAdjustment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#configuresProtocol"/>
+            <Class IRI="#Protocol"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
@@ -878,6 +898,14 @@
         <NamedIndividual IRI="#ProtocolAdjustment_1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Protocol"/>
+        <NamedIndividual IRI="#Protocol_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Protocol"/>
+        <NamedIndividual IRI="#Protocol_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Tetrode"/>
         <NamedIndividual IRI="#Tetrode_1"/>
     </ClassAssertion>
@@ -885,6 +913,10 @@
         <Class IRI="#Trial"/>
         <NamedIndividual IRI="#Trial_1"/>
     </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Protocol_1"/>
+        <NamedIndividual IRI="#Protocol_2"/>
+    </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <NamedIndividual IRI="#Amplifier_1"/>
@@ -899,6 +931,11 @@
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
         <NamedIndividual IRI="#Trial_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#configuresProtocol"/>
+        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
+        <NamedIndividual IRI="#Protocol_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasElectrode"/>
