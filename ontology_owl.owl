@@ -464,6 +464,9 @@
         <NamedIndividual IRI="#Experiment_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Project_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ProtocolAdjustment_1"/>
     </Declaration>
     <Declaration>
@@ -573,13 +576,6 @@
     <SubClassOf>
         <Class IRI="#Preparation"/>
         <Class abbreviatedIRI="prov:Activity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Project"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasExperiment"/>
-            <Class IRI="#Experiment"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Protocol"/>
@@ -902,6 +898,10 @@
     <ClassAssertion>
         <Class IRI="#Experiment"/>
         <NamedIndividual IRI="#Experiment_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Project"/>
+        <NamedIndividual IRI="#Project_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#ProtocolAdjustment"/>
