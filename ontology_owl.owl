@@ -167,9 +167,6 @@
         <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresTrial"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
     </Declaration>
     <Declaration>
@@ -608,11 +605,38 @@
         <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Resource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasResourceConfiguration"/>
+            <Class IRI="#ResourceConfiguration"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasResourceConfiguration"/>
+            <Class IRI="#ResourceConfiguration"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ResourceConfiguration"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#configures"/>
-            <Class IRI="#Resource"/>
+            <ObjectUnionOf>
+                <Class IRI="#Resource"/>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResourceConfiguration"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#configures"/>
+            <ObjectUnionOf>
+                <Class IRI="#Resource"/>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
@@ -641,6 +665,20 @@
     <SubClassOf>
         <Class IRI="#Trial"/>
         <Class IRI="#ResearchActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasResourceConfiguration"/>
+            <Class IRI="#ResourceConfiguration"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasResourceConfiguration"/>
+            <Class IRI="#ResourceConfiguration"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="prov:Person"/>
@@ -1044,16 +1082,6 @@
         <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresTrial"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresTrial"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
         <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
     </SubObjectPropertyOf>
@@ -1385,10 +1413,6 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresTrial"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1746,10 +1770,6 @@
             <Class IRI="#Tetrode"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresTrial"/>
-        <Class IRI="#Trial"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
