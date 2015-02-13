@@ -1393,6 +1393,20 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesData"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesData"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
                         <owl:onProperty rdf:resource="&ontology;isPartOfExperiment"/>
                         <owl:someValuesFrom rdf:resource="&ontology;Experiment"/>
                     </owl:Restriction>
@@ -1735,6 +1749,20 @@
 
     <owl:Class rdf:about="&ontology;ResearchActivity">
         <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;producesData"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;producesData"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
