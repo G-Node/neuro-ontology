@@ -473,6 +473,12 @@
         <NamedIndividual IRI="#Protocol_2"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ResourceConfiguration_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Resource_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Tetrode_1"/>
     </Declaration>
     <Declaration>
@@ -586,8 +592,22 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Protocol"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProtocolAdjustment"/>
+            <Class IRI="#ProtocolAdjustment"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ProtocolAdjustment"/>
         <Class IRI="#ResourceConfiguration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProtocolAdjustment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#configuresProtocol"/>
+            <Class IRI="#Protocol"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProtocolAdjustment"/>
@@ -952,6 +972,14 @@
     <ClassAssertion>
         <Class IRI="#Protocol"/>
         <NamedIndividual IRI="#Protocol_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ResourceConfiguration"/>
+        <NamedIndividual IRI="#ResourceConfiguration_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Resource"/>
+        <NamedIndividual IRI="#Resource_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Tetrode"/>

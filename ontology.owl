@@ -186,11 +186,6 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
         <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -199,6 +194,11 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -230,11 +230,6 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresSetupEquipment">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -243,6 +238,11 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -269,6 +269,11 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresStimulus">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -277,11 +282,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -373,13 +373,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCell"/>
-                <owl:onClass rdf:resource="&ontology;Cell"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -388,6 +381,13 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -517,11 +517,6 @@
         <rdfs:range rdf:resource="&ontology;ProtocolAdjustment"/>
         <owl:inverseOf rdf:resource="&ontology;configuresProtocol"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;configures"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -530,6 +525,11 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;configures"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -1567,6 +1567,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasProtocolAdjustment"/>
+                <owl:allValuesFrom rdf:resource="&ontology;ProtocolAdjustment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasProtocolAdjustment"/>
                 <owl:someValuesFrom rdf:resource="&ontology;ProtocolAdjustment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1581,6 +1587,12 @@
 
     <owl:Class rdf:about="&ontology;ProtocolAdjustment">
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Protocol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
@@ -1738,13 +1750,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
-                <owl:someValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
+                <owl:allValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
-                <owl:allValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
+                <owl:someValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1898,6 +1910,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontology#ResourceConfiguration_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ResourceConfiguration_1">
+        <rdf:type rdf:resource="&ontology;ResourceConfiguration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Resource_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Resource_1">
+        <rdf:type rdf:resource="&ontology;Resource"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#Tetrode_1 -->
 
     <owl:NamedIndividual rdf:about="&ontology;Tetrode_1">
@@ -1935,15 +1963,15 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Protocol_1"/>
-            <rdf:Description rdf:about="&ontology;Protocol_2"/>
+            <rdf:Description rdf:about="&ontology;Trial_1"/>
+            <rdf:Description rdf:about="&ontology;Trial_2"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Trial_1"/>
-            <rdf:Description rdf:about="&ontology;Trial_2"/>
+            <rdf:Description rdf:about="&ontology;Protocol_1"/>
+            <rdf:Description rdf:about="&ontology;Protocol_2"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
