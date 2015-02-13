@@ -186,6 +186,11 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
         <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -194,11 +199,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -208,6 +208,11 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresSetup">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -216,11 +221,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -269,6 +269,11 @@
     <owl:ObjectProperty rdf:about="&ontology;configuresStimulus">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -277,11 +282,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -373,13 +373,6 @@
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCell"/>
-                <owl:onClass rdf:resource="&ontology;Cell"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -388,6 +381,13 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1453,6 +1453,36 @@
     <!-- http://www.semanticweb.org/ontology#Data -->
 
     <owl:Class rdf:about="&ontology;Data">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isProducedBy"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;ResearchActivity"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isProducedBy"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;ResearchActivity"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isUsedInAnalysis"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;Analysis"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isUsedInAnalysis"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;Analysis"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Project"/>
         <owl:disjointWith rdf:resource="&ontology;Resource"/>
         <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
@@ -1500,20 +1530,6 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
                         <owl:onProperty rdf:resource="&ontology;hasResearchActivity"/>
                         <owl:someValuesFrom>
                             <owl:Class>
@@ -1538,6 +1554,20 @@
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>

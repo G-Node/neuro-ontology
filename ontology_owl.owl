@@ -550,6 +550,31 @@
         <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Data"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedBy"/>
+                    <Class IRI="#ResearchActivity"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedBy"/>
+                    <Class IRI="#ResearchActivity"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isUsedInAnalysis"/>
+                    <Class IRI="#Analysis"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isUsedInAnalysis"/>
+                    <Class IRI="#Analysis"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Electrode"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
