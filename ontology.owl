@@ -1376,10 +1376,18 @@
     <owl:Class rdf:about="&ontology;AmplifierSetting">
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;configuresAmplifierHardwareSetupEquipment"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Amplifier"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;configuresAmplifierHardwareSetupEquipment"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Amplifier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;configuresAmplifierHardwareSetupEquipment"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Amplifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     

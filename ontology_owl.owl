@@ -507,10 +507,16 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
-            <Class IRI="#Amplifier"/>
-        </ObjectSomeValuesFrom>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+                <Class IRI="#Amplifier"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+                <Class IRI="#Amplifier"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Analysis"/>
