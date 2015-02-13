@@ -517,6 +517,19 @@
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Analysis"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Animal"/>
         <Class abbreviatedIRI="prov:Agent"/>
     </SubClassOf>
@@ -670,6 +683,19 @@
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ResearchActivity"/>
         <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
@@ -734,6 +760,19 @@
     <SubClassOf>
         <Class IRI="#Trial"/>
         <Class IRI="#ResearchActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#isPartOfExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
