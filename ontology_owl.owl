@@ -553,6 +553,55 @@
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrincipalInvestigator"/>
+                <Class abbreviatedIRI="prov:Person"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPrincipalInvestigator"/>
+                <Class abbreviatedIRI="prov:Person"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasResearchActivity"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#ResearchActivity"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#Experiment"/>
+                    </ObjectComplementOf>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasResearchActivity"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#ResearchActivity"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#Experiment"/>
+                    </ObjectComplementOf>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#isPartOfProject"/>
+                <Class IRI="#Project"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#isPartOfProject"/>
+                <Class IRI="#Project"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Experimenter"/>
         <Class abbreviatedIRI="prov:Person"/>
     </SubClassOf>
