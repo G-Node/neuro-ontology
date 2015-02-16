@@ -556,8 +556,189 @@
         <Class abbreviatedIRI="prov:Agent"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasBrainRegion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCageID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasSpecies"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasAge"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasAnimalID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBrainRegion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasCageID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasMark"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasSex"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasSpecies"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasAge"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasAnimalID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasMark"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasSex"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
         <Class IRI="#Data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCondition"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasDiet"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasPerformance"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasStressLevel"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasWeight"/>
+            <DataUnionOf>
+                <Datatype abbreviatedIRI="xsd:float"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataUnionOf>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasCondition"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDiet"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasPerformance"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasStressLevel"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasWeight"/>
+            <DataUnionOf>
+                <Datatype abbreviatedIRI="xsd:float"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataUnionOf>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Camera"/>
@@ -566,6 +747,20 @@
     <SubClassOf>
         <Class IRI="#Cell"/>
         <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cell"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasType"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cell"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasType"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Channel"/>
@@ -607,6 +802,34 @@
     <SubClassOf>
         <Class IRI="#Event"/>
         <Class IRI="#Data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="prov:atTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI="prov:atTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Experiment"/>
@@ -679,12 +902,54 @@
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Experimenter"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasResearchDomain"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experimenter"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasResearchDomain"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Hardware"/>
         <Class IRI="#SetupEquipment"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
         <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasQuantity"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasQuantity"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Neuron"/>
@@ -699,8 +964,64 @@
         <Class IRI="#Data"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Permit"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasNumber"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Permit"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasNumber"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Preparation"/>
         <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preparation"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBehavioralState"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preparation"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBehavioralState"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasGoal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasGoal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Protocol"/>
@@ -815,6 +1136,48 @@
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasVendor"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDescription"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasVendor"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipment"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasDescription"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Signal"/>
         <Class IRI="#Data"/>
     </SubClassOf>
@@ -862,8 +1225,50 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI="prov:Activity"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="prov:endedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Activity"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="prov:startedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Activity"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI="prov:endedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Activity"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI="prov:startedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="prov:Person"/>
         <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Person"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Person"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
@@ -2534,7 +2939,10 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasWeight"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:float"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataUnionOf>
     </DataPropertyRange>
     <AnnotationPropertyDomain>
         <AnnotationProperty abbreviatedIRI="prov:atTime"/>
