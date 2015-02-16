@@ -251,6 +251,9 @@
         <ObjectProperty IRI="#isAboutAnimal"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isExperimenterFor"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPartOfExperiment"/>
     </Declaration>
     <Declaration>
@@ -661,6 +664,19 @@
     <SubClassOf>
         <Class IRI="#Experimenter"/>
         <Class abbreviatedIRI="prov:Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experimenter"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isExperimenterFor"/>
+                <Class IRI="#ResearchActivity"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#isExperimenterFor"/>
+                <Class IRI="#ResearchActivity"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hardware"/>
@@ -1521,6 +1537,10 @@
         <ObjectProperty IRI="#hasExperiment"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasExperimenter"/>
+        <ObjectProperty IRI="#isExperimenterFor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <ObjectProperty IRI="#isPartOfExperiment"/>
     </InverseObjectProperties>
@@ -1718,6 +1738,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#AnimalLogEntry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isExperimenterFor"/>
+        <Class IRI="#Experimenter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -2064,6 +2088,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#Animal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isExperimenterFor"/>
+        <Class IRI="#ResearchActivity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfExperiment"/>
