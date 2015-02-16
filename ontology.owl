@@ -1206,6 +1206,8 @@
 
     <owl:DatatypeProperty rdf:about="&ontology;hasMark">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -1339,8 +1341,8 @@
 
     <owl:DatatypeProperty rdf:about="&ontology;hasVersion">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&ontology;Hardware"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&prov;SoftwareAgent"/>
     </owl:DatatypeProperty>
     
 

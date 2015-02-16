@@ -2317,6 +2317,10 @@
         <Class IRI="#AmplifierSetting"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#hasMark"/>
+        <Class IRI="#Animal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
         <Class IRI="#Event"/>
     </DataPropertyDomain>
@@ -2390,7 +2394,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasVersion"/>
-        <Class IRI="#Hardware"/>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasWeight"/>
@@ -2467,6 +2471,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMark"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasName"/>
