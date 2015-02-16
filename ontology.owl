@@ -1103,6 +1103,7 @@
     <!-- http://www.semanticweb.org/ontology#hasChannelNumber -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasChannelNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;Channel"/>
         <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
@@ -1184,6 +1185,7 @@
     <!-- http://www.semanticweb.org/ontology#hasLpfBandpassHighCutoff -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasLpfBandpassHighCutoff">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;AmplifierSetting"/>
         <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
@@ -1193,6 +1195,7 @@
     <!-- http://www.semanticweb.org/ontology#hasLpfBandpassLowCutoff -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasLpfBandpassLowCutoff">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;AmplifierSetting"/>
         <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
@@ -1201,7 +1204,9 @@
 
     <!-- http://www.semanticweb.org/ontology#hasMark -->
 
-    <owl:DatatypeProperty rdf:about="&ontology;hasMark"/>
+    <owl:DatatypeProperty rdf:about="&ontology;hasMark">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -1231,6 +1236,7 @@
     <!-- http://www.semanticweb.org/ontology#hasNumberOfElectrodes -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasNumberOfElectrodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;ElectrodeGroup"/>
         <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
     </owl:DatatypeProperty>
@@ -1276,6 +1282,7 @@
     <!-- http://www.semanticweb.org/ontology#hasSex -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasSex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;Animal"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1331,6 +1338,7 @@
     <!-- http://www.semanticweb.org/ontology#hasVersion -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasVersion">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&ontology;Hardware"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
