@@ -2221,6 +2221,12 @@
         <ObjectProperty IRI="#usesTetrodeHardwareSetupEquipmentResource"/>
         <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAnimalID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasNumber"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAge"/>
         <Class IRI="#Animal"/>
