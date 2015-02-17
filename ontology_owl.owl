@@ -1274,6 +1274,20 @@
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
         <Class IRI="#SetupEquipment"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasVersion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasVersion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Amplifier"/>
         <Class IRI="#Camera"/>
