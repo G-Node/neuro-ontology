@@ -1215,12 +1215,18 @@
     <!-- http://www.semanticweb.org/ontology#hasName -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasName">
-        <rdfs:domain rdf:resource="&ontology;Event"/>
-        <rdfs:domain rdf:resource="&ontology;Medication"/>
-        <rdfs:domain rdf:resource="&ontology;Project"/>
-        <rdfs:domain rdf:resource="&ontology;SetupEquipment"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&prov;Agent"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Event"/>
+                    <rdf:Description rdf:about="&ontology;Medication"/>
+                    <rdf:Description rdf:about="&ontology;Project"/>
+                    <rdf:Description rdf:about="&ontology;SetupEquipment"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -1321,9 +1327,15 @@
     <!-- http://www.semanticweb.org/ontology#hasType -->
 
     <owl:DatatypeProperty rdf:about="&ontology;hasType">
-        <rdfs:domain rdf:resource="&ontology;Cell"/>
-        <rdfs:domain rdf:resource="&ontology;Stimulus"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Cell"/>
+                    <rdf:Description rdf:about="&ontology;Stimulus"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
