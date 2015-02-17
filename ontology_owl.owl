@@ -522,6 +522,34 @@
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Analysis"/>
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
@@ -767,6 +795,20 @@
         <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Channel"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasChannelNumber"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Channel"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasChannelNumber"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Data"/>
         <ObjectUnionOf>
             <ObjectIntersectionOf>
@@ -796,8 +838,64 @@
         <Class IRI="#Hardware"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Electrode"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasElectrodeNumber"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electrode"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasElectrodeNumber"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ElectrodeGroup"/>
         <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasElectrodeSpacing"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasElectrodeArrayGeometry"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasElectrodeSpacing"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasNumberOfElectrodes"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasElectrodeArrayGeometry"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasNumberOfElectrodes"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Event"/>
@@ -1182,12 +1280,68 @@
         <Class IRI="#Data"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Signal"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasSamplingRate"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Signal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasSamplingRate"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SpikeSorting"/>
         <Class IRI="#Analysis"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Stimulus"/>
         <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasBehavioralCondition"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasType"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBehavioralCondition"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasColor"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasSize"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasType"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Tetrode"/>
