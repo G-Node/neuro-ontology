@@ -116,6 +116,9 @@
         <Class IRI="#Signal"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Software"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SpikeSorting"/>
     </Declaration>
     <Declaration>
@@ -476,10 +479,16 @@
         <NamedIndividual IRI="#Protocol_2"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#RecordingSession_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ResourceConfiguration_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Resource_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Software_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Tetrode_1"/>
@@ -493,6 +502,10 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="prov:atTime"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Software"/>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Amplifier"/>
         <Class IRI="#Hardware"/>
@@ -1313,6 +1326,14 @@
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Software"/>
+        <Class IRI="#SetupEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Software"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SpikeSorting"/>
         <Class IRI="#Analysis"/>
     </SubClassOf>
@@ -1740,12 +1761,20 @@
         <NamedIndividual IRI="#Protocol_2"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#RecordingSession"/>
+        <NamedIndividual IRI="#RecordingSession_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#ResourceConfiguration"/>
         <NamedIndividual IRI="#ResourceConfiguration_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Resource"/>
         <NamedIndividual IRI="#Resource_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Software"/>
+        <NamedIndividual IRI="#Software_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Tetrode"/>
@@ -1786,6 +1815,11 @@
         <ObjectProperty IRI="#configuresProtocol"/>
         <NamedIndividual IRI="#ProtocolAdjustment_1"/>
         <NamedIndividual IRI="#Protocol_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
+        <NamedIndividual IRI="#RecordingSession_1"/>
+        <NamedIndividual IRI="#Software_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasElectrode"/>
