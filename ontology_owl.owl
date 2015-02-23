@@ -952,7 +952,10 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasResearchActivity"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="#ResearchActivity"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#RecordingSession"/>
+                        <Class IRI="#ResearchActivity"/>
+                    </ObjectUnionOf>
                     <ObjectComplementOf>
                         <Class IRI="#Experiment"/>
                     </ObjectComplementOf>
@@ -961,7 +964,10 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#hasResearchActivity"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="#ResearchActivity"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#RecordingSession"/>
+                        <Class IRI="#ResearchActivity"/>
+                    </ObjectUnionOf>
                     <ObjectComplementOf>
                         <Class IRI="#Experiment"/>
                     </ObjectComplementOf>
@@ -1159,7 +1165,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
-        <Class IRI="#ResearchActivity"/>
+        <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
@@ -1171,6 +1177,19 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#isPartOfExperiment"/>
                 <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#producesData"/>
+                <Class IRI="#Data"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#producesData"/>
+                <Class IRI="#Data"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </SubClassOf>
@@ -1349,7 +1368,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
-        <Class IRI="#ResearchActivity"/>
+        <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
@@ -1361,6 +1380,19 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#isPartOfExperiment"/>
                 <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#producesData"/>
+                <Class IRI="#Data"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#producesData"/>
+                <Class IRI="#Data"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </SubClassOf>
@@ -2110,16 +2142,16 @@
         <ObjectProperty IRI="#hasExperiment"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasExperimenter"/>
         <ObjectProperty IRI="#isExperimenterFor"/>
+        <ObjectProperty IRI="#hasExperimenter"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <ObjectProperty IRI="#isPartOfExperiment"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasTrial"/>
         <ObjectProperty IRI="#isPartOfRecordingSession"/>
+        <ObjectProperty IRI="#hasTrial"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#producesData"/>
@@ -2318,7 +2350,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfExperiment"/>
-        <Class IRI="#ResearchActivity"/>
+        <ObjectUnionOf>
+            <Class IRI="#RecordingSession"/>
+            <Class IRI="#ResearchActivity"/>
+            <Class IRI="#Trial"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -2364,7 +2400,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#producesData"/>
-        <Class IRI="#ResearchActivity"/>
+        <ObjectUnionOf>
+            <Class IRI="#RecordingSession"/>
+            <Class IRI="#ResearchActivity"/>
+            <Class IRI="#Trial"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#producesEventData"/>
@@ -2626,7 +2666,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasResearchActivity"/>
-        <Class IRI="#ResearchActivity"/>
+        <ObjectUnionOf>
+            <Class IRI="#RecordingSession"/>
+            <Class IRI="#ResearchActivity"/>
+            <Class IRI="#Trial"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasResearchActivity"/>
@@ -2680,7 +2724,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
-        <Class IRI="#ResearchActivity"/>
+        <ObjectUnionOf>
+            <Class IRI="#RecordingSession"/>
+            <Class IRI="#ResearchActivity"/>
+            <Class IRI="#Trial"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedByAnalysis"/>
