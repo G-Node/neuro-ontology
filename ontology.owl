@@ -1178,6 +1178,19 @@
         <Class IRI="#RecordingSession"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPreparation"/>
+                <Class IRI="#Preparation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPreparation"/>
+                <Class IRI="#Preparation"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#isPartOfExperiment"/>
                 <Class IRI="#Experiment"/>
             </ObjectSomeValuesFrom>
