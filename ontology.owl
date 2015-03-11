@@ -134,19 +134,19 @@
         <ObjectProperty IRI="#configures"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresAmplifier"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresCamera"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresElectrodeGroupHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresElectrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrodeGroup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#configuresMedication"/>
@@ -161,28 +161,28 @@
         <ObjectProperty IRI="#configuresSetupEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSoftware"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#configuresStimulus"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresTetrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasAmplifier"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectProperty IRI="#hasAnalysis"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAnimalLogEntry"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasCamera"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCell"/>
@@ -194,10 +194,7 @@
         <ObjectProperty IRI="#hasElectrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasElectrodeGroupHardwareSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasElectrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasElectrodeGroup"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasExperiment"/>
@@ -206,7 +203,7 @@
         <ObjectProperty IRI="#hasExperimenter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasMedication"/>
@@ -227,7 +224,7 @@
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectProperty IRI="#hasRecordingSession"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasResearchActivity"/>
@@ -239,16 +236,13 @@
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#hasSoftware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasTetrode"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTrial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTrialResearchActivity"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isAboutAnimal"/>
@@ -284,73 +278,73 @@
         <ObjectProperty IRI="#isUsedInAnalysis"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#producesAnimalLogEntry"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#producesData"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectProperty IRI="#producesEvent"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectProperty IRI="#producesPermit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectProperty IRI="#producesSignal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesAmplifierHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesAmplifier"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#usesAnimalLogEntry"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesCameraHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesCamera"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesData"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesElectrodeGroupHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesElectrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrodeGroup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectProperty IRI="#usesEvent"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesMedicationResource"/>
+        <ObjectProperty IRI="#usesMedication"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectProperty IRI="#usesPermit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesProtocolResource"/>
+        <ObjectProperty IRI="#usesProtocol"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesResource"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSetup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSetupResource"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectProperty IRI="#usesSignal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSoftware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesStimulusResouce"/>
+        <ObjectProperty IRI="#usesStimulus"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesTetrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesTetrode"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasAge"/>
@@ -525,11 +519,11 @@
         <Class IRI="#AmplifierSetting"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+                <ObjectProperty IRI="#configuresAmplifier"/>
                 <Class IRI="#Amplifier"/>
             </ObjectSomeValuesFrom>
             <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+                <ObjectProperty IRI="#configuresAmplifier"/>
                 <Class IRI="#Amplifier"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
@@ -1791,7 +1785,7 @@
         <NamedIndividual IRI="#Protocol_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSoftware"/>
         <NamedIndividual IRI="#RecordingSession_1"/>
         <NamedIndividual IRI="#Software_1"/>
     </ObjectPropertyAssertion>
@@ -1806,23 +1800,23 @@
         <NamedIndividual IRI="#Experiment_1"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresAmplifier"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresCameraHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresCamera"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrodeGroupHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrode"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrodeHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrodeGroup"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresHardware"/>
         <ObjectProperty IRI="#configuresSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1866,7 +1860,7 @@
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSoftware"/>
         <ObjectProperty IRI="#configuresSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1880,12 +1874,12 @@
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresTetrode"/>
+        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasAmplifier"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
@@ -1894,33 +1888,33 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <ObjectInverseOf>
-            <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+            <ObjectProperty IRI="#configuresHardware"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectProperty IRI="#hasAnalysis"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectProperty IRI="#hasAnalysis"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isPartOfExperiment"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasCameraHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasCamera"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasElectrodeGroupHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasElectrode"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasElectrodeHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasElectrodeGroup"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasHardware"/>
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1934,29 +1928,29 @@
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectProperty IRI="#hasRecordingSession"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectProperty IRI="#hasRecordingSession"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isPartOfExperiment"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#hasSoftware"/>
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTetrodeHardwareSetupEquipment"/>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasTetrode"/>
+        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTrialResearchActivity"/>
+        <ObjectProperty IRI="#hasTrial"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTrialResearchActivity"/>
+        <ObjectProperty IRI="#hasTrial"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isPartOfExperiment"/>
         </ObjectInverseOf>
@@ -2002,132 +1996,132 @@
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#producesAnimalLogEntry"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#producesAnimalLogEntry"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isProducedBy"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectProperty IRI="#producesEvent"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectProperty IRI="#producesEvent"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isProducedBy"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectProperty IRI="#producesPermit"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectProperty IRI="#producesPermit"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isProducedBy"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectProperty IRI="#producesSignal"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectProperty IRI="#producesSignal"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isProducedBy"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAmplifierHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesAmplifier"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#usesAnimalLogEntry"/>
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#usesAnimalLogEntry"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isUsedInAnalysis"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesCameraHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesCamera"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrodeGroupHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrode"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrodeHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrodeGroup"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectProperty IRI="#usesEvent"/>
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectProperty IRI="#usesEvent"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isUsedInAnalysis"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesHardware"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesMedicationResource"/>
+        <ObjectProperty IRI="#usesMedication"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectProperty IRI="#usesPermit"/>
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectProperty IRI="#usesPermit"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isUsedInAnalysis"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesProtocolResource"/>
+        <ObjectProperty IRI="#usesProtocol"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSetup"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSetupResource"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectProperty IRI="#usesSignal"/>
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectProperty IRI="#usesSignal"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#isUsedInAnalysis"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSoftware"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesStimulusResouce"/>
+        <ObjectProperty IRI="#usesStimulus"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesTetrodeHardwareSetupEquipmentResource"/>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesTetrode"/>
+        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#configures"/>
@@ -2135,7 +2129,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresAmplifier"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
@@ -2174,23 +2168,23 @@
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresAmplifier"/>
         <Class IRI="#AmplifierSetting"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresCamera"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrodeGroupHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrode"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrodeGroup"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresHardware"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2210,7 +2204,7 @@
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSoftware"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2218,11 +2212,11 @@
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresTetrode"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasAmplifier"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2233,7 +2227,7 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectProperty IRI="#hasAnalysis"/>
         <Class IRI="#Experiment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2241,7 +2235,7 @@
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasCamera"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2257,21 +2251,14 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasElectrode"/>
-        <Class IRI="#Hardware"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrode"/>
         <ObjectUnionOf>
             <Class IRI="#ElectrodeGroup"/>
+            <Class IRI="#Setup"/>
             <Class IRI="#Tetrode"/>
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrodeGroupHardwareSetupEquipment"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasElectrodeGroup"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2283,8 +2270,12 @@
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
-        <Class IRI="#Setup"/>
+        <ObjectProperty IRI="#hasHardware"/>
+        <ObjectUnionOf>
+            <Class IRI="#ElectrodeGroup"/>
+            <Class IRI="#Setup"/>
+            <Class IRI="#Tetrode"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMedication"/>
@@ -2314,7 +2305,7 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectProperty IRI="#hasRecordingSession"/>
         <Class IRI="#Experiment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2329,24 +2320,31 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically need only for the domain of hasElectrode.</Literal>
+        </Annotation>
         <ObjectProperty IRI="#hasSetupEquipment"/>
+        <ObjectUnionOf>
+            <Class IRI="#ElectrodeGroup"/>
+            <Class IRI="#Setup"/>
+            <Class IRI="#Tetrode"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSoftware"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSoftwareAgentSetupEquipment"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasTetrode"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTrial"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTrialResearchActivity"/>
-        <Class IRI="#Experiment"/>
+        <ObjectUnionOf>
+            <Class IRI="#Experiment"/>
+            <Class IRI="#RecordingSession"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
@@ -2399,7 +2397,7 @@
         <Class IRI="#Data"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#producesAnimalLogEntry"/>
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2407,27 +2405,27 @@
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectProperty IRI="#producesEvent"/>
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectProperty IRI="#producesPermit"/>
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectProperty IRI="#producesSignal"/>
         <Class IRI="#ResearchActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAmplifierHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesAmplifier"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#usesAnimalLogEntry"/>
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesCameraHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesCamera"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2435,31 +2433,31 @@
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrodeGroupHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrode"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrodeGroup"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectProperty IRI="#usesEvent"/>
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesHardware"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesMedicationResource"/>
+        <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectProperty IRI="#usesPermit"/>
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesProtocolResource"/>
+        <ObjectProperty IRI="#usesProtocol"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2467,27 +2465,27 @@
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSetup"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSetupResource"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectProperty IRI="#usesSignal"/>
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSoftware"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesStimulusResouce"/>
+        <ObjectProperty IRI="#usesStimulus"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesTetrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
@@ -2498,35 +2496,35 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresAmplifier"/>
         <ObjectUnionOf>
             <Class IRI="#Amplifier"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresCamera"/>
         <ObjectUnionOf>
             <Class IRI="#Camera"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrodeGroupHardwareSetupEquipment"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrode"/>
         <ObjectUnionOf>
             <Class IRI="#Electrode"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresElectrodeGroup"/>
+        <ObjectUnionOf>
+            <Class IRI="#ElectrodeGroup"/>
+            <Class IRI="#Trial"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#configuresHardware"/>
         <ObjectUnionOf>
             <Class IRI="#Hardware"/>
             <Class IRI="#Trial"/>
@@ -2561,7 +2559,7 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSoftware"/>
         <ObjectUnionOf>
             <Class IRI="#Trial"/>
             <Class abbreviatedIRI="prov:SoftwareAgent"/>
@@ -2575,14 +2573,14 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#configuresTetrode"/>
         <ObjectUnionOf>
             <Class IRI="#Tetrode"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAmplifierHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasAmplifier"/>
         <Class IRI="#Amplifier"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2590,7 +2588,7 @@
         <Class IRI="#AmplifierSetting"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAnalysisResearchActivity"/>
+        <ObjectProperty IRI="#hasAnalysis"/>
         <Class IRI="#Analysis"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2598,7 +2596,7 @@
         <Class IRI="#AnimalLogEntry"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCameraHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasCamera"/>
         <Class IRI="#Camera"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2617,12 +2615,8 @@
         <Class IRI="#Electrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElectrodeGroupHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasElectrodeGroup"/>
         <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElectrodeHardwareSetupEquipment"/>
-        <Class IRI="#Electrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasExperiment"/>
@@ -2633,7 +2627,7 @@
         <Class IRI="#Experimenter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasHardware"/>
         <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2661,7 +2655,7 @@
         <Class IRI="#ProtocolAdjustment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecordingSessionResearchActivity"/>
+        <ObjectProperty IRI="#hasRecordingSession"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2683,19 +2677,15 @@
         <Class IRI="#SetupEquipment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSoftwareAgentSetupEquipment"/>
+        <ObjectProperty IRI="#hasSoftware"/>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTetrodeHardwareSetupEquipment"/>
+        <ObjectProperty IRI="#hasTetrode"/>
         <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTrial"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTrialResearchActivity"/>
         <Class IRI="#Trial"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2716,7 +2706,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <Class IRI="#RecordingSession"/>
+        <ObjectUnionOf>
+            <Class IRI="#Experiment"/>
+            <Class IRI="#RecordingSession"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2743,7 +2736,7 @@
         <Class IRI="#Analysis"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#producesAnimalLogEntry"/>
         <Class IRI="#AnimalLogEntry"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2751,27 +2744,27 @@
         <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesEventData"/>
+        <ObjectProperty IRI="#producesEvent"/>
         <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesPermitData"/>
+        <ObjectProperty IRI="#producesPermit"/>
         <Class IRI="#Permit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesSignalData"/>
+        <ObjectProperty IRI="#producesSignal"/>
         <Class IRI="#Signal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAmplifierHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesAmplifier"/>
         <Class IRI="#Amplifier"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAnimalLogEntryData"/>
+        <ObjectProperty IRI="#usesAnimalLogEntry"/>
         <Class IRI="#AnimalLogEntry"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesCameraHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesCamera"/>
         <Class IRI="#Camera"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2779,31 +2772,31 @@
         <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrodeGroupHardwareSetupEquipmentResource"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesElectrode"/>
         <Class IRI="#Electrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesEventData"/>
+        <ObjectProperty IRI="#usesElectrodeGroup"/>
+        <Class IRI="#ElectrodeGroup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesEvent"/>
         <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesHardware"/>
         <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesMedicationResource"/>
+        <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#Medication"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesPermitData"/>
+        <ObjectProperty IRI="#usesPermit"/>
         <Class IRI="#Permit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesProtocolResource"/>
+        <ObjectProperty IRI="#usesProtocol"/>
         <Class IRI="#Protocol"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2811,27 +2804,27 @@
         <Class IRI="#Resource"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSetupEquipmentResource"/>
-        <Class IRI="#SetupEquipment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSetupResource"/>
+        <ObjectProperty IRI="#usesSetup"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSignalData"/>
+        <ObjectProperty IRI="#usesSetupEquipment"/>
+        <Class IRI="#SetupEquipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesSignal"/>
         <Class IRI="#Signal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSoftwareAgentSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesSoftware"/>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesStimulusResouce"/>
+        <ObjectProperty IRI="#usesStimulus"/>
         <Class IRI="#Stimulus"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesTetrodeHardwareSetupEquipmentResource"/>
+        <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
     <FunctionalDataProperty>
