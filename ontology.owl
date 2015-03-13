@@ -32,6 +32,9 @@
         <Class IRI="#AmplifierSetting"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AnalogSignal"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Analysis"/>
     </Declaration>
     <Declaration>
@@ -120,6 +123,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SpikeSorting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpikeTrain"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Stimulus"/>
@@ -237,6 +243,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSoftware"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpikeTrain"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTetrode"/>
@@ -557,6 +566,24 @@
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AnalogSignal"/>
+        <Class IRI="#Signal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnalogSignal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnalogSignal"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Analysis"/>
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
@@ -843,6 +870,35 @@
     <SubClassOf>
         <Class IRI="#Electrode"/>
         <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electrode"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electrode"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">relationship hasChannel between Electrode and Channel is explained below:
+
+* exactly 1 - can have exactly 1 channel
+* only - the range for the relationship can be only Channel
+* some - if there exist individuals with this relationship, there will be at least 1 instance of type Channel that correspond to the range of the relationship</Literal>
+        </Annotation>
+        <Class IRI="#Electrode"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Electrode"/>
@@ -1332,6 +1388,24 @@
         <Class IRI="#Analysis"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Stimulus"/>
         <Class IRI="#Resource"/>
     </SubClassOf>
@@ -1407,9 +1481,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSpikeTrain"/>
+            <Class IRI="#SpikeTrain"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasResourceConfiguration"/>
             <Class IRI="#ResourceConfiguration"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSpikeTrain"/>
+            <Class IRI="#SpikeTrain"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2260,7 +2348,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasChannel"/>
-        <Class IRI="#Electrode"/>
+        <ObjectUnionOf>
+            <Class IRI="#Electrode"/>
+            <Class IRI="#Signal"/>
+            <Class IRI="#SpikeTrain"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasElectrode"/>
@@ -2347,6 +2439,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSoftware"/>
         <Class IRI="#Setup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpikeTrain"/>
+        <Class IRI="#Trial"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTetrode"/>
@@ -2692,6 +2788,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSoftware"/>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpikeTrain"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTetrode"/>
