@@ -1,6 +1,9 @@
 DESCRIPTION
 The plot_classes.sh script generates a UML-like representation of the classes of an ontology. The resulted files have the DOT and SVG formats.
 
+LIBRARY DEPENDENCY
+rdflib
+
 USAGE
 The plot generator can be ran as follows:
 > sh plot_classes.sh [classes]
