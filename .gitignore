@@ -1,3 +1,4 @@
 # Protege configuration file #
 catalog*.xml
 *.dot
+*.svg
