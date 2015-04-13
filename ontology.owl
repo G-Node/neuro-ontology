@@ -1015,10 +1015,7 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasResearchActivity"/>
                 <ObjectIntersectionOf>
-                    <ObjectUnionOf>
-                        <Class IRI="#RecordingSession"/>
-                        <Class IRI="#ResearchActivity"/>
-                    </ObjectUnionOf>
+                    <Class IRI="#ResearchActivity"/>
                     <ObjectComplementOf>
                         <Class IRI="#Experiment"/>
                     </ObjectComplementOf>
@@ -1027,10 +1024,7 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#hasResearchActivity"/>
                 <ObjectIntersectionOf>
-                    <ObjectUnionOf>
-                        <Class IRI="#RecordingSession"/>
-                        <Class IRI="#ResearchActivity"/>
-                    </ObjectUnionOf>
+                    <Class IRI="#ResearchActivity"/>
                     <ObjectComplementOf>
                         <Class IRI="#Experiment"/>
                     </ObjectComplementOf>
