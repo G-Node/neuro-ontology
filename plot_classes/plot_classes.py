@@ -38,37 +38,37 @@ def query_object_properties(class_domain, class_range):
       OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
       }
       UNION
-	{ #for domains with a single class AND ranges with multiple classes(union of classes)
-	?prop a owl:ObjectProperty .
-	?prop rdfs:domain ?domain .
-	?prop rdfs:range ?r .
-	?r owl:unionOf ?ur.
-	?ur rdf:rest* ?sl .
-	?sl rdf:first ?range .
-	OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
-	OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
-	}
+      { #for domains with a single class AND ranges with multiple classes(union of classes)
+      ?prop a owl:ObjectProperty .
+      ?prop rdfs:domain ?domain .
+      ?prop rdfs:range ?r .
+      ?r owl:unionOf ?ur.
+      ?ur rdf:rest* ?sl .
+      ?sl rdf:first ?range .
+      OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
+      OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
+      }
       UNION
-	{ #for domains with multiple classes(union of classes) AND ranges with a single class
-	?prop a owl:ObjectProperty .
-	?prop rdfs:domain ?u . 
-	?u owl:unionOf ?list .
-	?list rdf:rest* ?subList .
-	?subList rdf:first ?domain .
-	?prop rdfs:range ?range .
-	OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
-	OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
-	}
+      { #for domains with multiple classes(union of classes) AND ranges with a single class
+      ?prop a owl:ObjectProperty .
+      ?prop rdfs:domain ?u .
+      ?u owl:unionOf ?list .
+      ?list rdf:rest* ?subList .
+      ?subList rdf:first ?domain .
+      ?prop rdfs:range ?range .
+      OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
+      OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
+      }
       UNION
-	{ #for domains AND ranges with a single class
-	?prop a owl:ObjectProperty .
-	?prop rdfs:domain ?domain .
-	?prop rdfs:range ?range .
-	OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
-	OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
-	}
+      { #for domains AND ranges with a single class
+      ?prop a owl:ObjectProperty .
+      ?prop rdfs:domain ?domain .
+      ?prop rdfs:range ?range .
+      OPTIONAL {?prop owl:inverseOf ?inverse . ?inverse a owl:ObjectProperty .}
+      OPTIONAL {?inverse owl:inverseOf ?prop . ?inverse a owl:ObjectProperty .}
+      }
     }
-    VALUES (?range)  {  """
+    VALUES (?range)  { """
 
     # set the classes that should be considered as range
     for i in xrange(len(class_range)):
@@ -97,23 +97,22 @@ def dtp_box(graph, classname, out):
     PREFIX onto:<http://www.semanticweb.org/ontology#>
     PREFIX owl:<http://www.w3.org/2002/07/owl#>
     SELECT ?prop ?range
-	WHERE {
-	  { #for domains with multiple classes (union of classes)
-	  ?prop a owl:DatatypeProperty .
-	  ?prop rdfs:domain ?u . 
-	  ?u owl:unionOf ?list .
-	  ?list rdf:rest* ?subList .
-	  ?subList rdf:first onto:""" + classname + """ .
-	  ?prop rdfs:range ?range .
-	  }
-	UNION
-	  { #for domains with a single class
-	  ?prop a owl:DatatypeProperty .
-	  ?prop rdfs:domain onto:""" + classname + """ .
-	  ?prop rdfs:range ?range .
-	  }
-	}
-    """
+        WHERE {
+            { #for domains with multiple classes (union of classes)
+            ?prop a owl:DatatypeProperty .
+            ?prop rdfs:domain ?u .
+            ?u owl:unionOf ?list .
+            ?list rdf:rest* ?subList .
+            ?subList rdf:first onto:""" + classname + """ .
+            ?prop rdfs:range ?range .
+            }
+            UNION
+            { #for domains with a single class
+            ?prop a owl:DatatypeProperty .
+            ?prop rdfs:domain onto:""" + classname + """ .
+            ?prop rdfs:range ?range .
+            }
+        } """
     dtp = graph.query(q)
 
     # start constructing the box node
