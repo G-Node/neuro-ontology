@@ -10,3241 +10,686 @@
 
 
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/ontology"
+     xml:base="http://www.w3.org/ns/prov-o#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     ontologyIRI="http://www.semanticweb.org/ontology">
-    <Prefix name="" IRI="http://www.semanticweb.org/ontology#"/>
+     ontologyIRI="http://www.w3.org/ns/prov-o#"
+     versionIRI="http://www.w3.org/ns/prov-o-20130430">
+    <Prefix name="" IRI="http://www.w3.org/ns/prov#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="ontology" IRI="http://www.semanticweb.org/ontology#"/>
-    <Prefix name="prov-o-20130430" IRI="http://www.w3.org/ns/prov-o-20130430#"/>
-    <Import>http://www.w3.org/ns/prov-o-20130430</Import>
-    <Declaration>
-        <Class IRI="#Amplifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AmplifierSetting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AnalogSignal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Analysis"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Animal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AnimalLogEntry"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Camera"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cell"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Channel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Data"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Electrode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Event"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Experiment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Experimenter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Hardware"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Medication"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Neuron"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Organ"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Permit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Preparation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Project"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Protocol"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProtocolAdjustment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecordingSession"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResearchActivity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Resource"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResourceConfiguration"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Setup"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Signal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Software"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SpikeSorting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SpikeTrain"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Stimulus"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tetrode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Trial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configures"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresCamera"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresElectrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresMedication"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresProtocol"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresSetup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresSoftware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresStimulus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresTetrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAmplifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAnalysis"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCamera"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCell"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasChannel"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasElectrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasExperiment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasExperimenter"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasHardware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasMedication"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasOrgan"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPermit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPreparation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPrincipalInvestigator"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRecordingSession"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSoftware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTetrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTrial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isAboutAnimal"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPartOfProject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isUsedInAnalysis"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producesAnimalLogEntry"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producesData"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producesEvent"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producesPermit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producesSignal"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesAmplifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesAnimalLogEntry"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesCamera"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesData"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesElectrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesEvent"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesHardware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesMedication"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesPermit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesProtocol"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesResource"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSetup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSignal"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSoftware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesStimulus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesTetrode"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasAge"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasAnimalID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasBehavioralCondition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasBehavioralState"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasBrainRegion"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasCageID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasChannelNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasColor"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasCondition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDiet"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasElectrodeArrayGeometry"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasElectrodeNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasElectrodeSpacing"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasGoal"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasMark"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasNumberOfElectrodes"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasPerformance"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasQuantity"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasResearchDomain"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSamplingRate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSex"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSize"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSpecies"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasStressLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasVendor"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasVersion"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasWeight"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#AmplifierSetting_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Amplifier_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ElectrodeGroup_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Electrode_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Experiment_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Project_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Protocol_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Protocol_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#RecordingSession_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ResourceConfiguration_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Resource_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Software_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Tetrode_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Trial_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Trial_2"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="prov:atTime"/>
-    </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#Software"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#Amplifier"/>
-        <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Amplifier"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasAmplifierSetting"/>
-            <Class IRI="#AmplifierSetting"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifier"/>
-                <Class IRI="#Amplifier"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifier"/>
-                <Class IRI="#Amplifier"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnalogSignal"/>
-        <Class IRI="#Signal"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnalogSignal"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnalogSignal"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Analysis"/>
-        <Class IRI="#ResearchActivity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Analysis"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Analysis"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#usesData"/>
-                <Class IRI="#Data"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#usesData"/>
-                <Class IRI="#Data"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasBrainRegion"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasCageID"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasSpecies"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasAge"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasAnimalID"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasBrainRegion"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasCageID"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasMark"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasSex"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasSpecies"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasAge"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasAnimalID"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasMark"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasSex"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <Class IRI="#Data"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasCondition"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasDiet"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasPerformance"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasStressLevel"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasWeight"/>
-            <DataUnionOf>
-                <Datatype abbreviatedIRI="xsd:float"/>
-                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
-            </DataUnionOf>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasCondition"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasDiet"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasPerformance"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasStressLevel"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnimalLogEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasWeight"/>
-            <DataUnionOf>
-                <Datatype abbreviatedIRI="xsd:float"/>
-                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
-            </DataUnionOf>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Camera"/>
-        <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cell"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cell"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasType"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cell"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasType"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Channel"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Channel"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasChannelNumber"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Channel"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasChannelNumber"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Data"/>
-        <ObjectUnionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedBy"/>
-                    <Class IRI="#ResearchActivity"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedBy"/>
-                    <Class IRI="#ResearchActivity"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isUsedInAnalysis"/>
-                    <Class IRI="#Analysis"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isUsedInAnalysis"/>
-                    <Class IRI="#Analysis"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-        </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="&rdf;PlainLiteral">relationship hasChannel between Electrode and Channel is explained below:
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://www.w3.org/ns/prov</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">W3C PROVenance Interchange Ontology (PROV-O)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page). 
 
-* exactly 1 - can have exactly 1 channel
-* only - the range for the relationship can be only Channel
-* some - if there exist individuals with this relationship, there will be at least 1 instance of type Channel that correspond to the range of the relationship</Literal>
-        </Annotation>
-        <Class IRI="#Electrode"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasElectrodeNumber"/>
-            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasElectrodeNumber"/>
-            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasElectrodeSpacing"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasElectrodeArrayGeometry"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasElectrodeSpacing"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasNumberOfElectrodes"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasElectrodeArrayGeometry"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ElectrodeGroup"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasNumberOfElectrodes"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <Class IRI="#Data"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <DataSomeValuesFrom>
-            <DataProperty abbreviatedIRI="prov:atTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="prov:atTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experiment"/>
-        <Class IRI="#ResearchActivity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experiment"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasPrincipalInvestigator"/>
-                <Class abbreviatedIRI="prov:Person"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#hasPrincipalInvestigator"/>
-                <Class abbreviatedIRI="prov:Person"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experiment"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasResearchActivity"/>
-                <ObjectIntersectionOf>
-                    <Class IRI="#ResearchActivity"/>
-                    <ObjectComplementOf>
-                        <Class IRI="#Experiment"/>
-                    </ObjectComplementOf>
-                </ObjectIntersectionOf>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#hasResearchActivity"/>
-                <ObjectIntersectionOf>
-                    <Class IRI="#ResearchActivity"/>
-                    <ObjectComplementOf>
-                        <Class IRI="#Experiment"/>
-                    </ObjectComplementOf>
-                </ObjectIntersectionOf>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experiment"/>
-        <ObjectIntersectionOf>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isPartOfProject"/>
-                <Class IRI="#Project"/>
-            </ObjectAllValuesFrom>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty IRI="#isPartOfProject"/>
-                <Class IRI="#Project"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experimenter"/>
-        <Class abbreviatedIRI="prov:Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experimenter"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isExperimenterFor"/>
-                <Class IRI="#ResearchActivity"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isExperimenterFor"/>
-                <Class IRI="#ResearchActivity"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experimenter"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasResearchDomain"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experimenter"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasResearchDomain"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Hardware"/>
-        <Class IRI="#SetupEquipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasQuantity"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasQuantity"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Neuron"/>
-        <Class IRI="#Cell"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Organ"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Permit"/>
-        <Class IRI="#Data"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Permit"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasNumber"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Permit"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasNumber"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preparation"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preparation"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasBehavioralState"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preparation"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasBehavioralState"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Project"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasGoal"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Project"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasGoal"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Project"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Project"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Protocol"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Protocol"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasProtocolAdjustment"/>
-            <Class IRI="#ProtocolAdjustment"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Protocol"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasProtocolAdjustment"/>
-            <Class IRI="#ProtocolAdjustment"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ProtocolAdjustment"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ProtocolAdjustment"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#configuresProtocol"/>
-            <Class IRI="#Protocol"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ProtocolAdjustment"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#configuresProtocol"/>
-            <Class IRI="#Protocol"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecordingSession"/>
-        <Class IRI="#ResearchActivity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecordingSession"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasPreparation"/>
-                <Class IRI="#Preparation"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#hasPreparation"/>
-                <Class IRI="#Preparation"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecordingSession"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResearchActivity"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResearchActivity"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#producesData"/>
-                <Class IRI="#Data"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#producesData"/>
-                <Class IRI="#Data"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Resource"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Resource"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResourceConfiguration"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#configures"/>
-            <ObjectUnionOf>
-                <Class IRI="#Resource"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResourceConfiguration"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#configures"/>
-            <ObjectUnionOf>
-                <Class IRI="#Resource"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Setup"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasVendor"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasDescription"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasVendor"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasDescription"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Signal"/>
-        <Class IRI="#Data"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Signal"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasSamplingRate"/>
-            <Datatype abbreviatedIRI="xsd:float"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Signal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasSamplingRate"/>
-            <Datatype abbreviatedIRI="xsd:float"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Software"/>
-        <Class IRI="#SetupEquipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Software"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeSorting"/>
-        <Class IRI="#Analysis"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <Class IRI="#Event"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasBehavioralCondition"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasType"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasBehavioralCondition"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasColor"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasSize"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stimulus"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasType"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Tetrode"/>
-        <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <Class IRI="#ResearchActivity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isPartOfExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasSpikeTrain"/>
-            <Class IRI="#SpikeTrain"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasSpikeTrain"/>
-            <Class IRI="#SpikeTrain"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <DataSomeValuesFrom>
-            <DataProperty abbreviatedIRI="prov:endedAtTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <DataSomeValuesFrom>
-            <DataProperty abbreviatedIRI="prov:startedAtTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="prov:endedAtTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="prov:startedAtTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Person"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Person"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:Person"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        <Class IRI="#SetupEquipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasVersion"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasVersion"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
+If you wish to make comments regarding this document, please send them to public-prov-comments@w3.org (subscribe public-prov-comments-request@w3.org, archives http://lists.w3.org/Archives/Public/public-prov-comments/). All feedback is welcome.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://www.w3.org/TR/prov-o/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Recommendation version 2013-04-30</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Role"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SoftwareAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hadRole"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":atTime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":EmptyCollection"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":aq"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":constraints"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":editorialNote"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":editorsDefinition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":inverse"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":order"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":qualifiedForm"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":sharesDefinitionWith"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":specializationOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":todo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI=":wasRevisionOf"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SoftwareAgent"/>
+        <Class abbreviatedIRI=":Agent"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#Amplifier"/>
-        <Class IRI="#Camera"/>
+        <Class abbreviatedIRI=":Activity"/>
+        <Class abbreviatedIRI=":Entity"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Amplifier"/>
-        <Class IRI="#Electrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Amplifier"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Amplifier"/>
-        <Class IRI="#Tetrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Camera"/>
-        <Class IRI="#Electrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Camera"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Camera"/>
-        <Class IRI="#Tetrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class IRI="#Project"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class IRI="#Resource"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Electrode"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Electrode"/>
-        <Class IRI="#Tetrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ElectrodeGroup"/>
-        <Class IRI="#Tetrode"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Medication"/>
-        <Class IRI="#Protocol"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Medication"/>
-        <Class IRI="#Setup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Medication"/>
-        <Class IRI="#SetupEquipment"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Medication"/>
-        <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class IRI="#Resource"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Protocol"/>
-        <Class IRI="#Setup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Protocol"/>
-        <Class IRI="#SetupEquipment"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Protocol"/>
-        <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="prov:Agent"/>
-            <ObjectComplementOf>
-                <Class abbreviatedIRI="prov:SoftwareAgent"/>
-            </ObjectComplementOf>
-        </ObjectIntersectionOf>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Setup"/>
-        <Class IRI="#SetupEquipment"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Setup"/>
-        <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#SetupEquipment"/>
-        <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Agent"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Agent"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Agent"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Entity"/>
-        <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Entity"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Location"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#AmplifierSetting"/>
-        <NamedIndividual IRI="#AmplifierSetting_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Amplifier"/>
-        <NamedIndividual IRI="#Amplifier_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#ElectrodeGroup"/>
-        <NamedIndividual IRI="#ElectrodeGroup_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Electrode"/>
-        <NamedIndividual IRI="#Electrode_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Experiment"/>
-        <NamedIndividual IRI="#Experiment_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Project"/>
-        <NamedIndividual IRI="#Project_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#ProtocolAdjustment"/>
-        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Protocol"/>
-        <NamedIndividual IRI="#Protocol_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Protocol"/>
-        <NamedIndividual IRI="#Protocol_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RecordingSession"/>
-        <NamedIndividual IRI="#RecordingSession_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#ResourceConfiguration"/>
-        <NamedIndividual IRI="#ResourceConfiguration_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Resource"/>
-        <NamedIndividual IRI="#Resource_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Software"/>
-        <NamedIndividual IRI="#Software_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tetrode"/>
-        <NamedIndividual IRI="#Tetrode_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Trial"/>
-        <NamedIndividual IRI="#Trial_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Trial"/>
-        <NamedIndividual IRI="#Trial_2"/>
-    </ClassAssertion>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#Protocol_1"/>
-        <NamedIndividual IRI="#Protocol_2"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#Trial_1"/>
-        <NamedIndividual IRI="#Trial_2"/>
-    </DifferentIndividuals>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <NamedIndividual IRI="#Amplifier_1"/>
-        <NamedIndividual IRI="#AmplifierSetting_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasElectrode"/>
-        <NamedIndividual IRI="#ElectrodeGroup_1"/>
-        <NamedIndividual IRI="#Electrode_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-        <NamedIndividual IRI="#Experiment_1"/>
-        <NamedIndividual IRI="#Trial_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
-        <NamedIndividual IRI="#Protocol_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <NamedIndividual IRI="#RecordingSession_1"/>
-        <NamedIndividual IRI="#Software_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasElectrode"/>
-        <NamedIndividual IRI="#Tetrode_1"/>
-        <NamedIndividual IRI="#Electrode_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-        <NamedIndividual IRI="#Trial_1"/>
-        <NamedIndividual IRI="#Experiment_1"/>
-    </ObjectPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresHardware"/>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresMedication"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresMedication"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetup"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetup"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresStimulus"/>
-        <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresStimulus"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#configuresHardware"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAnalysis"/>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAnalysis"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isPartOfExperiment"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasCamera"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasElectrode"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasElectrodeGroup"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasHardware"/>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#configures"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecordingSession"/>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecordingSession"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isPartOfExperiment"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSoftware"/>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTrial"/>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTrial"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isPartOfExperiment"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#producesData"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#producesData"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#producesData"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#producesData"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesAnimalLogEntry"/>
-        <ObjectProperty IRI="#producesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesAnimalLogEntry"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isProducedBy"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesEvent"/>
-        <ObjectProperty IRI="#producesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesEvent"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isProducedBy"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesPermit"/>
-        <ObjectProperty IRI="#producesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesPermit"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isProducedBy"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesSignal"/>
-        <ObjectProperty IRI="#producesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producesSignal"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isProducedBy"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAnimalLogEntry"/>
-        <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAnimalLogEntry"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isUsedInAnalysis"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesCamera"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesEvent"/>
-        <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesEvent"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isUsedInAnalysis"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesHardware"/>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesMedication"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesPermit"/>
-        <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesPermit"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isUsedInAnalysis"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesProtocol"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSetup"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSignal"/>
-        <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSignal"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#isUsedInAnalysis"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesStimulus"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesTetrode"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#configures"/>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectProperty IRI="#configuresProtocol"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isAboutAnimal"/>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isPartOfProject"/>
-        <ObjectProperty IRI="#hasExperiment"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <ObjectProperty IRI="#hasExperimenter"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <ObjectProperty IRI="#hasTrial"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#producesData"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isUsedInAnalysis"/>
-        <ObjectProperty IRI="#usesData"/>
-    </InverseObjectProperties>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configures"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <Class IRI="#AmplifierSetting"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresHardware"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresMedication"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <Class IRI="#ProtocolAdjustment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSetup"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresStimulus"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectUnionOf>
-            <Class IRI="#Amplifier"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAnalysis"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCamera"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCell"/>
-        <ObjectUnionOf>
-            <Class IRI="#Organ"/>
-            <Class IRI="#RecordingSession"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasChannel"/>
-        <ObjectUnionOf>
-            <Class IRI="#Electrode"/>
-            <Class IRI="#Signal"/>
-            <Class IRI="#SpikeTrain"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrode"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Setup"/>
-            <Class IRI="#Tetrode"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrodeGroup"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasExperiment"/>
-        <Class IRI="#Project"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasExperimenter"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasHardware"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Setup"/>
-            <Class IRI="#Tetrode"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMedication"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasOrgan"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPermit"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPreparation"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPrincipalInvestigator"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectUnionOf>
-            <Class IRI="#Protocol"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecordingSession"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-        <ObjectUnionOf>
-            <Class IRI="#Resource"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically need only for the domain of hasElectrode.</Literal>
-        </Annotation>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Setup"/>
-            <Class IRI="#Tetrode"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSoftware"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTrial"/>
-        <ObjectUnionOf>
-            <Class IRI="#Experiment"/>
-            <Class IRI="#RecordingSession"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isAboutAnimal"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <Class IRI="#Experimenter"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-        <ObjectComplementOf>
-            <Class IRI="#Experiment"/>
-        </ObjectComplementOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfProject"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedBy"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isUsedInAnalysis"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesAnimalLogEntry"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesData"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesEvent"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesPermit"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#producesSignal"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAnimalLogEntry"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesCamera"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesData"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesEvent"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesHardware"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesMedication"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesPermit"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesProtocol"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesResource"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSetup"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSignal"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesStimulus"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesTetrode"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configures"/>
-        <ObjectUnionOf>
-            <Class IRI="#Resource"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <ObjectProperty abbreviatedIRI=":hadRole"/>
+        <Class abbreviatedIRI=":Role"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <ObjectUnionOf>
-            <Class IRI="#Amplifier"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <ObjectUnionOf>
-            <Class IRI="#Camera"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <ObjectUnionOf>
-            <Class IRI="#Electrode"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresHardware"/>
-        <ObjectUnionOf>
-            <Class IRI="#Hardware"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresMedication"/>
-        <ObjectUnionOf>
-            <Class IRI="#Medication"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <ObjectUnionOf>
-            <Class IRI="#Protocol"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSetup"/>
-        <ObjectUnionOf>
-            <Class IRI="#Setup"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
-        <ObjectUnionOf>
-            <Class IRI="#SetupEquipment"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <ObjectUnionOf>
-            <Class IRI="#Trial"/>
-            <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresStimulus"/>
-        <ObjectUnionOf>
-            <Class IRI="#Stimulus"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <ObjectUnionOf>
-            <Class IRI="#Tetrode"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <Class IRI="#Amplifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <Class IRI="#AmplifierSetting"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAnalysis"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCamera"/>
-        <Class IRI="#Camera"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCell"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#hasCell"/>
-            <Class IRI="#Cell"/>
-        </ObjectMinCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasChannel"/>
-        <Class IRI="#Channel"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElectrode"/>
-        <Class IRI="#Electrode"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElectrodeGroup"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasExperiment"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasExperimenter"/>
-        <Class IRI="#Experimenter"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasHardware"/>
-        <Class IRI="#Hardware"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMedication"/>
-        <Class IRI="#Medication"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasOrgan"/>
-        <Class IRI="#Organ"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPermit"/>
-        <Class IRI="#Permit"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPreparation"/>
-        <Class IRI="#Preparation"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPrincipalInvestigator"/>
-        <Class abbreviatedIRI="prov:Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <Class IRI="#ProtocolAdjustment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecordingSession"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasResearchActivity"/>
-        <ObjectComplementOf>
-            <Class IRI="#Experiment"/>
-        </ObjectComplementOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-        <Class IRI="#SetupEquipment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSoftware"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-        <Class IRI="#SpikeTrain"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <Class IRI="#Tetrode"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTrial"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isAboutAnimal"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfExperiment"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfProject"/>
-        <Class IRI="#Project"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <ObjectUnionOf>
-            <Class IRI="#Experiment"/>
-            <Class IRI="#RecordingSession"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedBy"/>
-        <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isUsedInAnalysis"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesAnimalLogEntry"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesData"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesEvent"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesPermit"/>
-        <Class IRI="#Permit"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#producesSignal"/>
-        <Class IRI="#Signal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <Class IRI="#Amplifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAnimalLogEntry"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesCamera"/>
-        <Class IRI="#Camera"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesData"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <Class IRI="#Electrode"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesEvent"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesHardware"/>
-        <Class IRI="#Hardware"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesMedication"/>
-        <Class IRI="#Medication"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesPermit"/>
-        <Class IRI="#Permit"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesProtocol"/>
-        <Class IRI="#Protocol"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesResource"/>
-        <Class IRI="#Resource"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSetup"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-        <Class IRI="#SetupEquipment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSignal"/>
-        <Class IRI="#Signal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesStimulus"/>
-        <Class IRI="#Stimulus"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesTetrode"/>
-        <Class IRI="#Tetrode"/>
-    </ObjectPropertyRange>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasAnimalID"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasChannelNumber"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasMark"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasNumber"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasNumberOfElectrodes"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasSex"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasVersion"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasAge"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasAnimalID"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasBehavioralCondition"/>
-        <Class IRI="#Stimulus"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasBehavioralState"/>
-        <Class IRI="#Preparation"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasBrainRegion"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasCageID"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasChannelNumber"/>
-        <Class IRI="#Channel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasColor"/>
-        <Class IRI="#Stimulus"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasCondition"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDescription"/>
-        <Class IRI="#SetupEquipment"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDiet"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasElectrodeArrayGeometry"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasElectrodeNumber"/>
-        <Class IRI="#Electrode"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasElectrodeSpacing"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasGoal"/>
-        <Class IRI="#Project"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-        <Class IRI="#AmplifierSetting"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-        <Class IRI="#AmplifierSetting"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasMark"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasName"/>
-        <ObjectUnionOf>
-            <Class IRI="#Event"/>
-            <Class IRI="#Medication"/>
-            <Class IRI="#Project"/>
-            <Class IRI="#SetupEquipment"/>
-            <Class abbreviatedIRI="prov:Agent"/>
-        </ObjectUnionOf>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasNumber"/>
-        <Class IRI="#Permit"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasNumberOfElectrodes"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasPerformance"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasQuantity"/>
-        <Class IRI="#Medication"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasResearchDomain"/>
-        <Class IRI="#Experimenter"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasSamplingRate"/>
-        <Class IRI="#Signal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasSex"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasSize"/>
-        <Class IRI="#Stimulus"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasSpecies"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasStressLevel"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasType"/>
-        <ObjectUnionOf>
-            <Class IRI="#Cell"/>
-            <Class IRI="#Stimulus"/>
-        </ObjectUnionOf>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasVendor"/>
-        <Class IRI="#SetupEquipment"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasVersion"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasWeight"/>
-        <Class IRI="#AnimalLogEntry"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="prov:atTime"/>
-        <Class IRI="#Event"/>
-    </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#hasAge"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <DataProperty abbreviatedIRI=":atTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasAnimalID"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasBehavioralCondition"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasBehavioralState"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasBrainRegion"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasCageID"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasChannelNumber"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasColor"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasCondition"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDescription"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDiet"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasElectrodeArrayGeometry"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasElectrodeNumber"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasElectrodeSpacing"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasGoal"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasMark"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasNumber"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasNumberOfElectrodes"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasPerformance"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasQuantity"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasResearchDomain"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSamplingRate"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSex"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSize"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSpecies"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasStressLevel"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasType"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasVendor"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasVersion"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasWeight"/>
-        <DataUnionOf>
-            <Datatype abbreviatedIRI="xsd:float"/>
-            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
-        </DataUnionOf>
-    </DataPropertyRange>
-    <AnnotationPropertyDomain>
-        <AnnotationProperty abbreviatedIRI="prov:atTime"/>
-        <IRI>#Event</IRI>
-    </AnnotationPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>rdfs:comment</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>rdfs:comment</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>rdfs:label</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>rdfs:label</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>rdfs:seeAlso</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":constraints"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:Activity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":constraints"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:Entity</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Person agents are people.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:Person</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A role is the function of an entity or agent with respect to an activity, in the context of a usage, generation, invalidation, association, start, and end.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SoftwareAgent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A software agent is running software.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AbbreviatedIRI>:SoftwareAgent</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:aq</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">atTime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":sharesDefinitionWith"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>:InstantaneousEvent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>:endedAtTime</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>:generatedAtTime</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>:invalidatedAtTime</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+        <AbbreviatedIRI>:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>:startedAtTime</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:category</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Classify prov-o terms into three categories, including &apos;starting-point&apos;, &apos;qualifed&apos;, and &apos;extended&apos;. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:category</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:component</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Classify prov-o terms into six components according to prov-dm, including &apos;agents-responsibility&apos;, &apos;alternate&apos;, &apos;annotations&apos;, &apos;collections&apos;, &apos;derivations&apos;, and &apos;entities-activities&apos;. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:component</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:constraints</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:constraints</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:definition</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:definition</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:dm</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A reference to the principal section of the PROV-DM document that describes this concept.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:dm</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:editorialNote</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:editorialNote</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:editorsDefinition</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:editorsDefinition</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":category"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":component"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":editorsDefinition"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":inverse"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasRoleIn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI=":sharesDefinitionWith"/>
+        <AbbreviatedIRI>:hadRole</AbbreviatedIRI>
+        <AbbreviatedIRI>:Role</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:inverse</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:inverse</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <AbbreviatedIRI>:inverse</AbbreviatedIRI>
+        <IRI>http://www.w3.org/TR/prov-o/#names-of-inverse-properties</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:n</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A reference to the principal section of the PROV-DM document that describes this concept.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:n</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:order</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The position that this OWL term should be listed within documentation. The scope of the documentation (e.g., among all terms, among terms within a prov:category, among properties applying to a particular class, etc.) is unspecified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:order</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:qualifiedForm</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. 
+
+Example annotation:
+
+    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .
+
+Then this unqualified assertion:
+
+    :entity1 prov:wasGeneratedBy :activity1 .
+
+can be qualified by adding:
+
+   :entity1 prov:qualifiedGeneration :entity1Gen .
+   :entity1Gen 
+       a prov:Generation, prov:Influence;
+       prov:activity :activity1;
+       :customValue 1337 .
+
+Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:qualifiedForm</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:sharesDefinitionWith</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:unqualifiedForm</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>:unqualifiedForm</AbbreviatedIRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":aq"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":constraints"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":dm"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":editorsDefinition"/>
+        <AnnotationProperty abbreviatedIRI=":definition"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":n"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":qualifiedForm"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":sharesDefinitionWith"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI=":unqualifiedForm"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+    </SubAnnotationPropertyOf>
 </Ontology>
 
 
