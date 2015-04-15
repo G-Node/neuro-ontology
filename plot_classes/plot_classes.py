@@ -96,10 +96,10 @@ def dtp_box(graph, classname, out):
     q = """
     PREFIX onto:<http://www.semanticweb.org/ontology#>
     PREFIX owl:<http://www.w3.org/2002/07/owl#>
-    SELECT ?prop ?range
+    SELECT DISTINCT ?prop ?range
         WHERE {
             { #for domains with multiple classes (union of classes)
-            ?prop a owl:DatatypeProperty .
+            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
             ?prop rdfs:domain ?u .
             ?u owl:unionOf ?list .
             ?list rdf:rest* ?subList .
@@ -108,7 +108,7 @@ def dtp_box(graph, classname, out):
             }
             UNION
             { #for domains with a single class
-            ?prop a owl:DatatypeProperty .
+            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
             ?prop rdfs:domain onto:""" + classname + """ .
             ?prop rdfs:range ?range .
             }
@@ -126,6 +126,7 @@ def dtp_box(graph, classname, out):
         prop_type = r[1].split('#')[1]
         out.write('\n<tr><td port="port%i" align="left" bgcolor="white">%s: %s\
         </td></tr>' % (idx+1, prop, prop_type))
+        idx += 1
     out.write('</table>>];')
 
 
