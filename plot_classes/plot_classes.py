@@ -98,7 +98,28 @@ def dtp_box(graph, classname, out):
     PREFIX owl:<http://www.w3.org/2002/07/owl#>
     SELECT DISTINCT ?prop ?range
         WHERE {
-            { #for domains with multiple classes (union of classes)
+            { #for domains AND ranges with multiple classes (union of classes)
+            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
+            ?prop rdfs:domain ?u .
+            ?u owl:unionOf ?list .
+            ?list rdf:rest* ?subList .
+            ?subList rdf:first onto:""" + classname + """ .
+            ?prop rdfs:range ?r .
+            ?r owl:unionOf ?ur.
+            ?ur rdf:rest* ?subList .
+            ?subList rdf:first ?range .
+            }
+            UNION
+            { #for domains with a single class AND ranges with multiple types(union of types)
+            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
+            ?prop rdfs:domain onto:""" + classname + """ .
+            ?prop rdfs:range ?r .
+            ?r owl:unionOf ?ur.
+            ?ur rdf:rest* ?subList .
+            ?subList rdf:first ?range .
+            }
+            UNION
+            { #for domains with multiple classes (union of classes) AND range with a single type
             {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
             ?prop rdfs:domain ?u .
             ?u owl:unionOf ?list .
@@ -107,12 +128,16 @@ def dtp_box(graph, classname, out):
             ?prop rdfs:range ?range .
             }
             UNION
-            { #for domains with a single class
+            { #for domains with a single class AND range with a single type
             {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
             ?prop rdfs:domain onto:""" + classname + """ .
             ?prop rdfs:range ?range .
             }
-        } """
+        }
+        VALUES (?range) {
+        (xsd:float) (xsd:integer) (xsd:nonNegativeInteger) (xsd:positiveInteger) (xsd:string)
+        }"""
+
     dtp = graph.query(q)
 
     # start constructing the box node
@@ -222,6 +247,7 @@ def main(argv):
 
         # perform query for each Class that was requested from the CL
         query_results_to_dot(g, 'graph.dot', class_names)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
