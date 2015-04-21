@@ -392,7 +392,7 @@ def usage():
     Output:
     """
 
-    print("> individual_generator.py [--ontology=|-o ontology_file] [project_no "
+    print("> individuals_generator.py [--ontology=|-o ontology_file] [project_no "
           "experiment_no]")
 
 
