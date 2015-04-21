@@ -242,7 +242,7 @@ def main(argv):
         # prepare the graph
         g = ConjunctiveGraph()
 
-        g.parse("ontology_rdf.owl")
+        g.parse("../ontology_rdf.owl")
         print("graph has %s statements." % len(g))
 
         # perform query for each Class that was requested from the CL
