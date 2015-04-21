@@ -393,7 +393,7 @@ def usage():
     """
 
     print("> individuals_generator.py [--ontology=|-o ontology_file] [project_no "
-          "experiment_no]")
+          "experiment_no]. \nExample: > individuals_generator.py --ontology=../ontology_rdf.owl 2 3")
 
 
 def main(argv):
@@ -421,8 +421,13 @@ def main(argv):
         elif opt in ("-o", "--ontology"):
             ontology_file = arg
 
+    # check if in case arguments are provided, they contain only numbers
     if args:
-        args = map(int, args)
+        if re.search('[0-9]', ''.join(args)):
+            args = map(int, args)
+        else:
+            usage()
+            sys.exit()
 
     no_projects = get_no(args)
     print("> no Projects: %s" % str(no_projects))
