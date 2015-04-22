@@ -249,7 +249,8 @@ def query_dtp(graph, classnames):
     dtp_dict = {}
 
     for cn in classnames:
-        cn = cn[0].split('#')[1]
+        if re.search("#", cn[0]):
+            cn = cn[0].split('#')[1]
 
         q = """
         PREFIX onto:<http://www.semanticweb.org/ontology#>
@@ -294,7 +295,8 @@ def query_dtp(graph, classnames):
             }
             VALUES (?range) {
             (xsd:float) (xsd:integer) (xsd:nonNegativeInteger) (xsd:positiveInteger) (xsd:string)
-            }"""
+            }
+            """
 
         result = graph.query(q)
         dtp_dict[cn] = result
