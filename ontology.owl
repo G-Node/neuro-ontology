@@ -11,10 +11,10 @@
 
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/ontology"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/ontology">
     <Prefix name="" IRI="http://www.semanticweb.org/ontology#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -25,12 +25,8 @@
     <Prefix name="ontology" IRI="http://www.semanticweb.org/ontology#"/>
     <Prefix name="prov-o-20130430" IRI="http://www.w3.org/ns/prov-o-20130430#"/>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>http://www.w3.org/ns/prov</IRI>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">W3C PROVenance Interchange Ontology (PROV-O)</Literal>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Recommendation version 2013-04-30</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -40,11 +36,15 @@ If you wish to make comments regarding this document, please send them to public
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://www.w3.org/ns/prov</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>http://www.w3.org/TR/prov-o/</IRI>
     </Annotation>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Recommendation version 2013-04-30</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">W3C PROVenance Interchange Ontology (PROV-O)</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#Amplifier"/>
@@ -452,10 +452,10 @@ If you wish to make comments regarding this document, please send them to public
         <DataProperty IRI="#hasGoal"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasMark"/>
@@ -672,28 +672,28 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+            <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+            <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <DataAllValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+            <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <DataAllValuesFrom>
-            <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+            <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
         </DataAllValuesFrom>
     </SubClassOf>
@@ -2359,8 +2359,8 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasResourceConfiguration"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
         <ObjectProperty IRI="#configuresAmplifier"/>
+        <ObjectProperty IRI="#hasAmplifierSetting"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
@@ -2371,8 +2371,8 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasAnimalLogEntry"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isPartOfProject"/>
         <ObjectProperty IRI="#hasExperiment"/>
+        <ObjectProperty IRI="#isPartOfProject"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isExperimenterFor"/>
@@ -3085,10 +3085,10 @@ If you wish to make comments regarding this document, please send them to public
         <DataProperty IRI="#hasChannelNumber"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasMark"/>
@@ -3166,11 +3166,11 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
         <Class IRI="#AmplifierSetting"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
         <Class IRI="#AmplifierSetting"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -3323,11 +3323,11 @@ If you wish to make comments regarding this document, please send them to public
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasLpfBandpassHighCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassHighCutoff"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasLpfBandpassLowCutoff"/>
+        <DataProperty IRI="#hasLfpBandpassLowCutoff"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
