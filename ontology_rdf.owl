@@ -94,17 +94,7 @@ If you wish to make comments regarding this document, please send them to public
     <!-- http://www.w3.org/ns/prov#atTime -->
 
     <owl:AnnotationProperty rdf:about="&prov;atTime">
-        <rdfs:label>atTime</rdfs:label>
-        <prov:category>qualified</prov:category>
-        <prov:component>entities-activities</prov:component>
-        <rdfs:comment xml:lang="en">The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</rdfs:comment>
         <rdfs:domain rdf:resource="&ontology;Event"/>
-        <prov:sharesDefinitionWith rdf:resource="&prov;InstantaneousEvent"/>
-        <prov:unqualifiedForm rdf:resource="&prov;endedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;generatedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;invalidatedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;startedAtTime"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:AnnotationProperty>
     
 
@@ -265,7 +255,16 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
 
     <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
 
-    <owl:AnnotationProperty rdf:about="&prov;wasRevisionOf"/>
+    <owl:AnnotationProperty rdf:about="&prov;wasRevisionOf">
+        <rdfs:label>wasRevisionOf</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:category>expanded</prov:category>
+        <prov:inverse>hadRevision</prov:inverse>
+        <rdfs:comment xml:lang="en">A revision is a derivation that revises an entity into a revised version.</rdfs:comment>
+        <prov:qualifiedForm rdf:resource="&prov;Revision"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedRevision"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -432,11 +431,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;configuresSetup">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -445,6 +439,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -542,11 +541,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;hasAmplifierSetting">
         <rdfs:range rdf:resource="&ontology;AmplifierSetting"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;configuresHardware"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -555,6 +549,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;configuresHardware"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -1300,37 +1299,308 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
-    <!-- http://www.w3.org/ns/prov#atLocation -->
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
 
-    <owl:ObjectProperty rdf:about="&prov;atLocation">
-        <rdfs:label>atLocation</rdfs:label>
-        <prov:category>expanded</prov:category>
-        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
-        <prov:inverse>locationOf</prov:inverse>
-        <rdfs:comment xml:lang="en">The Location of any resource.</rdfs:comment>
-        <prov:editorialNote xml:lang="en">The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes.</prov:editorialNote>
-        <prov:editorialNote xml:lang="en">This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair).</prov:editorialNote>
-        <prov:sharesDefinitionWith rdf:resource="&prov;Location"/>
-        <rdfs:range rdf:resource="&prov;Location"/>
+    <owl:ObjectProperty rdf:about="&prov;actedOnBehalfOf">
+        <rdfs:label>actedOnBehalfOf</rdfs:label>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:category>starting-point</prov:category>
+        <prov:inverse>hadDelegate</prov:inverse>
+        <rdfs:comment xml:lang="en">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </rdfs:comment>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:domain rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Delegation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedDelegation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/ns/prov#hadRole -->
+    <!-- http://www.w3.org/ns/prov#hadMember -->
 
-    <owl:ObjectProperty rdf:about="&prov;hadRole">
-        <rdfs:label>hadRole</rdfs:label>
-        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</rdfs:comment>
-        <prov:category>qualified</prov:category>
-        <prov:inverse>wasRoleIn</prov:inverse>
-        <prov:component>agents-responsibility</prov:component>
-        <prov:editorsDefinition xml:lang="en">prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end.</prov:editorsDefinition>
-        <rdfs:range rdf:resource="&prov;Role"/>
-        <prov:sharesDefinitionWith rdf:resource="&prov;Role"/>
+    <owl:ObjectProperty rdf:about="&prov;hadMember">
+        <rdfs:label>hadMember</rdfs:label>
+        <prov:component>expanded</prov:component>
+        <prov:inverse>wasMemberOf</prov:inverse>
+        <prov:category>expanded</prov:category>
+        <prov:sharesDefinitionWith rdf:resource="&prov;Collection"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment xml:lang="en">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</rdfs:comment>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</prov:dm>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedTarget rdf:resource="&prov;Entity"/>
+        <owl:annotatedSource rdf:resource="&prov;hadMember"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadPrimarySource -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadPrimarySource">
+        <rdfs:label>hadPrimarySource</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>wasPrimarySourceOf</prov:inverse>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;PrimarySource"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedPrimarySource"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;hadPrimarySource"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+    <owl:ObjectProperty rdf:about="&prov;used">
+        <rdfs:label>used</rdfs:label>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>wasUsedBy</prov:inverse>
+        <prov:category>starting-point</prov:category>
+        <rdfs:comment xml:lang="en">A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Usage"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedUsage"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAssociatedWith">
+        <rdfs:label>wasAssociatedWith</rdfs:label>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:category>starting-point</prov:category>
+        <rdfs:comment xml:lang="en">An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</rdfs:comment>
+        <prov:inverse>wasAssociateFor</prov:inverse>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Association"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedAssociation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAttributedTo">
+        <rdfs:label>wasAttributedTo</rdfs:label>
+        <prov:inverse>contributed</prov:inverse>
+        <rdfs:comment xml:lang="en">Attribution is the ascribing of an entity to an agent.</rdfs:comment>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">Attribution is the ascribing of an entity to an agent.</prov:definition>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Attribution"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedAttribution"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <prov:definition>IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </prov:definition>
+        <rdfs:comment>Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;wasAttributedTo"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasInfluencedBy"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasDerivedFrom">
+        <rdfs:label>wasDerivedFrom</rdfs:label>
+        <prov:inverse>hadDerivation</prov:inverse>
+        <prov:category>starting-point</prov:category>
+        <prov:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</prov:definition>
+        <rdfs:comment xml:lang="en">The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</rdfs:comment>
+        <prov:component>derivations</prov:component>
+        <prov:qualifiedForm rdf:resource="&prov;Derivation"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedDerivation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasInfluencedBy"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasGeneratedBy">
+        <rdfs:label>wasGeneratedBy</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:inverse>generated</prov:inverse>
+        <prov:component>entities-activities</prov:component>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Generation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedGeneration"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInfluencedBy">
+        <rdfs:label>wasInfluencedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>influenced</prov:inverse>
+        <prov:editorialNote xml:lang="en">The sub-properties of prov:wasInfluencedBy can be elaborated in more detail using the Qualification Pattern. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualifiedUsage [ a prov:Usage; prov:entity :spoon; prov:atLocation :kitchen ] .
+
+Subproperties of prov:wasInfluencedBy may also be asserted directly without being qualified.
+
+prov:wasInfluencedBy should not be used without also using one of its subproperties. 
+</prov:editorialNote>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <prov:qualifiedForm rdf:resource="&prov;Influence"/>
+        <prov:sharesDefinitionWith rdf:resource="&prov;Influence"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedInfluence"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;</prov:definition>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencee: an identifier (o2) for an entity, activity, or agent; </prov:definition>
+        <owl:annotatedProperty rdf:resource="&rdfs;domain"/>
+        <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInformedBy">
+        <rdfs:label>wasInformedBy</rdfs:label>
+        <prov:inverse>informed</prov:inverse>
+        <rdfs:comment xml:lang="en">An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</rdfs:comment>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Communication"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedCommunication"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasQuotedFrom">
+        <rdfs:label>wasQuotedFrom</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>quotedAs</prov:inverse>
+        <prov:category>expanded</prov:category>
+        <rdfs:comment xml:lang="en">An entity is derived from an original entity by copying, or &apos;quoting&apos;, some or all of it.</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Quotation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedQuotation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or &quot;quoting&quot;, some or all of it. </rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedSource rdf:resource="&prov;wasQuotedFrom"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasRevisionOf">
+        <rdfs:label>wasRevisionOf</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:category>expanded</prov:category>
+        <prov:inverse>hadRevision</prov:inverse>
+        <rdfs:comment xml:lang="en">A revision is a derivation that revises an entity into a revised version.</rdfs:comment>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Revision"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedRevision"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to 
+http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 &apos;wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.&apos;</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedSource rdf:resource="&prov;wasRevisionOf"/>
+    </owl:Axiom>
     
 
 
@@ -1675,25 +1945,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
-    <!-- http://www.w3.org/ns/prov#atTime -->
-
-    <owl:DatatypeProperty rdf:about="&prov;atTime">
-        <rdfs:label>atTime</rdfs:label>
-        <prov:category>qualified</prov:category>
-        <prov:component>entities-activities</prov:component>
-        <rdfs:comment xml:lang="en">The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</rdfs:comment>
-        <rdfs:domain rdf:resource="&ontology;Event"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <prov:sharesDefinitionWith rdf:resource="&prov;InstantaneousEvent"/>
-        <prov:unqualifiedForm rdf:resource="&prov;endedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;generatedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;invalidatedAtTime"/>
-        <prov:unqualifiedForm rdf:resource="&prov;startedAtTime"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.w3.org/ns/prov#endedAtTime -->
 
     <owl:DatatypeProperty rdf:about="&prov;endedAtTime">
@@ -1705,23 +1956,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain rdf:resource="&prov;Activity"/>
         <prov:qualifiedForm rdf:resource="&prov;End"/>
-        <prov:qualifiedForm rdf:resource="&prov;atTime"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#invalidatedAtTime -->
-
-    <owl:DatatypeProperty rdf:about="&prov;invalidatedAtTime">
-        <rdfs:label>invalidatedAtTime</rdfs:label>
-        <prov:category>expanded</prov:category>
-        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedInvalidation o prov:atTime) rdfs:subPropertyOf prov:invalidatedAtTime.</prov:editorialNote>
-        <rdfs:comment xml:lang="en">The time at which an entity was invalidated (i.e., no longer usable).</rdfs:comment>
-        <prov:component>entities-activities</prov:component>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <rdfs:domain rdf:resource="&prov;Entity"/>
-        <prov:qualifiedForm rdf:resource="&prov;Invalidation"/>
         <prov:qualifiedForm rdf:resource="&prov;atTime"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:DatatypeProperty>
@@ -1780,8 +2014,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassLowCutoff"/>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
                 <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1792,7 +2032,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassLowCutoff"/>
                 <owl:allValuesFrom rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1810,12 +2050,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1827,13 +2061,13 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1882,70 +2116,19 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&prov;Agent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasAge"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasMark"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasMark"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSex"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSex"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1958,7 +2141,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
+                <owl:onProperty rdf:resource="&ontology;hasMark"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1970,7 +2160,51 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAge"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasMark"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1981,7 +2215,13 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#AnimalLogEntry -->
 
     <owl:Class rdf:about="&ontology;AnimalLogEntry">
-        <rdfs:subClassOf rdf:resource="&ontology;Data"/>
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasWeight"/>
@@ -1997,31 +2237,13 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2040,14 +2262,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2056,6 +2272,25 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition>Health state log ~ journal</prov:definition>
     </owl:Class>
     
 
@@ -2098,14 +2333,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
-                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;integer"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2115,6 +2350,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#Data -->
 
     <owl:Class rdf:about="&ontology;Data">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2150,9 +2386,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
         <owl:disjointWith rdf:resource="&prov;Activity"/>
         <owl:disjointWith rdf:resource="&prov;Agent"/>
-        <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
     </owl:Class>
     
 
@@ -2171,13 +2405,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;positiveInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2188,9 +2423,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;positiveInteger"/>
+                <owl:onProperty rdf:resource="&ontology;hasChannel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
@@ -2221,15 +2455,15 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2240,8 +2474,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2268,20 +2502,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;Data"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&prov;atTime"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&prov;atTime"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2299,6 +2521,20 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
 
     <owl:Class rdf:about="&ontology;Experiment">
         <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2335,20 +2571,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
                         <owl:onProperty rdf:resource="&ontology;isPartOfProject"/>
                         <owl:allValuesFrom rdf:resource="&ontology;Project"/>
                     </owl:Restriction>
@@ -2369,12 +2591,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:Class rdf:about="&ontology;Experimenter">
         <rdfs:subClassOf rdf:resource="&prov;Person"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasResearchDomain"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -2392,6 +2608,12 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasResearchDomain"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasResearchDomain"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2412,6 +2634,18 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
+                <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
                 <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
@@ -2419,19 +2653,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
-                <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Protocol"/>
@@ -2465,14 +2687,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasNumber"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2511,21 +2733,21 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Resource"/>
@@ -2534,7 +2756,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <owl:disjointWith rdf:resource="&prov;Agent"/>
         <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
     </owl:Class>
     
 
@@ -2644,6 +2865,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#Resource -->
 
     <owl:Class rdf:about="&ontology;Resource">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
@@ -2658,9 +2880,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
         <owl:disjointWith rdf:resource="&prov;Activity"/>
-        <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2678,6 +2898,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#ResourceConfiguration -->
 
     <owl:Class rdf:about="&ontology;ResourceConfiguration">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;configures"/>
@@ -2706,9 +2927,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&prov;Activity"/>
         <owl:disjointWith rdf:resource="&prov;Agent"/>
-        <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
     </owl:Class>
     
 
@@ -2729,31 +2948,7 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasDescription"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2762,6 +2957,30 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 <owl:onProperty rdf:resource="&ontology;hasDescription"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
@@ -2776,13 +2995,13 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasSamplingRate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+                <owl:allValuesFrom rdf:resource="&xsd;float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasSamplingRate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;float"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2810,17 +3029,17 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#SpikeTrain -->
 
     <owl:Class rdf:about="&ontology;SpikeTrain">
-        <rdfs:subClassOf rdf:resource="&ontology;Event"/>
+        <rdfs:subClassOf rdf:resource="&ontology;Signal"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2839,20 +3058,14 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasColor"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasSize"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ontology;hasColor"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2864,6 +3077,12 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasType"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2885,14 +3104,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpikeTrain"/>
-                <owl:allValuesFrom rdf:resource="&ontology;SpikeTrain"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpikeTrain"/>
-                <owl:someValuesFrom rdf:resource="&ontology;SpikeTrain"/>
+                <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
+                <owl:allValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2911,14 +3124,20 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
-                <owl:someValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
+                <owl:onProperty rdf:resource="&ontology;hasSpikeTrain"/>
+                <owl:allValuesFrom rdf:resource="&ontology;SpikeTrain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpikeTrain"/>
+                <owl:someValuesFrom rdf:resource="&ontology;SpikeTrain"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasResourceConfiguration"/>
-                <owl:allValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
+                <owl:someValuesFrom rdf:resource="&ontology;ResourceConfiguration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2938,31 +3157,30 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&prov;endedAtTime"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&prov;startedAtTime"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;startedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&prov;endedAtTime"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&prov;startedAtTime"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&prov;Agent"/>
         <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
         <prov:constraints rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Activity</prov:dm>
         <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity</prov:n>
@@ -2978,9 +3196,20 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
 
     <owl:Class rdf:about="&prov;Agent">
         <rdfs:label>Agent</rdfs:label>
-        <owl:disjointWith rdf:resource="&prov;Entity"/>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Software"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
         <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Agent</prov:n>
         <prov:definition xml:lang="en">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity. </prov:definition>
@@ -2996,7 +3225,19 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:Class rdf:about="&prov;Entity">
         <rdfs:label>Entity</rdfs:label>
         <owl:disjointWith rdf:resource="&prov;Location"/>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Software"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
         <prov:constraints rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity</prov:dm>
         <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity</prov:n>
@@ -3012,7 +3253,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
 
     <owl:Class rdf:about="&prov;Location">
         <rdfs:label>Location</rdfs:label>
-        <owl:disjointWith rdf:resource="&prov;Role"/>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-location</prov:dm>
         <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</prov:n>
         <prov:definition xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</prov:definition>
@@ -3031,13 +3271,13 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
@@ -3045,21 +3285,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <prov:component>agents-responsibility</prov:component>
         <prov:definition xml:lang="en">Person agents are people.</prov:definition>
         <prov:category>expanded</prov:category>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Role -->
-
-    <owl:Class rdf:about="&prov;Role">
-        <rdfs:label>Role</rdfs:label>
-        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-role</prov:dm>
-        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</prov:n>
-        <prov:definition xml:lang="en">A role is the function of an entity or agent with respect to an activity, in the context of a usage, generation, invalidation, association, start, and end.</prov:definition>
-        <prov:category>qualified</prov:category>
-        <prov:component>agents-responsibility</prov:component>
-        <rdfs:seeAlso rdf:resource="&prov;hadRole"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:Class>
     
@@ -3239,9 +3464,17 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
-    <!-- http://www.w3.org/ns/prov#EmptyCollection -->
+    <!-- http://www.w3.org/ns/prov-o-20120312 -->
 
-    <owl:NamedIndividual rdf:about="&prov;EmptyCollection"/>
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o-20120312"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o# -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o#">
+        <prov:wasRevisionOf rdf:resource="http://www.w3.org/ns/prov-o-20120312"/>
+    </owl:NamedIndividual>
     
 
 
@@ -3256,15 +3489,15 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Trial_1"/>
-            <rdf:Description rdf:about="&ontology;Trial_2"/>
+            <rdf:Description rdf:about="&ontology;Protocol_1"/>
+            <rdf:Description rdf:about="&ontology;Protocol_2"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Protocol_1"/>
-            <rdf:Description rdf:about="&ontology;Protocol_2"/>
+            <rdf:Description rdf:about="&ontology;Trial_1"/>
+            <rdf:Description rdf:about="&ontology;Trial_2"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>

@@ -36,11 +36,11 @@ If you wish to make comments regarding this document, please send them to public
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>http://www.w3.org/ns/prov</IRI>
+        <IRI>http://www.w3.org/TR/prov-o/</IRI>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>http://www.w3.org/TR/prov-o/</IRI>
+        <IRI>http://www.w3.org/ns/prov</IRI>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -174,9 +174,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="prov:Person"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="prov:Role"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
@@ -401,10 +398,40 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesTetrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="prov:atLocation"/>
+        <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="prov:hadRole"/>
+        <ObjectProperty abbreviatedIRI="prov:hadMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:hadPrimarySource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasQuotedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasAge"/>
@@ -506,13 +533,7 @@ If you wish to make comments regarding this document, please send them to public
         <DataProperty IRI="#hasWeight"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="prov:atTime"/>
-    </Declaration>
-    <Declaration>
         <DataProperty abbreviatedIRI="prov:endedAtTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="prov:invalidatedAtTime"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI="prov:startedAtTime"/>
@@ -564,9 +585,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Trial_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="prov:EmptyCollection"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -856,7 +874,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
-        <Class IRI="#Data"/>
+        <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
@@ -973,6 +991,10 @@ If you wish to make comments regarding this document, please send them to public
             <DataProperty IRI="#hasChannelNumber"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
         </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Data"/>
+        <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Data"/>
@@ -1098,23 +1120,9 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Event"/>
-        <DataSomeValuesFrom>
-            <DataProperty abbreviatedIRI="prov:atTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasName"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Event"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="prov:atTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1401,6 +1409,10 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Resource"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resource"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasResourceConfiguration"/>
             <Class IRI="#ResourceConfiguration"/>
@@ -1412,6 +1424,10 @@ If you wish to make comments regarding this document, please send them to public
             <ObjectProperty IRI="#hasResourceConfiguration"/>
             <Class IRI="#ResourceConfiguration"/>
         </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResourceConfiguration"/>
+        <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ResourceConfiguration"/>
@@ -1515,7 +1531,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
-        <Class IRI="#Event"/>
+        <Class IRI="#Signal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
@@ -1744,15 +1760,7 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
         <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
-        <Class abbreviatedIRI="prov:Role"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Electrode"/>
@@ -1807,10 +1815,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Protocol"/>
         <Class IRI="#Setup"/>
     </DisjointClasses>
@@ -1832,15 +1836,7 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
         <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Resource"/>
-        <Class abbreviatedIRI="prov:Role"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Resource"/>
@@ -1861,15 +1857,7 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
         <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResourceConfiguration"/>
-        <Class abbreviatedIRI="prov:Role"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Setup"/>
@@ -1896,20 +1884,20 @@ If you wish to make comments regarding this document, please send them to public
         <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI="prov:Activity"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Agent"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class abbreviatedIRI="prov:Agent"/>
         <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="prov:Agent"/>
-        <Class abbreviatedIRI="prov:Role"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="prov:Entity"/>
+            <ObjectComplementOf>
+                <Class IRI="#Software"/>
+            </ObjectComplementOf>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI="prov:SoftwareAgent"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="prov:Entity"/>
@@ -1917,11 +1905,15 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="prov:Entity"/>
-        <Class abbreviatedIRI="prov:Role"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="prov:Location"/>
-        <Class abbreviatedIRI="prov:Role"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="prov:Agent"/>
+            <ObjectComplementOf>
+                <Class IRI="#Software"/>
+            </ObjectComplementOf>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI="prov:SoftwareAgent"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#AmplifierSetting"/>
@@ -2029,6 +2021,11 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isPartOfExperiment"/>
         <NamedIndividual IRI="#Trial_1"/>
         <NamedIndividual IRI="#Experiment_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
+        <NamedIndividual IRI="http://www.w3.org/ns/prov-o#"/>
+        <NamedIndividual IRI="http://www.w3.org/ns/prov-o-20120312"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresAmplifier"/>
@@ -2353,6 +2350,75 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesTetrode"/>
         <ObjectProperty IRI="#usesHardware"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:hadMember"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information.</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:hadPrimarySource"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:definition"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence.</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or &quot;quoting&quot;, some or all of it. </Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasQuotedFrom"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to 
+http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 &apos;wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.&apos;</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#configures"/>
@@ -2727,6 +2793,62 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:hadPrimarySource"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:definition"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">influencee: an identifier (o2) for an entity, activity, or agent; </Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:dm"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="prov:Activity"/>
+            <Class abbreviatedIRI="prov:Agent"/>
+            <Class abbreviatedIRI="prov:Entity"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasQuotedFrom"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configures"/>
         <ObjectUnionOf>
@@ -3071,12 +3193,72 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="prov:atLocation"/>
-        <Class abbreviatedIRI="prov:Location"/>
+        <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
+        <Class abbreviatedIRI="prov:Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="prov:hadRole"/>
-        <Class abbreviatedIRI="prov:Role"/>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:dm"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:hadMember"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:hadPrimarySource"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:definition"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="prov:dm"/>
+            <Literal datatypeIRI="&rdf;PlainLiteral">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</Literal>
+        </Annotation>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="prov:Activity"/>
+            <Class abbreviatedIRI="prov:Agent"/>
+            <Class abbreviatedIRI="prov:Entity"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasQuotedFrom"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
+        <Class abbreviatedIRI="prov:Entity"/>
     </ObjectPropertyRange>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasAnimalID"/>
@@ -3247,16 +3429,8 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#AnimalLogEntry"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="prov:atTime"/>
-        <Class IRI="#Event"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty abbreviatedIRI="prov:endedAtTime"/>
         <Class abbreviatedIRI="prov:Activity"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="prov:invalidatedAtTime"/>
-        <Class abbreviatedIRI="prov:Entity"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI="prov:startedAtTime"/>
@@ -3398,21 +3572,18 @@ If you wish to make comments regarding this document, please send them to public
         </DataUnionOf>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="prov:atTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty abbreviatedIRI="prov:endedAtTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="prov:invalidatedAtTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="prov:startedAtTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:definition"/>
+        <IRI>#AnimalLogEntry</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Health state log ~ journal</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>rdfs:comment</AbbreviatedIRI>
@@ -3625,46 +3796,6 @@ If you wish to make comments regarding this document, please send them to public
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <IRI>http://www.w3.org/ns/prov-o#</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Role</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:category"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:component"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:definition"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A role is the function of an entity or agent with respect to an activity, in the context of a usage, generation, invalidation, association, start, and end.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:dm"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-role</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:n"/>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <AbbreviatedIRI>prov:SoftwareAgent</AbbreviatedIRI>
         <IRI>http://www.w3.org/ns/prov-o#</IRI>
     </AnnotationAssertion>
@@ -3699,104 +3830,49 @@ If you wish to make comments regarding this document, please send them to public
         <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:aq</AbbreviatedIRI>
-        <IRI>http://www.w3.org/ns/prov-o#</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Location of any resource.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</Literal>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
         <IRI>http://www.w3.org/ns/prov-o#</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">atLocation</Literal>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">actedOnBehalfOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:category"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">locationOf</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
-        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:Location</AbbreviatedIRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <IRI>http://www.w3.org/ns/prov-o#</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">atTime</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:category"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:component"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:InstantaneousEvent</AbbreviatedIRI>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadDelegate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:unqualifiedForm"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:endedAtTime</AbbreviatedIRI>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Delegation</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:unqualifiedForm"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:generatedAtTime</AbbreviatedIRI>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:actedOnBehalfOf</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedDelegation</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:unqualifiedForm"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:unqualifiedForm"/>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:startedAtTime</AbbreviatedIRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:aq</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3909,89 +3985,69 @@ If you wish to make comments regarding this document, please send them to public
         <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
         <IRI>http://www.w3.org/ns/prov-o#</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">hadRole</Literal>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadMember</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:category"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:component"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:editorsDefinition"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">wasRoleIn</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
-        <AbbreviatedIRI>prov:hadRole</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:Role</AbbreviatedIRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The time at which an entity was invalidated (i.e., no longer usable).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <IRI>http://www.w3.org/ns/prov-o#</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">invalidatedAtTime</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:category"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:component"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">It is the intent that the property chain holds: (prov:qualifiedInvalidation o prov:atTime) rdfs:subPropertyOf prov:invalidatedAtTime.</Literal>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasMemberOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
+        <AbbreviatedIRI>prov:hadMember</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Collection</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadPrimarySource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">derivations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasPrimarySourceOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:Invalidation</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:PrimarySource</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
-        <AbbreviatedIRI>prov:invalidatedAtTime</AbbreviatedIRI>
-        <AbbreviatedIRI>prov:atTime</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:hadPrimarySource</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedPrimarySource</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4110,6 +4166,391 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <AbbreviatedIRI>prov:unqualifiedForm</AbbreviatedIRI>
         <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">used</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasUsedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Usage</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:used</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedUsage</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasAssociatedWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasAssociateFor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Association</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasAssociatedWith</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedAssociation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Attribution is the ascribing of an entity to an agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasAttributedTo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:definition"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Attribution is the ascribing of an entity to an agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">contributed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Attribution</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasAttributedTo</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedAttribution</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasDerivedFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">derivations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:definition"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadDerivation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Derivation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasDerivedFrom</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedDerivation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasGeneratedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">generated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Generation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasGeneratedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedGeneration</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasInfluencedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">qualified</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">agents-responsibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The sub-properties of prov:wasInfluencedBy can be elaborated in more detail using the Qualification Pattern. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualifiedUsage [ a prov:Usage; prov:entity :spoon; prov:atLocation :kitchen ] .
+
+Subproperties of prov:wasInfluencedBy may also be asserted directly without being qualified.
+
+prov:wasInfluencedBy should not be used without also using one of its subproperties. 
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">influenced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Influence</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedInfluence</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
+        <AbbreviatedIRI>prov:wasInfluencedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Influence</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasInformedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">starting-point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">informed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Communication</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasInformedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedCommunication</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An entity is derived from an original entity by copying, or &apos;quoting&apos;, some or all of it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasQuotedFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">derivations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">quotedAs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Quotation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasQuotedFrom</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedQuotation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A revision is a derivation that revises an entity into a revised version.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">wasRevisionOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">derivations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hadRevision</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Revision</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
+        <AbbreviatedIRI>prov:wasRevisionOf</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:qualifiedRevision</AbbreviatedIRI>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
         <AnnotationProperty abbreviatedIRI="prov:aq"/>
