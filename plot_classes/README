@@ -1,0 +1,19 @@
+DESCRIPTION
+The plot_classes.sh script generates a UML-like representation of the classes of an ontology. The resulted files have the DOT and SVG formats.
+
+PROGRAMMING LANGUAGE
+python - recommended version 2.7
+
+LIBRARY DEPENDENCY
+rdflib - recommended version 4.2.0
+
+USAGE
+The plot generator can be ran as follows:
+> sh plot_classes.sh [classes]
+
+where [classes] - a list with names of classes that should be plotted, separated by white spaces.
+Example: sh plot_classes.sh Resource ResourceConfiguration Medication Experiment Project Animal Electrode ElectrodeGroup SetupEquipment
+
+REMARKS
+1. If no class name is given, nothing is performed.
+2. An RDF/XML ontology_rdf.owl file is being used as the ontology. It is located inside the parent folder.
