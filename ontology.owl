@@ -278,9 +278,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasSoftware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTetrode"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasTrial"/>
     </Declaration>
     <Declaration>
@@ -1475,7 +1472,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Tetrode"/>
-        <Class IRI="#Hardware"/>
+        <Class IRI="#Electrode"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
@@ -1618,10 +1615,6 @@ If you wish to make comments regarding this document, please send them to public
     <DisjointClasses>
         <Class IRI="#Electrode"/>
         <Class IRI="#ElectrodeGroup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Electrode"/>
-        <Class IRI="#Tetrode"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#ElectrodeGroup"/>
@@ -2022,10 +2015,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasTrial"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
@@ -2383,10 +2372,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTrial"/>
         <ObjectUnionOf>
             <Class IRI="#Experiment"/>
@@ -2740,10 +2725,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSoftware"/>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTetrode"/>
-        <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTrial"/>
