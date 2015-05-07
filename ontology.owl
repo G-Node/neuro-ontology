@@ -233,9 +233,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasCell"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasChannel"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasElectrode"/>
     </Declaration>
     <Declaration>
@@ -282,6 +279,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isAboutAnimal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isChannelOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMedicationOf"/>
@@ -363,6 +363,12 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesTetrode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasDerivedFromChannel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
@@ -687,20 +693,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Signal"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#AnalogSignal"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AnalogSignal"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Analysis"/>
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
@@ -953,35 +945,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Electrode"/>
         <Class IRI="#Hardware"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Electrode"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="&rdf;PlainLiteral">relationship hasChannel between Electrode and Channel is explained below:
-
-* exactly 1 - can have exactly 1 channel
-* only - the range for the relationship can be only Channel
-* some - if there exist individuals with this relationship, there will be at least 1 instance of type Channel that correspond to the range of the relationship</Literal>
-        </Annotation>
-        <Class IRI="#Electrode"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Electrode"/>
@@ -1409,20 +1372,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
         <Class IRI="#Signal"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasChannel"/>
-            <Class IRI="#Channel"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Stimulus"/>
@@ -2023,6 +1972,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isChannelOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isMedicationOf"/>
         <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
     </SubObjectPropertyOf>
@@ -2129,6 +2082,14 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesTetrode"/>
         <ObjectProperty IRI="#usesHardware"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#wasDerivedFromChannel"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
@@ -2287,13 +2248,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Organ"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasChannel"/>
-        <ObjectUnionOf>
-            <Class IRI="#Electrode"/>
-            <Class IRI="#Signal"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasElectrode"/>
         <ObjectUnionOf>
             <Class IRI="#ElectrodeGroup"/>
@@ -2381,6 +2335,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#AnimalLogEntry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isChannelOf"/>
+        <Class IRI="#Channel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMedicationOf"/>
@@ -2489,6 +2447,17 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasDerivedFromChannel"/>
+        <ObjectUnionOf>
+            <Class IRI="#AnalogSignal"/>
+            <Class IRI="#Neuron"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
@@ -2661,10 +2630,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectMinCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasChannel"/>
-        <Class IRI="#Channel"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasElectrode"/>
         <Class IRI="#Electrode"/>
     </ObjectPropertyRange>
@@ -2733,6 +2698,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#Animal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isChannelOf"/>
+        <Class IRI="#Electrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMedicationOf"/>
@@ -2841,6 +2810,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#Tetrode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasDerivedFromChannel"/>
+        <Class IRI="#Channel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <Class IRI="#Neuron"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
