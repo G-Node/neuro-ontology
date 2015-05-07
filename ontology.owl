@@ -323,6 +323,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesCamera"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#usesCell"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#usesData"/>
     </Declaration>
     <Declaration>
@@ -1965,6 +1968,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCell"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasElectrode"/>
         <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
@@ -2073,6 +2080,10 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesCamera"/>
         <ObjectProperty IRI="#usesHardware"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesCell"/>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesData"/>
@@ -2284,17 +2295,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCell"/>
-        <ObjectUnionOf>
-            <Class IRI="#Organ"/>
-            <Class IRI="#RecordingSession"/>
-        </ObjectUnionOf>
+        <Class IRI="#Organ"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasChannel"/>
         <ObjectUnionOf>
             <Class IRI="#Electrode"/>
             <Class IRI="#Signal"/>
-            <Class IRI="#SpikeTrain"/>
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2436,6 +2443,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesCamera"/>
+        <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesCell"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2789,6 +2800,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCamera"/>
         <Class IRI="#Camera"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesCell"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#usesCell"/>
+            <Class IRI="#Cell"/>
+        </ObjectMinCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesData"/>

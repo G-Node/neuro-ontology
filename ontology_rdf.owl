@@ -387,6 +387,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;configuresMedication">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -395,11 +400,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -409,11 +409,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
         <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -422,6 +417,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -431,11 +431,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;configuresSetup">
         <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -444,6 +439,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;hasResourceConfiguration"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -541,6 +541,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <owl:ObjectProperty rdf:about="&ontology;hasAmplifierSetting">
         <rdfs:range rdf:resource="&ontology;AmplifierSetting"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;configuresHardware"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -549,11 +554,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;configuresHardware"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -564,15 +564,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:range rdf:resource="&ontology;Analysis"/>
         <rdfs:domain rdf:resource="&ontology;Experiment"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontology#hasAnimalLogEntry -->
-
-    <owl:ObjectProperty rdf:about="&ontology;hasAnimalLogEntry">
-        <rdfs:domain rdf:resource="&ontology;Animal"/>
-        <rdfs:range rdf:resource="&ontology;AnimalLogEntry"/>
     </owl:ObjectProperty>
     
 
@@ -590,14 +581,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#hasCell -->
 
     <owl:ObjectProperty rdf:about="&ontology;hasCell">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ontology;Organ"/>
-                    <rdf:Description rdf:about="&ontology;RecordingSession"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="&ontology;Organ"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasCell"/>
@@ -618,7 +603,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ontology;Electrode"/>
                     <rdf:Description rdf:about="&ontology;Signal"/>
-                    <rdf:Description rdf:about="&ontology;SpikeTrain"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -720,11 +704,6 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:range rdf:resource="&ontology;ProtocolAdjustment"/>
         <owl:inverseOf rdf:resource="&ontology;configuresProtocol"/>
         <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ontology;configures"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -733,6 +712,11 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ontology;configures"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
@@ -861,9 +845,9 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     <!-- http://www.semanticweb.org/ontology#isAboutAnimal -->
 
     <owl:ObjectProperty rdf:about="&ontology;isAboutAnimal">
+        <prov:inverse>hasAnimalLogEntry</prov:inverse>
         <rdfs:range rdf:resource="&ontology;Animal"/>
         <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
-        <owl:inverseOf rdf:resource="&ontology;hasAnimalLogEntry"/>
         <rdfs:subPropertyOf rdf:resource="&prov;wasAttributedTo"/>
     </owl:ObjectProperty>
     
@@ -993,9 +977,26 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
+    <!-- http://www.semanticweb.org/ontology#usesCell -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesCell">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;usesCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontology#usesData -->
 
     <owl:ObjectProperty rdf:about="&ontology;usesData">
+        <prov:inverse>isUsedInAnalysis</prov:inverse>
         <rdfs:domain rdf:resource="&ontology;Analysis"/>
         <rdfs:range rdf:resource="&ontology;Data"/>
         <rdfs:subPropertyOf rdf:resource="&prov;used"/>
@@ -1164,8 +1165,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</prov:dm>
         <rdfs:comment xml:lang="en">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</rdfs:comment>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</prov:dm>
         <owl:annotatedProperty rdf:resource="&rdfs;range"/>
         <owl:annotatedTarget rdf:resource="&prov;Entity"/>
         <owl:annotatedSource rdf:resource="&prov;hadMember"/>
@@ -1249,8 +1250,8 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <prov:definition>IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </prov:definition>
         <rdfs:comment>Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it.</rdfs:comment>
+        <prov:definition>IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </prov:definition>
         <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
         <owl:annotatedSource rdf:resource="&prov;wasAttributedTo"/>
         <owl:annotatedTarget rdf:resource="&prov;wasInfluencedBy"/>
@@ -1339,8 +1340,8 @@ prov:wasInfluencedBy should not be used without also using one of its subpropert
         </rdfs:range>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <prov:definition>influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;</prov:definition>
         <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;</prov:definition>
         <owl:annotatedProperty rdf:resource="&rdfs;range"/>
         <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
         <owl:annotatedTarget>
@@ -1354,8 +1355,8 @@ prov:wasInfluencedBy should not be used without also using one of its subpropert
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <prov:definition>influencee: an identifier (o2) for an entity, activity, or agent; </prov:definition>
         <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencee: an identifier (o2) for an entity, activity, or agent; </prov:definition>
         <owl:annotatedProperty rdf:resource="&rdfs;domain"/>
         <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
         <owl:annotatedTarget>
@@ -1847,12 +1848,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <owl:Class rdf:about="&ontology;AmplifierSetting">
         <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
-                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -1865,6 +1860,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1936,71 +1937,9 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf rdf:resource="&prov;Agent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasAge"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSex"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSex"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasMark"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2018,14 +1957,76 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasAge"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasCageID"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasMark"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAge"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2038,56 +2039,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasDiet"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasWeight"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&xsd;float"/>
-                            <rdf:Description rdf:about="&xsd;positiveInteger"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2108,6 +2066,49 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                         </owl:unionOf>
                     </rdfs:Datatype>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasWeight"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&xsd;float"/>
+                            <rdf:Description rdf:about="&xsd;positiveInteger"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <prov:definition>Health state log ~ journal</prov:definition>
@@ -2153,14 +2154,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;integer"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
-                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2187,12 +2188,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;positiveInteger"/>
@@ -2215,6 +2210,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
                 <owl:allValuesFrom rdf:resource="&xsd;positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasChannel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
@@ -2245,6 +2246,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
@@ -2257,9 +2265,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2270,15 +2277,9 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
@@ -2315,20 +2316,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
-                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
                         <owl:onProperty rdf:resource="&ontology;hasResearchActivity"/>
                         <owl:someValuesFrom>
                             <owl:Class>
@@ -2353,6 +2340,20 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2396,12 +2397,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
                 <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2409,6 +2404,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2447,14 +2448,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasNumber"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2468,14 +2469,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasBehavioralState"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasBehavioralState"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Setup"/>
@@ -2488,6 +2489,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <owl:Class rdf:about="&ontology;Project">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
@@ -2503,12 +2510,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&ontology;Resource"/>
@@ -2635,19 +2636,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;configures"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&ontology;Resource"/>
-                            <rdf:Description rdf:about="&ontology;Trial"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;configures"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -2656,6 +2644,19 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configures"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&ontology;Resource"/>
+                            <rdf:Description rdf:about="&ontology;Trial"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&prov;Activity"/>
@@ -2679,12 +2680,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasDescription"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
@@ -2692,7 +2687,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
+                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2704,13 +2699,19 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasVendor"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2764,13 +2765,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasChannel"/>
-                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2781,18 +2782,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 
     <owl:Class rdf:about="&ontology;Stimulus">
         <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasColor"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasType"/>
@@ -2807,7 +2796,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
+                <owl:onProperty rdf:resource="&ontology;hasColor"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2815,6 +2804,18 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasType"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2867,6 +2868,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;endedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&prov;startedAtTime"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
@@ -2875,12 +2882,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&prov;endedAtTime"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&prov;endedAtTime"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&prov;Agent"/>
@@ -2976,13 +2977,13 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ontology;hasName"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
@@ -3193,15 +3194,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Trial_1"/>
-            <rdf:Description rdf:about="&ontology;Trial_2"/>
+            <rdf:Description rdf:about="&ontology;Protocol_1"/>
+            <rdf:Description rdf:about="&ontology;Protocol_2"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Protocol_1"/>
-            <rdf:Description rdf:about="&ontology;Protocol_2"/>
+            <rdf:Description rdf:about="&ontology;Trial_1"/>
+            <rdf:Description rdf:about="&ontology;Trial_2"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
