@@ -254,9 +254,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasHardware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMedication"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasOrgan"/>
     </Declaration>
     <Declaration>
@@ -297,6 +294,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isAboutAnimal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMedicationOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -2164,6 +2164,10 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isMedicationOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByAnalysis"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
@@ -2555,10 +2559,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMedication"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasOrgan"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
@@ -2630,6 +2630,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#AnimalLogEntry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMedicationOf"/>
+        <Class IRI="#Medication"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -2964,10 +2968,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMedication"/>
-        <Class IRI="#Medication"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasOrgan"/>
         <Class IRI="#Organ"/>
     </ObjectPropertyRange>
@@ -3027,6 +3027,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAboutAnimal"/>
+        <Class IRI="#Animal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMedicationOf"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
