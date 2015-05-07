@@ -293,12 +293,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isOrganOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isPartOfProject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isPermitOf"/>
     </Declaration>
     <Declaration>
@@ -1151,19 +1145,6 @@ If you wish to make comments regarding this document, please send them to public
                     </ObjectComplementOf>
                 </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experiment"/>
-        <ObjectIntersectionOf>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isPartOfProject"/>
-                <Class IRI="#Project"/>
-            </ObjectAllValuesFrom>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty IRI="#isPartOfProject"/>
-                <Class IRI="#Project"/>
-            </ObjectExactCardinality>
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
@@ -2097,6 +2078,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAboutAnimal"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isMedicationOf"/>
         <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
     </SubObjectPropertyOf>
@@ -2366,14 +2351,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty IRI="#hasAnimalLogEntry"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasExperiment"/>
-        <ObjectProperty IRI="#isPartOfProject"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <ObjectProperty IRI="#hasTrial"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#producesData"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </InverseObjectProperties>
@@ -2567,14 +2544,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isOrganOf"/>
         <Class IRI="#Organ"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfProject"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <Class IRI="#Trial"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPermitOf"/>
@@ -2955,17 +2924,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isOrganOf"/>
         <Class IRI="#Animal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfProject"/>
-        <Class IRI="#Project"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfRecordingSession"/>
-        <ObjectUnionOf>
-            <Class IRI="#Experiment"/>
-            <Class IRI="#RecordingSession"/>
-        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPermitOf"/>
