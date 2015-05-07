@@ -227,9 +227,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasAnalysis"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasCamera"/>
     </Declaration>
     <Declaration>
@@ -2214,10 +2211,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
         <ObjectProperty IRI="#configuresProtocol"/>
     </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isAboutAnimal"/>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#configures"/>
         <Class IRI="#ResourceConfiguration"/>
@@ -2284,10 +2277,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAnalysis"/>
         <Class IRI="#Experiment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-        <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCamera"/>
@@ -2663,10 +2652,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAnalysis"/>
         <Class IRI="#Analysis"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAnimalLogEntry"/>
-        <Class IRI="#AnimalLogEntry"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCamera"/>
@@ -3277,6 +3262,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#hasTrial</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">isPartOfRecordingSession</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#isAboutAnimal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hasAnimalLogEntry</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
