@@ -299,9 +299,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isAboutAnimal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isPartOfExperiment"/>
     </Declaration>
     <Declaration>
@@ -1188,19 +1185,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Experimenter"/>
         <Class abbreviatedIRI="prov:Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Experimenter"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isExperimenterFor"/>
-                <Class IRI="#ResearchActivity"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#isExperimenterFor"/>
-                <Class IRI="#ResearchActivity"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Experimenter"/>
@@ -2134,6 +2118,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExperimenter"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasHardware"/>
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
@@ -2433,10 +2421,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty IRI="#isPartOfProject"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <ObjectProperty IRI="#hasExperimenter"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <ObjectProperty IRI="#isPartOfExperiment"/>
     </InverseObjectProperties>
@@ -2646,10 +2630,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#AnimalLogEntry"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <Class IRI="#Experimenter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -3048,10 +3028,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAboutAnimal"/>
         <Class IRI="#Animal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isExperimenterFor"/>
-        <Class IRI="#ResearchActivity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfExperiment"/>
@@ -3575,6 +3551,16 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:definition"/>
         <IRI>#AnimalLogEntry</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Health state log ~ journal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasExperiment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">can be child of prov:wasInformedBy if the Project is considered an Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#hasExperimenter</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">isExperimenterFor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
