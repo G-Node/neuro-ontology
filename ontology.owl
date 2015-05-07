@@ -254,9 +254,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasHardware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPermit"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasPreparation"/>
     </Declaration>
     <Declaration>
@@ -306,6 +303,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOfRecordingSession"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPermitOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2172,6 +2172,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPermitOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByAnalysis"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
@@ -2563,10 +2567,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPermit"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPreparation"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
@@ -2656,6 +2656,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfRecordingSession"/>
         <Class IRI="#Trial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPermitOf"/>
+        <Class IRI="#Permit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2972,10 +2976,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPermit"/>
-        <Class IRI="#Permit"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPreparation"/>
         <Class IRI="#Preparation"/>
     </ObjectPropertyRange>
@@ -3051,6 +3051,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <Class IRI="#Experiment"/>
             <Class IRI="#RecordingSession"/>
         </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPermitOf"/>
+        <Class IRI="#Animal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -3569,6 +3573,16 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#hasExperimenter</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">isExperimenterFor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#isOrganOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hasOrgan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#isPermitOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hasPermit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
