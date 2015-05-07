@@ -3448,6 +3448,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#hasExperiment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">isPartOfProject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#hasExperimenter</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">isExperimenterFor</Literal>
     </AnnotationAssertion>
@@ -3455,6 +3460,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#hasResearchActivity</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">isPartOfExperiment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#hasTrial</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">isPartOfRecordingSession</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
