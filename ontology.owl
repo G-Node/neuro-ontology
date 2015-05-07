@@ -1451,7 +1451,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
-        <Class IRI="#Resource"/>
+        <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SetupEquipment"/>
@@ -1780,15 +1780,15 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Medication"/>
-        <Class IRI="#Setup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Medication"/>
         <Class IRI="#SetupEquipment"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Medication"/>
         <Class IRI="#Stimulus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Preparation"/>
+        <Class IRI="#Setup"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Project"/>
@@ -1816,15 +1816,15 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Protocol"/>
-        <Class IRI="#Setup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Protocol"/>
         <Class IRI="#SetupEquipment"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Protocol"/>
         <Class IRI="#Stimulus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ResearchActivity"/>
+        <Class IRI="#Setup"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Resource"/>
@@ -1858,14 +1858,6 @@ If you wish to make comments regarding this document, please send them to public
     <DisjointClasses>
         <Class IRI="#ResourceConfiguration"/>
         <Class abbreviatedIRI="prov:Location"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Setup"/>
-        <Class IRI="#SetupEquipment"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Setup"/>
-        <Class IRI="#Stimulus"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#SetupEquipment"/>
