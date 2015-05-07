@@ -2126,6 +2126,14 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreparation"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrincipalInvestigator"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
     </SubObjectPropertyOf>
