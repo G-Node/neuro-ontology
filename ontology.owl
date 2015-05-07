@@ -3299,6 +3299,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Literal datatypeIRI="&rdf;PlainLiteral">hasSpikeTrain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#usesData</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">isUsedInAnalysis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>rdfs:comment</AbbreviatedIRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral"></Literal>
