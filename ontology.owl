@@ -278,9 +278,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasSoftware"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasTetrode"/>
     </Declaration>
     <Declaration>
@@ -318,6 +315,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProducedByTrial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSpikeTrainOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isUsedInAnalysis"/>
@@ -1565,23 +1565,9 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasSpikeTrain"/>
-            <Class IRI="#SpikeTrain"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasResourceConfiguration"/>
             <Class IRI="#ResourceConfiguration"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasSpikeTrain"/>
-            <Class IRI="#SpikeTrain"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2163,6 +2149,10 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSpikeTrainOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#producesAnimalLogEntry"/>
         <ObjectProperty IRI="#producesData"/>
     </SubObjectPropertyOf>
@@ -2542,7 +2532,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically need only for the domain of hasElectrode.</Literal>
+            <Literal datatypeIRI="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically needed only for the domain of hasElectrode.</Literal>
         </Annotation>
         <ObjectProperty IRI="#hasSetupEquipment"/>
         <ObjectUnionOf>
@@ -2554,10 +2544,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSoftware"/>
         <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-        <Class IRI="#Trial"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTetrode"/>
@@ -2613,6 +2599,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedByTrial"/>
         <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSpikeTrainOf"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isUsedInAnalysis"/>
@@ -2947,10 +2937,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSpikeTrain"/>
-        <Class IRI="#SpikeTrain"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTetrode"/>
         <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
@@ -3003,6 +2989,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedByTrial"/>
+        <Class IRI="#Trial"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSpikeTrainOf"/>
         <Class IRI="#Trial"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -3517,6 +3507,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#isPermitOf</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">hasPermit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <IRI>#isSpikeTrainOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hasSpikeTrain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
