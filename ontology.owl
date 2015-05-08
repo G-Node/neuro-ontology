@@ -693,6 +693,20 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Signal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AnalogSignal"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasSamplingRate"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnalogSignal"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasSamplingRate"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Analysis"/>
         <Class IRI="#ResearchActivity"/>
     </SubClassOf>
@@ -1342,20 +1356,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Signal"/>
         <Class IRI="#Data"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Signal"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasSamplingRate"/>
-            <Datatype abbreviatedIRI="xsd:float"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Signal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasSamplingRate"/>
-            <Datatype abbreviatedIRI="xsd:float"/>
-        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Software"/>
@@ -3023,7 +3023,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasSamplingRate"/>
-        <Class IRI="#Signal"/>
+        <Class IRI="#AnalogSignal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasSex"/>
