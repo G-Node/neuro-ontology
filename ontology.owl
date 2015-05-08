@@ -1026,9 +1026,23 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Event"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasName"/>
             <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
