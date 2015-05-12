@@ -236,6 +236,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasElectrodes"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasEvent"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasExperiment"/>
     </Declaration>
     <Declaration>
@@ -1388,6 +1391,20 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Signal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasEvent"/>
+            <Class IRI="#Event"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasEvent"/>
+            <Class IRI="#Event"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Stimulus"/>
         <Class IRI="#Resource"/>
     </SubClassOf>
@@ -1942,6 +1959,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEvent"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasExperimenter"/>
         <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
     </SubObjectPropertyOf>
@@ -2278,6 +2299,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasElectrodes"/>
         <Class IRI="#Setup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEvent"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasExperiment"/>
@@ -2651,6 +2676,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <Class IRI="#Electrode"/>
             <Class IRI="#ElectrodeGroup"/>
         </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEvent"/>
+        <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasExperiment"/>
