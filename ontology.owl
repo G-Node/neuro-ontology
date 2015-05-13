@@ -3324,6 +3324,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A Project is a piece of planned work that has a specific goal. Its development involves the interaction between Activities, Agents, Entities in order to fulfill its purpose.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
+        <IRI>#Software</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">SoftwareAgent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasExperiment</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">can be child of prov:wasInformedBy if the Project is considered an Activity</Literal>
