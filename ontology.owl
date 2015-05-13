@@ -1514,6 +1514,34 @@ If you wish to make comments regarding this document, please send them to public
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI="prov:Agent"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Agent"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Entity"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Entity"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="prov:Person"/>
         <Class abbreviatedIRI="prov:Agent"/>
     </SubClassOf>
