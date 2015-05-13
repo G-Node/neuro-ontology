@@ -1195,6 +1195,19 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Project"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasExperiment"/>
+                <Class IRI="#Experiment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasGoal"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -1829,6 +1842,11 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
         <NamedIndividual IRI="#Trial_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExperiment"/>
+        <NamedIndividual IRI="#Project_1"/>
+        <NamedIndividual IRI="#Experiment_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#configuresProtocol"/>
@@ -3252,6 +3270,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="prov:endedAtTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
