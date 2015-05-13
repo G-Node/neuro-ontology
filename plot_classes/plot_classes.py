@@ -21,9 +21,10 @@ def query_object_properties(class_domain, class_range):
     q_objprop_select = """
     PREFIX onto:<http://www.semanticweb.org/ontology#>
     PREFIX owl:<http://www.w3.org/2002/07/owl#>
+    PREFIX prov:<http://www.w3.org/ns/prov#>
     SELECT DISTINCT ?prop ?range ?inverse
       WHERE {
-      VALUES ?domain {onto:""" + class_domain + """}
+      VALUES ?domain {onto:""" + class_domain + """ prov:""" + class_domain + """}
       { #for domains AND ranges with multiple classes (union of classes)
       ?prop a owl:ObjectProperty .
       ?prop rdfs:domain ?u . 
@@ -72,7 +73,7 @@ def query_object_properties(class_domain, class_range):
 
     # set the classes that should be considered as range
     for i in xrange(len(class_range)):
-        q_objprop_select += "(onto:" + class_range[i] + ") "
+        q_objprop_select += "(onto:" + class_range[i] + ") (prov:" + class_range[i] + ") "
     q_objprop_select += "}"
 
     return q_objprop_select
@@ -96,14 +97,16 @@ def dtp_box(graph, classname, out):
     q = """
     PREFIX onto:<http://www.semanticweb.org/ontology#>
     PREFIX owl:<http://www.w3.org/2002/07/owl#>
+    PREFIX prov:<http://www.w3.org/ns/prov#>
     SELECT DISTINCT ?prop ?range
         WHERE {
+	        VALUES ?domain {onto:""" + classname + """ prov:""" + classname + """}
             { #for domains AND ranges with multiple classes (union of classes)
             {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
             ?prop rdfs:domain ?u .
             ?u owl:unionOf ?list .
             ?list rdf:rest* ?subList .
-            ?subList rdf:first onto:""" + classname + """ .
+            ?subList rdf:first ?domain .
             ?prop rdfs:range ?r .
             ?r owl:unionOf ?ur.
             ?ur rdf:rest* ?subList .
@@ -112,7 +115,7 @@ def dtp_box(graph, classname, out):
             UNION
             { #for domains with a single class AND ranges with multiple types(union of types)
             {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain onto:""" + classname + """ .
+            ?prop rdfs:domain ?domain .
             ?prop rdfs:range ?r .
             ?r owl:unionOf ?ur.
             ?ur rdf:rest* ?subList .
@@ -124,18 +127,18 @@ def dtp_box(graph, classname, out):
             ?prop rdfs:domain ?u .
             ?u owl:unionOf ?list .
             ?list rdf:rest* ?subList .
-            ?subList rdf:first onto:""" + classname + """ .
+            ?subList rdf:first ?domain .
             ?prop rdfs:range ?range .
             }
             UNION
             { #for domains with a single class AND range with a single type
             {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain onto:""" + classname + """ .
+            ?prop rdfs:domain ?domain .
             ?prop rdfs:range ?range .
             }
         }
         VALUES (?range) {
-        (xsd:float) (xsd:integer) (xsd:nonNegativeInteger) (xsd:positiveInteger) (xsd:string)
+        (xsd:float) (xsd:integer) (xsd:nonNegativeInteger) (xsd:positiveInteger) (xsd:string) (xsd:dateTime)
         }"""
 
     dtp = graph.query(q)
