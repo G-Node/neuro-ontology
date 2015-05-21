@@ -533,7 +533,13 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Electrode_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Entity_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Experiment_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Permit_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Project_1"/>
@@ -1840,8 +1846,16 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Electrode_1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="prov:Entity"/>
+        <NamedIndividual IRI="#Entity_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Experiment"/>
         <NamedIndividual IRI="#Experiment_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Permit"/>
+        <NamedIndividual IRI="#Permit_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Project"/>
@@ -1891,6 +1905,10 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Trial"/>
         <NamedIndividual IRI="#Trial_2"/>
     </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#Entity_1"/>
+        <NamedIndividual IRI="#Permit_1"/>
+    </SameIndividual>
     <DifferentIndividuals>
         <NamedIndividual IRI="#Protocol_1"/>
         <NamedIndividual IRI="#Protocol_2"/>
@@ -1944,6 +1962,11 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="http://www.w3.org/ns/prov-o#"/>
         <NamedIndividual IRI="http://www.w3.org/ns/prov-o-20120312"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <NamedIndividual IRI="#Entity_1"/>
+        <Literal datatypeIRI="&xsd;dateTime">2012-01-01T09:00:00</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresAmplifier"/>
         <ObjectProperty IRI="#configuresHardware"/>
