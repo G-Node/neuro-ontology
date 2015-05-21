@@ -134,7 +134,7 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Setup"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Signal"/>
@@ -218,9 +218,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#configuresTetrode"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAmplifier"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
     </Declaration>
     <Declaration>
@@ -230,13 +227,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasAnimal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasCamera"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasCell"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasElectrodes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEvent"/>
@@ -246,9 +237,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasExperimenter"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasHardware"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPreparation"/>
@@ -272,10 +260,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasSetup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSoftware"/>
+        <ObjectProperty IRI="#hasSetupEquipmentItem"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTrial"/>
@@ -1143,7 +1128,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hardware"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
@@ -1376,49 +1361,49 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
+        <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasName"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasVendor"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasDescription"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasName"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasVendor"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <DataExactCardinality cardinality="1">
             <DataProperty IRI="#hasDescription"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -1430,7 +1415,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Software"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Software"/>
@@ -1602,7 +1587,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="prov:SoftwareAgent"/>
@@ -1688,15 +1673,11 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Medication"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Medication"/>
         <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Preparation"/>
-        <Class IRI="#Setup"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Project"/>
@@ -1724,15 +1705,11 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Protocol"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Protocol"/>
         <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ResearchActivity"/>
-        <Class IRI="#Setup"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Resource"/>
@@ -1773,7 +1750,7 @@ If you wish to make comments regarding this document, please send them to public
         <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
         <Class IRI="#Stimulus"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1789,7 +1766,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectIntersectionOf>
             <Class abbreviatedIRI="prov:Entity"/>
             <ObjectComplementOf>
-                <Class IRI="#SetupEquipment"/>
+                <Class IRI="#SetupEquipmentItem"/>
             </ObjectComplementOf>
         </ObjectIntersectionOf>
     </DisjointClasses>
@@ -1923,11 +1900,6 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#AmplifierSetting_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasElectrodes"/>
-        <NamedIndividual IRI="#ElectrodeGroup_1"/>
-        <NamedIndividual IRI="#Electrode_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
         <NamedIndividual IRI="#Trial_1"/>
@@ -1951,11 +1923,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesData"/>
         <NamedIndividual IRI="#SpikeSorting_1"/>
         <NamedIndividual IRI="#Data_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasElectrodes"/>
-        <NamedIndividual IRI="#Tetrode_1"/>
-        <NamedIndividual IRI="#Electrode_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
@@ -2046,10 +2013,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
     </SubObjectPropertyOf>
@@ -2068,16 +2031,8 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasCamera"/>
-        <ObjectProperty IRI="#hasHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCell"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasElectrodes"/>
-        <ObjectProperty IRI="#hasHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEvent"/>
@@ -2086,10 +2041,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasExperimenter"/>
         <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasHardware"/>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPreparation"/>
@@ -2122,12 +2073,8 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-        <ObjectProperty abbreviatedIRI="prov:used"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSoftware"/>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
+        <ObjectProperty IRI="#hasSetupEquipmentItem"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasTrial"/>
@@ -2398,10 +2345,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <ObjectUnionOf>
             <Class IRI="#Amplifier"/>
@@ -2417,16 +2360,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Experiment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCamera"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCell"/>
         <Class IRI="#Organ"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElectrodes"/>
-        <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEvent"/>
@@ -2439,10 +2374,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasExperimenter"/>
         <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasHardware"/>
-        <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPreparation"/>
@@ -2483,11 +2414,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
             <Literal datatypeIRI="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically needed only for the domain of hasElectrode.</Literal>
         </Annotation>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSoftware"/>
+        <ObjectProperty IRI="#hasSetupEquipmentItem"/>
         <Class IRI="#Setup"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2750,7 +2677,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresSetupEquipment"/>
         <ObjectUnionOf>
-            <Class IRI="#SetupEquipment"/>
+            <Class IRI="#SetupEquipmentItem"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
@@ -2776,10 +2703,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAmplifier"/>
-        <Class IRI="#Amplifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <Class IRI="#AmplifierSetting"/>
     </ObjectPropertyRange>
@@ -2792,22 +2715,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Animal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCamera"/>
-        <Class IRI="#Camera"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCell"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#hasCell"/>
             <Class IRI="#Cell"/>
         </ObjectMinCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElectrodes"/>
-        <ObjectUnionOf>
-            <Class IRI="#Electrode"/>
-            <Class IRI="#ElectrodeGroup"/>
-        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEvent"/>
@@ -2820,10 +2732,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasExperimenter"/>
         <Class IRI="#Experimenter"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasHardware"/>
-        <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPreparation"/>
@@ -2860,12 +2768,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Setup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSetupEquipment"/>
-        <Class IRI="#SetupEquipment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSoftware"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+        <ObjectProperty IRI="#hasSetupEquipmentItem"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTrial"/>
@@ -2973,7 +2877,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesSetupEquipment"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesSignal"/>
@@ -3132,7 +3036,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasDescription"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasDiet"/>
@@ -3172,7 +3076,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <Class IRI="#Event"/>
             <Class IRI="#Medication"/>
             <Class IRI="#Project"/>
-            <Class IRI="#SetupEquipment"/>
+            <Class IRI="#SetupEquipmentItem"/>
             <Class abbreviatedIRI="prov:Agent"/>
         </ObjectUnionOf>
     </DataPropertyDomain>
@@ -3225,7 +3129,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasVendor"/>
-        <Class IRI="#SetupEquipment"/>
+        <Class IRI="#SetupEquipmentItem"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasVersion"/>
