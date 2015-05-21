@@ -227,6 +227,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasAnalysis"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasAnimal"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCamera"/>
     </Declaration>
     <Declaration>
@@ -521,6 +524,9 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Amplifier_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Data_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ElectrodeGroup_1"/>
     </Declaration>
     <Declaration>
@@ -552,6 +558,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Software_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpikeSorting_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Tetrode_1"/>
@@ -1063,6 +1072,19 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Experiment"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAnimal"/>
+                <Class IRI="#Animal"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAnimal"/>
+                <Class IRI="#Animal"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasPrincipalInvestigator"/>
                 <Class abbreviatedIRI="prov:Person"/>
             </ObjectSomeValuesFrom>
@@ -1290,6 +1312,19 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#ResearchActivity"/>
         <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResearchActivity"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasExperimenter"/>
+                <Class IRI="#Experimenter"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasExperimenter"/>
+                <Class IRI="#Experimenter"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Resource"/>
@@ -1793,6 +1828,10 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Amplifier_1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#Data_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#ElectrodeGroup"/>
         <NamedIndividual IRI="#ElectrodeGroup_1"/>
     </ClassAssertion>
@@ -1835,6 +1874,10 @@ If you wish to make comments regarding this document, please send them to public
     <ClassAssertion>
         <Class IRI="#Software"/>
         <NamedIndividual IRI="#Software_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpikeSorting"/>
+        <NamedIndividual IRI="#SpikeSorting_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Tetrode"/>
@@ -1885,6 +1928,11 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesSoftware"/>
         <NamedIndividual IRI="#RecordingSession_1"/>
         <NamedIndividual IRI="#Software_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesData"/>
+        <NamedIndividual IRI="#SpikeSorting_1"/>
+        <NamedIndividual IRI="#Data_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasElectrodes"/>
@@ -1991,6 +2039,10 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAnalysis"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAnimal"/>
+        <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCamera"/>
@@ -2267,6 +2319,9 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
         <ObjectProperty IRI="#configuresProtocol"/>
     </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#usesData"/>
+    </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#configures"/>
         <Class IRI="#ResourceConfiguration"/>
@@ -2332,6 +2387,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAnalysis"/>
+        <Class IRI="#Experiment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#Experiment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2704,6 +2763,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAnalysis"/>
         <Class IRI="#Analysis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAnimal"/>
+        <Class IRI="#Animal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCamera"/>
