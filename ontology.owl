@@ -320,16 +320,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesElectrodeGroup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesEvent"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#usesHardware"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesMedication"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesPermit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -339,9 +333,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSignal"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesSoftware"/>
@@ -1169,7 +1160,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
-        <Class IRI="#Data"/>
+        <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
@@ -2150,20 +2141,12 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesEvent"/>
-        <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesHardware"/>
         <ObjectProperty IRI="#usesSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesMedication"/>
         <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesPermit"/>
-        <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2176,10 +2159,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesSetupEquipment"/>
         <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSignal"/>
-        <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesSoftware"/>
@@ -2490,20 +2469,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesEvent"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesHardware"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesPermit"/>
-        <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2516,10 +2487,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesSetupEquipment"/>
         <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSignal"/>
-        <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesSoftware"/>
@@ -2837,20 +2804,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#ElectrodeGroup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesEvent"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#usesHardware"/>
         <Class IRI="#Hardware"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#Medication"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesPermit"/>
-        <Class IRI="#Permit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2863,10 +2822,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesSetupEquipment"/>
         <Class IRI="#SetupEquipmentItem"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSignal"/>
-        <Class IRI="#Signal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesSoftware"/>
