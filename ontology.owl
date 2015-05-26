@@ -209,7 +209,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#configuresSetup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#configuresSoftware"/>
@@ -258,9 +258,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSetup"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSetupEquipmentItem"/>
@@ -327,6 +324,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesSetup"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesSetupEquipmentItem"/>
@@ -497,6 +497,9 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Amplifier_1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Camera_1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Data_1"/>
     </Declaration>
     <Declaration>
@@ -635,21 +638,35 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Amplifier"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAmplifierSetting"/>
+            <Class IRI="#AmplifierSetting"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <Class IRI="#ResourceConfiguration"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#configuresAmplifier"/>
+            <ObjectUnionOf>
                 <Class IRI="#Amplifier"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#configuresAmplifier"/>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmplifierSetting"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#configuresAmplifier"/>
+            <ObjectUnionOf>
                 <Class IRI="#Amplifier"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
@@ -829,6 +846,20 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLogEntry"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasCondition"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -928,6 +959,20 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Channel"/>
         <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Channel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isChannelOf"/>
+            <Class IRI="#Electrode"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Channel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isChannelOf"/>
+            <Class IRI="#Electrode"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Channel"/>
@@ -1036,6 +1081,20 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#ElectrodeGroup"/>
         <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isComposedOf"/>
+            <Class IRI="#Electrode"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrodeGroup"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isComposedOf"/>
+            <Class IRI="#Electrode"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ElectrodeGroup"/>
@@ -1219,6 +1278,20 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isMedicationOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isMedicationOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medication"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasName"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -1254,8 +1327,43 @@ If you wish to make comments regarding this document, please send them to public
         <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Organ"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isOrganOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organ"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCell"/>
+            <Class IRI="#Cell"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organ"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isOrganOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Permit"/>
         <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Permit"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isPermitOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Permit"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isPermitOf"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
@@ -1291,16 +1399,17 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Project"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#hasExperiment"/>
-                <Class IRI="#Experiment"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasExperiment"/>
+            <Class IRI="#Experiment"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasExperiment"/>
+            <Class IRI="#Experiment"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Project"/>
@@ -1354,9 +1463,22 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProtocolAdjustment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#configuresProtocol"/>
+            <ObjectUnionOf>
+                <Class IRI="#Protocol"/>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProtocolAdjustment"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#configuresProtocol"/>
-            <Class IRI="#Protocol"/>
+            <ObjectUnionOf>
+                <Class IRI="#Protocol"/>
+                <Class IRI="#Trial"/>
+            </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1387,19 +1509,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#RecordingSession"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasSetup"/>
-                <Class IRI="#Setup"/>
-            </ObjectSomeValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#hasSetup"/>
-                <Class IRI="#Setup"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecordingSession"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasTrial"/>
                 <Class IRI="#Trial"/>
             </ObjectSomeValuesFrom>
@@ -1432,6 +1541,19 @@ If you wish to make comments regarding this document, please send them to public
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#usesResource"/>
                 <Class IRI="#Resource"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesSetup"/>
+                <Class IRI="#Setup"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesSetup"/>
+                <Class IRI="#Setup"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </SubClassOf>
@@ -1510,27 +1632,192 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ResourceConfiguration"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#configures"/>
-            <ObjectUnionOf>
-                <Class IRI="#Resource"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResourceConfiguration"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#configures"/>
-            <ObjectUnionOf>
-                <Class IRI="#Resource"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectAllValuesFrom>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectUnionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#Medication"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#configuresMedication"/>
+                        <Class abbreviatedIRI="owl:Thing"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+                <ObjectUnionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#Medication"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="#configuresMedication"/>
+                        <Class abbreviatedIRI="owl:Thing"/>
+                    </ObjectAllValuesFrom>
+                </ObjectUnionOf>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configures"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Resource"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configures"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Resource"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresCamera"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Camera"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresCamera"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Camera"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresElectrode"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Electrode"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresElectrode"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Electrode"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresElectrodeGroup"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#ElectrodeGroup"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresElectrodeGroup"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#ElectrodeGroup"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresHardware"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Hardware"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresHardware"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Hardware"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresSetup"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Setup"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresSetup"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Setup"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#SetupEquipmentItem"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#SetupEquipmentItem"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresStimulus"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Stimulus"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresStimulus"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Stimulus"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#configuresTetrode"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Tetrode"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#configuresTetrode"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Tetrode"/>
+                        <Class IRI="#Trial"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
         <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Setup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSetupEquipmentItem"/>
+            <Class IRI="#SetupEquipmentItem"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Setup"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSetupEquipmentItem"/>
+            <Class IRI="#SetupEquipmentItem"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SetupEquipmentItem"/>
@@ -1583,12 +1870,40 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Data"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Signal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Signal"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromChannel"/>
+            <Class IRI="#Channel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Software"/>
         <Class IRI="#SetupEquipmentItem"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Software"/>
         <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Software"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasVersion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Software"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasVersion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeSorting"/>
@@ -1633,9 +1948,65 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+            <Class IRI="#SpikeSorting"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSpikeTrainOf"/>
+            <Class IRI="#Trial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+            <Class IRI="#AnalogSignal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromUnit"/>
+            <Class IRI="#Unit"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasEvent"/>
             <Class IRI="#Event"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+            <Class IRI="#SpikeSorting"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isSpikeTrainOf"/>
+            <Class IRI="#Trial"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+            <Class IRI="#AnalogSignal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#wasDerivedFromUnit"/>
+            <Class IRI="#Unit"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1698,6 +2069,20 @@ If you wish to make comments regarding this document, please send them to public
             <ObjectProperty IRI="#hasResourceConfiguration"/>
             <Class IRI="#ResourceConfiguration"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAmplifierSetting"/>
+            <Class IRI="#AmplifierSetting"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trial"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProtocolAdjustment"/>
+            <Class IRI="#ProtocolAdjustment"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
@@ -1821,6 +2206,21 @@ If you wish to make comments regarding this document, please send them to public
     <DisjointClasses>
         <Class IRI="#Amplifier"/>
         <Class IRI="#Tetrode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Analysis"/>
+        <Class IRI="#Experiment"/>
+        <Class IRI="#RecordingSession"/>
+        <Class IRI="#Trial"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AnimalLogEntry"/>
+        <Class IRI="#Medication"/>
+        <Class IRI="#Permit"/>
+        <Class IRI="#Protocol"/>
+        <Class IRI="#Setup"/>
+        <Class IRI="#SetupEquipmentItem"/>
+        <Class IRI="#Stimulus"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Camera"/>
@@ -1958,6 +2358,10 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="prov:Activity"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="prov:Activity"/>
         <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -2008,6 +2412,10 @@ If you wish to make comments regarding this document, please send them to public
     <ClassAssertion>
         <Class IRI="#Amplifier"/>
         <NamedIndividual IRI="#Amplifier_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#Camera_1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Data"/>
@@ -2096,7 +2504,7 @@ If you wish to make comments regarding this document, please send them to public
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <NamedIndividual IRI="#Amplifier_1"/>
-        <NamedIndividual IRI="#AmplifierSetting_1"/>
+        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isProducedByExperiment"/>
@@ -2122,6 +2530,16 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesSetupEquipmentItem"/>
         <NamedIndividual IRI="#RecordingSession_1"/>
         <NamedIndividual IRI="#Software_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#configures"/>
+        <NamedIndividual IRI="#ResourceConfiguration_1"/>
+        <NamedIndividual IRI="#Protocol_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#configuresCamera"/>
+        <NamedIndividual IRI="#ResourceConfiguration_1"/>
+        <NamedIndividual IRI="#Camera_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#usesData"/>
@@ -2156,7 +2574,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresHardware"/>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresMedication"/>
@@ -2189,18 +2607,18 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
         <ObjectProperty IRI="#configures"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
         <ObjectInverseOf>
             <ObjectProperty IRI="#hasResourceConfiguration"/>
         </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresSoftware"/>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresStimulus"/>
@@ -2270,10 +2688,6 @@ If you wish to make comments regarding this document, please send them to public
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasResearchActivity"/>
-        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSetup"/>
         <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2363,6 +2777,10 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesResource"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesSetup"/>
+        <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesSetupEquipmentItem"/>
@@ -2505,7 +2923,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2583,10 +3001,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
             <Class IRI="#Resource"/>
             <Class IRI="#Trial"/>
         </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSetup"/>
-        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <Annotation>
@@ -2681,6 +3095,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesResource"/>
+        <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesSetup"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2831,7 +3249,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSetupEquipment"/>
+        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
         <ObjectUnionOf>
             <Class IRI="#SetupEquipmentItem"/>
             <Class IRI="#Trial"/>
@@ -2920,10 +3338,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSetup"/>
-        <Class IRI="#Setup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSetupEquipmentItem"/>
         <Class IRI="#SetupEquipmentItem"/>
     </ObjectPropertyRange>
@@ -3010,6 +3424,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesResource"/>
         <Class IRI="#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesSetup"/>
+        <Class IRI="#Setup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesSetupEquipmentItem"/>
