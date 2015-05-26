@@ -509,6 +509,9 @@ If you wish to make comments regarding this document, please send them to public
         <DataProperty abbreviatedIRI="prov:startedAtTime"/>
     </Declaration>
     <Declaration>
+        <DataProperty abbreviatedIRI="prov:value"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#AmplifierSetting_1"/>
     </Declaration>
     <Declaration>
@@ -3170,6 +3173,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <DataProperty abbreviatedIRI="prov:startedAtTime"/>
         <Class abbreviatedIRI="prov:Activity"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="prov:value"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#hasAge"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -4069,6 +4076,46 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <AnnotationProperty abbreviatedIRI="prov:qualifiedForm"/>
         <AbbreviatedIRI>prov:used</AbbreviatedIRI>
         <AbbreviatedIRI>prov:qualifiedUsage</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:component"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entities-activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:definition"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Provides a value that is a direct representation of an entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:dm"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The editor&apos;s definition comes from http://www.w3.org/TR/rdf-primer/#rdfvalue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
+        <AbbreviatedIRI>prov:value</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This property serves the same purpose as rdf:value, but has been reintroduced to avoid some of the definitional ambiguity in the RDF specification (specifically, &apos;may be used in describing structured values&apos;).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
