@@ -350,6 +350,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesTetrode"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
     </Declaration>
     <Declaration>
@@ -2187,6 +2190,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
@@ -2517,6 +2524,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
@@ -2853,6 +2864,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#Tetrode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
+        <Class IRI="#AnalogSignal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
