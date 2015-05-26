@@ -311,6 +311,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesAmplifier"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#usesAnalogSignal"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#usesCamera"/>
     </Declaration>
     <Declaration>
@@ -2138,6 +2141,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesAnalogSignal"/>
+        <ObjectProperty IRI="#usesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesCamera"/>
         <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
@@ -2472,6 +2479,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesAmplifier"/>
         <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesAnalogSignal"/>
+        <Class IRI="#SpikeSorting"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesCamera"/>
@@ -2812,6 +2823,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesAmplifier"/>
         <Class IRI="#Amplifier"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesAnalogSignal"/>
+        <Class IRI="#AnalogSignal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCamera"/>
