@@ -320,6 +320,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesCell"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#usesChannel"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#usesData"/>
     </Declaration>
     <Declaration>
@@ -2153,6 +2156,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesChannel"/>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesData"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
@@ -2491,6 +2498,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesCell"/>
         <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesChannel"/>
+        <Class IRI="#SpikeSorting"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesData"/>
@@ -2835,6 +2846,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCell"/>
         <Class IRI="#Cell"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesChannel"/>
+        <Class IRI="#Channel"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesData"/>
