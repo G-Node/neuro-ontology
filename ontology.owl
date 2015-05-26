@@ -158,6 +158,9 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Trial"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Unit"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="owl:Thing"/>
     </Declaration>
     <Declaration>
@@ -347,7 +350,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <ObjectProperty IRI="#wasDerivedFromUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
@@ -1500,6 +1503,10 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Unit"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="prov:Activity"/>
         <DataSomeValuesFrom>
             <DataProperty abbreviatedIRI="prov:endedAtTime"/>
@@ -2177,7 +2184,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <ObjectProperty IRI="#wasDerivedFromUnit"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2508,7 +2515,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <ObjectProperty IRI="#wasDerivedFromUnit"/>
         <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2840,8 +2847,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Channel"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
-        <Class IRI="#Neuron"/>
+        <ObjectProperty IRI="#wasDerivedFromUnit"/>
+        <Class IRI="#Unit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
