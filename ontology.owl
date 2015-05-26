@@ -368,6 +368,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI="prov:atLocation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="prov:hadMember"/>
     </Declaration>
     <Declaration>
@@ -2912,6 +2915,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class abbreviatedIRI="prov:Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="prov:atLocation"/>
+        <Class abbreviatedIRI="prov:Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
             <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</Literal>
@@ -3676,6 +3683,51 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <AbbreviatedIRI>prov:aq</AbbreviatedIRI>
         <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Location of any resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov-o#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">atLocation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:category"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">expanded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:editorialNote"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">locationOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:sharesDefinitionWith"/>
+        <AbbreviatedIRI>prov:atLocation</AbbreviatedIRI>
+        <AbbreviatedIRI>prov:Location</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
