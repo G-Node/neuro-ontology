@@ -299,6 +299,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isProducedByRecordingSession"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isProducedByTrial"/>
     </Declaration>
     <Declaration>
@@ -2116,6 +2119,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+        <ObjectProperty IRI="#isProducedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedByTrial"/>
         <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
@@ -2442,6 +2449,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedByRecordingSession"/>
         <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+        <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedByTrial"/>
@@ -2774,6 +2785,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedByRecordingSession"/>
         <Class IRI="#RecordingSession"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
+        <Class IRI="#SpikeSorting"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedByTrial"/>
