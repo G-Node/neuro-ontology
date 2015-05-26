@@ -308,13 +308,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isSpikeTrainOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesAmplifier"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#usesAnalogSignal"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesCamera"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesCell"/>
@@ -326,15 +320,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesData"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesElectrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesHardware"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#usesMedication"/>
     </Declaration>
     <Declaration>
@@ -344,16 +329,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesResource"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesSoftware"/>
+        <ObjectProperty IRI="#usesSetupEquipmentItem"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesStimulus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesTetrode"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
@@ -969,6 +948,74 @@ If you wish to make comments regarding this document, please send them to public
         <Class abbreviatedIRI="prov:Entity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Data"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="prov:atLocation"/>
+                <Class abbreviatedIRI="prov:Location"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="prov:atLocation"/>
+                <Class abbreviatedIRI="prov:Location"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Data"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedBy"/>
+                    <Class IRI="#ResearchActivity"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedBy"/>
+                    <Class IRI="#ResearchActivity"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedByAnalysis"/>
+                    <Class IRI="#Analysis"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedByAnalysis"/>
+                    <Class IRI="#Analysis"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedByExperiment"/>
+                    <Class IRI="#Experiment"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedByExperiment"/>
+                    <Class IRI="#Experiment"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedByRecordingSession"/>
+                    <Class IRI="#RecordingSession"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedByRecordingSession"/>
+                    <Class IRI="#RecordingSession"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isProducedByTrial"/>
+                    <Class IRI="#Trial"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isProducedByTrial"/>
+                    <Class IRI="#Trial"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Electrode"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
@@ -1072,6 +1119,19 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Experiment"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAnalysis"/>
+                <Class IRI="#Analysis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAnalysis"/>
+                <Class IRI="#Analysis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasAnimal"/>
                 <Class IRI="#Animal"/>
             </ObjectSomeValuesFrom>
@@ -1116,6 +1176,20 @@ If you wish to make comments regarding this document, please send them to public
                 </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasRecordingSession"/>
+            <Class IRI="#RecordingSession"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experiment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTrial"/>
+            <Class IRI="#Trial"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Experimenter"/>
@@ -1310,6 +1384,92 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSetup"/>
+                <Class IRI="#Setup"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasSetup"/>
+                <Class IRI="#Setup"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTrial"/>
+                <Class IRI="#Trial"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasTrial"/>
+                <Class IRI="#Trial"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesProtocol"/>
+                <Class IRI="#Protocol"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesProtocol"/>
+                <Class IRI="#Protocol"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesResource"/>
+                <Class IRI="#Resource"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesResource"/>
+                <Class IRI="#Resource"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesSetupEquipmentItem"/>
+                <Class IRI="#SetupEquipmentItem"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesSetupEquipmentItem"/>
+                <Class IRI="#SetupEquipmentItem"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#usesCell"/>
+            <Class IRI="#Cell"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#usesMedication"/>
+            <Class IRI="#Medication"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#usesStimulus"/>
+            <Class IRI="#Stimulus"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ResearchActivity"/>
         <Class abbreviatedIRI="prov:Activity"/>
     </SubClassOf>
@@ -1433,6 +1593,32 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#SpikeSorting"/>
         <Class IRI="#Analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeSorting"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesAnalogSignal"/>
+                <Class IRI="#AnalogSignal"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesAnalogSignal"/>
+                <Class IRI="#AnalogSignal"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeSorting"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesChannel"/>
+                <Class IRI="#Channel"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesChannel"/>
+                <Class IRI="#Channel"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
@@ -1913,6 +2099,11 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#AmplifierSetting_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedByExperiment"/>
+        <NamedIndividual IRI="#Data_1"/>
+        <NamedIndividual IRI="#Experiment_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
         <NamedIndividual IRI="#Trial_1"/>
@@ -1928,7 +2119,7 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Protocol_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#usesSoftware"/>
+        <ObjectProperty IRI="#usesSetupEquipmentItem"/>
         <NamedIndividual IRI="#RecordingSession_1"/>
         <NamedIndividual IRI="#Software_1"/>
     </ObjectPropertyAssertion>
@@ -2146,16 +2337,8 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesAnalogSignal"/>
         <ObjectProperty IRI="#usesData"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesCamera"/>
-        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesCell"/>
@@ -2170,18 +2353,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <ObjectProperty IRI="#usesHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesHardware"/>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesMedication"/>
         <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
@@ -2194,20 +2365,12 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
+        <ObjectProperty IRI="#usesSetupEquipmentItem"/>
         <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesStimulus"/>
         <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesTetrode"/>
-        <ObjectProperty IRI="#usesHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
@@ -2409,7 +2572,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasResearchActivity"/>
-        <Class IRI="#Experiment"/>
+        <ObjectUnionOf>
+            <Class IRI="#Experiment"/>
+            <Class IRI="#RecordingSession"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
@@ -2490,16 +2656,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesAnalogSignal"/>
         <Class IRI="#SpikeSorting"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesCamera"/>
-        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesCell"/>
@@ -2514,18 +2672,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Analysis"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesHardware"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
@@ -2538,19 +2684,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSoftware"/>
+        <ObjectProperty IRI="#usesSetupEquipmentItem"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesStimulus"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesTetrode"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2846,16 +2984,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Trial"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAmplifier"/>
-        <Class IRI="#Amplifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#usesAnalogSignal"/>
         <Class IRI="#AnalogSignal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesCamera"/>
-        <Class IRI="#Camera"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCell"/>
@@ -2870,18 +3000,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrode"/>
-        <Class IRI="#Electrode"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesElectrodeGroup"/>
-        <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesHardware"/>
-        <Class IRI="#Hardware"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#usesMedication"/>
         <Class IRI="#Medication"/>
     </ObjectPropertyRange>
@@ -2894,20 +3012,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Resource"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSetupEquipment"/>
+        <ObjectProperty IRI="#usesSetupEquipmentItem"/>
         <Class IRI="#SetupEquipmentItem"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSoftware"/>
-        <Class abbreviatedIRI="prov:SoftwareAgent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesStimulus"/>
         <Class IRI="#Stimulus"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesTetrode"/>
-        <Class IRI="#Tetrode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
