@@ -263,6 +263,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesAnalogSignal"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#usesAnimalAttribute"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#usesCell"/>
     </Declaration>
     <Declaration>
@@ -270,9 +273,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesData"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesMedication"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -1419,15 +1419,15 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#usesCell"/>
-            <Class IRI="#Cell"/>
+            <ObjectProperty IRI="#usesAnimalAttribute"/>
+            <Class IRI="#Medication"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#usesMedication"/>
-            <Class IRI="#Medication"/>
+            <ObjectProperty IRI="#usesCell"/>
+            <Class IRI="#Cell"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2294,6 +2294,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesCell"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
@@ -2303,10 +2307,6 @@ If you wish to make comments regarding this document, please send them to public
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesData"/>
-        <ObjectProperty abbreviatedIRI="prov:used"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesMedication"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2528,6 +2528,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#SpikeSorting"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <Class IRI="#RecordingSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesCell"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
@@ -2538,10 +2542,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesData"/>
         <Class IRI="#Analysis"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesMedication"/>
-        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2753,6 +2753,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#AnalogSignal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <Class IRI="#AnimalAttribute"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCell"/>
         <Class IRI="#Cell"/>
     </ObjectPropertyRange>
@@ -2763,10 +2767,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesData"/>
         <Class IRI="#Data"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesMedication"/>
-        <Class IRI="#AnimalAttribute"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesProtocol"/>
