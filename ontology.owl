@@ -185,21 +185,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#configures"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresCamera"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresElectrode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#configuresMedication"/>
     </Declaration>
     <Declaration>
@@ -212,13 +197,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#configuresSoftware"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#configuresStimulus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#configuresTetrode"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
@@ -647,26 +626,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <Class IRI="#ResourceConfiguration"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#configuresAmplifier"/>
-            <ObjectUnionOf>
-                <Class IRI="#Amplifier"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmplifierSetting"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#configuresAmplifier"/>
-            <ObjectUnionOf>
-                <Class IRI="#Amplifier"/>
-                <Class IRI="#Trial"/>
-            </ObjectUnionOf>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
@@ -1399,6 +1358,10 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Project"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasExperiment"/>
             <Class IRI="#Experiment"/>
@@ -1629,177 +1592,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#ResourceConfiguration"/>
         <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResourceConfiguration"/>
-        <ObjectUnionOf>
-            <ObjectIntersectionOf>
-                <ObjectUnionOf>
-                    <ObjectUnionOf>
-                        <Class IRI="#Medication"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#configuresMedication"/>
-                        <Class abbreviatedIRI="owl:Thing"/>
-                    </ObjectSomeValuesFrom>
-                </ObjectUnionOf>
-                <ObjectUnionOf>
-                    <ObjectUnionOf>
-                        <Class IRI="#Medication"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                    <ObjectAllValuesFrom>
-                        <ObjectProperty IRI="#configuresMedication"/>
-                        <Class abbreviatedIRI="owl:Thing"/>
-                    </ObjectAllValuesFrom>
-                </ObjectUnionOf>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configures"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Resource"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configures"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Resource"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresCamera"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Camera"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresCamera"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Camera"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresElectrode"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Electrode"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresElectrode"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Electrode"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresElectrodeGroup"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#ElectrodeGroup"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresElectrodeGroup"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#ElectrodeGroup"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresHardware"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Hardware"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresHardware"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Hardware"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresSetup"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Setup"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresSetup"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Setup"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#SetupEquipmentItem"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#SetupEquipmentItem"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresStimulus"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Stimulus"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresStimulus"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Stimulus"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#configuresTetrode"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Tetrode"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#configuresTetrode"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#Tetrode"/>
-                        <Class IRI="#Trial"/>
-                    </ObjectUnionOf>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-        </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Setup"/>
@@ -2537,11 +2329,6 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Protocol_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <NamedIndividual IRI="#ResourceConfiguration_1"/>
-        <NamedIndividual IRI="#Camera_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#usesData"/>
         <NamedIndividual IRI="#SpikeSorting_1"/>
         <NamedIndividual IRI="#Data_1"/>
@@ -2557,92 +2344,28 @@ If you wish to make comments regarding this document, please send them to public
         <Literal datatypeIRI="&xsd;dateTime">2012-01-01T09:00:00</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <ObjectProperty IRI="#configuresHardware"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresHardware"/>
-        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresMedication"/>
         <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresMedication"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresProtocol"/>
         <ObjectProperty IRI="#configures"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresProtocol"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresSetup"/>
         <ObjectProperty IRI="#configures"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetup"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
         <ObjectProperty IRI="#configures"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#configuresStimulus"/>
         <ObjectProperty IRI="#configures"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresStimulus"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <ObjectProperty IRI="#configuresHardware"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#configuresHardware"/>
-        </ObjectInverseOf>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAnalysis"/>
@@ -2661,6 +2384,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExperiment"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasExperimenter"/>
         <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
     </SubObjectPropertyOf>
@@ -2677,18 +2404,16 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasResourceConfiguration"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectInverseOf>
-            <ObjectProperty IRI="#configures"/>
-        </ObjectInverseOf>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRecordingSession"/>
         <ObjectProperty IRI="#hasResearchActivity"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <ObjectProperty abbreviatedIRI="prov:wasInformedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasResourceConfiguration"/>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSetupEquipmentItem"/>
@@ -2871,43 +2596,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty abbreviatedIRI="prov:wasRevisionOf"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#configures"/>
-        <ObjectProperty IRI="#hasResourceConfiguration"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectProperty IRI="#configuresProtocol"/>
-    </InverseObjectProperties>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#usesData"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#configures"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <Class IRI="#AmplifierSetting"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresHardware"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2927,23 +2620,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#configuresStimulus"/>
         <Class IRI="#ResourceConfiguration"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <ObjectUnionOf>
-            <Class IRI="#Amplifier"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAnalysis"/>
@@ -2979,10 +2661,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasProtocolAdjustment"/>
-        <ObjectUnionOf>
-            <Class IRI="#Protocol"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRecordingSession"/>
@@ -2997,10 +2676,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasResourceConfiguration"/>
-        <ObjectUnionOf>
-            <Class IRI="#Resource"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <Annotation>
@@ -3187,94 +2863,27 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configures"/>
-        <ObjectUnionOf>
-            <Class IRI="#Resource"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresAmplifier"/>
-        <ObjectUnionOf>
-            <Class IRI="#Amplifier"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresCamera"/>
-        <ObjectUnionOf>
-            <Class IRI="#Camera"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrode"/>
-        <ObjectUnionOf>
-            <Class IRI="#Electrode"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresElectrodeGroup"/>
-        <ObjectUnionOf>
-            <Class IRI="#ElectrodeGroup"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresHardware"/>
-        <ObjectUnionOf>
-            <Class IRI="#Hardware"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#Resource"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresMedication"/>
-        <ObjectUnionOf>
-            <Class IRI="#Medication"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#Medication"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresProtocol"/>
-        <ObjectUnionOf>
-            <Class IRI="#Protocol"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#Protocol"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresSetup"/>
-        <ObjectUnionOf>
-            <Class IRI="#Setup"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#Setup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresSetupEquipmentItem"/>
-        <ObjectUnionOf>
-            <Class IRI="#SetupEquipmentItem"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresSoftware"/>
-        <ObjectUnionOf>
-            <Class IRI="#Trial"/>
-            <Class abbreviatedIRI="prov:SoftwareAgent"/>
-        </ObjectUnionOf>
+        <Class IRI="#SetupEquipmentItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#configuresStimulus"/>
-        <ObjectUnionOf>
-            <Class IRI="#Stimulus"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#configuresTetrode"/>
-        <ObjectUnionOf>
-            <Class IRI="#Tetrode"/>
-            <Class IRI="#Trial"/>
-        </ObjectUnionOf>
+        <Class IRI="#Stimulus"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAmplifierSetting"/>
