@@ -260,24 +260,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#isProducedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isSpikeTrainOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#usesAnalogSignal"/>
     </Declaration>
     <Declaration>
@@ -963,61 +945,6 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Data"/>
-        <ObjectUnionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedBy"/>
-                    <Class IRI="#ResearchActivity"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedBy"/>
-                    <Class IRI="#ResearchActivity"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedByAnalysis"/>
-                    <Class IRI="#Analysis"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedByAnalysis"/>
-                    <Class IRI="#Analysis"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedByExperiment"/>
-                    <Class IRI="#Experiment"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedByExperiment"/>
-                    <Class IRI="#Experiment"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedByRecordingSession"/>
-                    <Class IRI="#RecordingSession"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedByRecordingSession"/>
-                    <Class IRI="#RecordingSession"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#isProducedByTrial"/>
-                    <Class IRI="#Trial"/>
-                </ObjectSomeValuesFrom>
-                <ObjectAllValuesFrom>
-                    <ObjectProperty IRI="#isProducedByTrial"/>
-                    <Class IRI="#Trial"/>
-                </ObjectAllValuesFrom>
-            </ObjectIntersectionOf>
-        </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Electrode"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
@@ -1697,20 +1624,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-            <Class IRI="#SpikeSorting"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isSpikeTrainOf"/>
-            <Class IRI="#Trial"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
             <Class IRI="#AnalogSignal"/>
         </ObjectSomeValuesFrom>
@@ -1727,20 +1640,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasEvent"/>
             <Class IRI="#Event"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-            <Class IRI="#SpikeSorting"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isSpikeTrainOf"/>
-            <Class IRI="#Trial"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2255,11 +2154,6 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#ProtocolAdjustment_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <NamedIndividual IRI="#Data_1"/>
-        <NamedIndividual IRI="#Experiment_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
         <NamedIndividual IRI="#Trial_1"/>
@@ -2393,30 +2287,6 @@ If you wish to make comments regarding this document, please send them to public
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedBy"/>
-        <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <ObjectProperty IRI="#isProducedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isSpikeTrainOf"/>
         <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2654,30 +2524,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Data"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-        <Class IRI="#SpikeTrain"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <Class IRI="#Data"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isSpikeTrainOf"/>
-        <Class IRI="#SpikeTrain"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesAnalogSignal"/>
         <Class IRI="#SpikeSorting"/>
     </ObjectPropertyDomain>
@@ -2901,30 +2747,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
         <Class IRI="#ResearchActivity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByAnalysis"/>
-        <Class IRI="#Analysis"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByExperiment"/>
-        <Class IRI="#Experiment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByRecordingSession"/>
-        <Class IRI="#RecordingSession"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedBySpikeSorting"/>
-        <Class IRI="#SpikeSorting"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProducedByTrial"/>
-        <Class IRI="#Trial"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isSpikeTrainOf"/>
-        <Class IRI="#Trial"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesAnalogSignal"/>
@@ -3445,11 +3267,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#isProducedBy</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">producesData</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
-        <IRI>#isSpikeTrainOf</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">hasSpikeTrain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
