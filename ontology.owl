@@ -2307,7 +2307,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesMedication"/>
-        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2766,7 +2766,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesMedication"/>
-        <Class IRI="#Medication"/>
+        <Class IRI="#AnimalAttribute"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesProtocol"/>
