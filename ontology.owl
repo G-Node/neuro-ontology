@@ -62,6 +62,9 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Animal"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AnimalAttribute"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#AnimalLogEntry"/>
     </Declaration>
     <Declaration>
@@ -252,15 +255,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isComposedOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isMedicationOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isOrganOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPermitOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -800,8 +794,12 @@ If you wish to make comments regarding this document, please send them to public
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AnimalAttribute"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
-        <Class IRI="#Resource"/>
+        <Class IRI="#AnimalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
@@ -899,7 +897,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cell"/>
-        <Class abbreviatedIRI="prov:Entity"/>
+        <Class IRI="#AnimalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cell"/>
@@ -1233,21 +1231,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isMedicationOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Medication"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isMedicationOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectAllValuesFrom>
+        <Class IRI="#AnimalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
@@ -1283,14 +1267,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organ"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Organ"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isOrganOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#AnimalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organ"/>
@@ -1300,29 +1277,8 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Organ"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isOrganOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Permit"/>
-        <Class IRI="#Resource"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Permit"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isPermitOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Permit"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isPermitOf"/>
-            <Class IRI="#Animal"/>
-        </ObjectAllValuesFrom>
+        <Class IRI="#AnimalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
@@ -2436,18 +2392,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isMedicationOf"/>
-        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isOrganOf"/>
-        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isPermitOf"/>
-        <ObjectProperty abbreviatedIRI="prov:wasAttributedTo"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducedBy"/>
         <ObjectProperty abbreviatedIRI="prov:wasGeneratedBy"/>
     </SubObjectPropertyOf>
@@ -2695,7 +2639,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
-        <Class IRI="#AnimalLogEntry"/>
+        <Class IRI="#AnimalAttribute"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChannelOf"/>
@@ -2704,18 +2648,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isComposedOf"/>
         <Class IRI="#ElectrodeGroup"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMedicationOf"/>
-        <Class IRI="#Medication"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isOrganOf"/>
-        <Class IRI="#Organ"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPermitOf"/>
-        <Class IRI="#Permit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2965,18 +2897,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isComposedOf"/>
         <Class IRI="#Electrode"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMedicationOf"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isOrganOf"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPermitOf"/>
-        <Class IRI="#Animal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -3520,16 +3440,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
         <IRI>#isAboutAnimal</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">hasAnimalLogEntry</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
-        <IRI>#isOrganOf</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">hasOrgan</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="prov:inverse"/>
-        <IRI>#isPermitOf</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">hasPermit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="prov:inverse"/>
