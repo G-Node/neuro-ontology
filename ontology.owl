@@ -586,20 +586,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Hardware"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Amplifier"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasAmplifierSetting"/>
-            <Class IRI="#AmplifierSetting"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Amplifier"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasAmplifierSetting"/>
-            <Class IRI="#AmplifierSetting"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#AmplifierSetting"/>
         <Class IRI="#ResourceConfiguration"/>
     </SubClassOf>
@@ -1290,20 +1276,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Protocol"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasProtocolAdjustment"/>
-            <Class IRI="#ProtocolAdjustment"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Protocol"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasProtocolAdjustment"/>
-            <Class IRI="#ProtocolAdjustment"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#ProtocolAdjustment"/>
         <Class IRI="#ResourceConfiguration"/>
     </SubClassOf>
@@ -1457,20 +1429,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Resource"/>
         <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Resource"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Resource"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ResourceConfiguration"/>
@@ -1712,13 +1670,6 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasAmplifierSetting"/>
             <Class IRI="#AmplifierSetting"/>
@@ -1729,13 +1680,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasProtocolAdjustment"/>
             <Class IRI="#ProtocolAdjustment"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trial"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasResourceConfiguration"/>
-            <Class IRI="#ResourceConfiguration"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2120,11 +2064,6 @@ If you wish to make comments regarding this document, please send them to public
         <NamedIndividual IRI="#Trial_1"/>
         <NamedIndividual IRI="#Trial_2"/>
     </DifferentIndividuals>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAmplifierSetting"/>
-        <NamedIndividual IRI="#Amplifier_1"/>
-        <NamedIndividual IRI="#ProtocolAdjustment_1"/>
-    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasResearchActivity"/>
         <NamedIndividual IRI="#Experiment_1"/>
