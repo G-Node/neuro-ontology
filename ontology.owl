@@ -296,6 +296,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#wasDerivedFromUnit"/>
     </Declaration>
     <Declaration>
@@ -1574,6 +1577,31 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+                    <Class IRI="#Neuron"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+                    <Class IRI="#Neuron"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#wasDerivedFromUnit"/>
+                    <Class IRI="#Unit"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#wasDerivedFromUnit"/>
+                    <Class IRI="#Unit"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpikeTrain"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasEvent"/>
             <Class IRI="#Event"/>
@@ -1588,13 +1616,6 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpikeTrain"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#wasDerivedFromUnit"/>
-            <Class IRI="#Unit"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasEvent"/>
             <Class IRI="#Event"/>
@@ -1605,13 +1626,6 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#wasDerivedFromAnalogSignal"/>
             <Class IRI="#AnalogSignal"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SpikeTrain"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#wasDerivedFromUnit"/>
-            <Class IRI="#Unit"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2249,6 +2263,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#wasDerivedFromUnit"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
@@ -2483,6 +2501,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Signal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <Class IRI="#SpikeTrain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#wasDerivedFromUnit"/>
         <Class IRI="#SpikeTrain"/>
     </ObjectPropertyDomain>
@@ -2706,6 +2728,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#wasDerivedFromChannel"/>
         <Class IRI="#Channel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasDerivedFromNeuron"/>
+        <Class IRI="#Neuron"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#wasDerivedFromUnit"/>
