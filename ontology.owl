@@ -1883,10 +1883,6 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Data"/>
-        <Class IRI="#Project"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Data"/>
         <Class IRI="#Resource"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1924,30 +1920,6 @@ If you wish to make comments regarding this document, please send them to public
     <DisjointClasses>
         <Class IRI="#Medication"/>
         <Class IRI="#Stimulus"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class IRI="#Resource"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class IRI="#ResourceConfiguration"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Activity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Agent"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Project"/>
-        <Class abbreviatedIRI="prov:Location"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Protocol"/>
