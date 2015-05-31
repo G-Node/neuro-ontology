@@ -886,21 +886,32 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Channel"/>
-        <Class abbreviatedIRI="prov:Entity"/>
+        <Class IRI="#Hardware"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Channel"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isChannelOf"/>
-            <Class IRI="#Electrode"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Channel"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isChannelOf"/>
-            <Class IRI="#Electrode"/>
-        </ObjectAllValuesFrom>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#Amplifier"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#Amplifier"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#Electrode"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#Electrode"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Channel"/>
@@ -2671,7 +2682,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isChannelOf"/>
-        <Class IRI="#Electrode"/>
+        <ObjectUnionOf>
+            <Class IRI="#Amplifier"/>
+            <Class IRI="#Electrode"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isComposedOf"/>
