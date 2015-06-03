@@ -68,6 +68,12 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#AnimalLogEntry"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Brain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BrainRegion"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Camera"/>
     </Declaration>
     <Declaration>
@@ -218,6 +224,9 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#hasAnimal"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasBrainRegion"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCell"/>
     </Declaration>
     <Declaration>
@@ -360,9 +369,6 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasBehavioralState"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasBrainRegion"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasCageID"/>
@@ -692,13 +698,6 @@ If you wish to make comments regarding this document, please send them to public
     <SubClassOf>
         <Class IRI="#Animal"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasBrainRegion"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataSomeValuesFrom>
             <DataProperty IRI="#hasCageID"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
@@ -721,13 +720,6 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Animal"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#hasAnimalID"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Animal"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#hasBrainRegion"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
@@ -887,6 +879,35 @@ If you wish to make comments regarding this document, please send them to public
                 <Datatype abbreviatedIRI="xsd:positiveInteger"/>
             </DataUnionOf>
         </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBrainRegion"/>
+            <Class IRI="#BrainRegion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brain"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasBrainRegion"/>
+            <Class IRI="#BrainRegion"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrainRegion"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrainRegion"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCell"/>
+            <Class IRI="#Cell"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Camera"/>
@@ -2297,6 +2318,10 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty abbreviatedIRI="prov:wasAssociatedWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBrainRegion"/>
+        <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCell"/>
         <ObjectProperty abbreviatedIRI="prov:wasDerivedFrom"/>
     </SubObjectPropertyOf>
@@ -2529,8 +2554,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Experiment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBrainRegion"/>
+        <Class IRI="#Brain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCell"/>
-        <Class IRI="#Organ"/>
+        <ObjectUnionOf>
+            <Class IRI="#BrainRegion"/>
+            <Class IRI="#Organ"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEvent"/>
@@ -2767,6 +2799,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#Animal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBrainRegion"/>
+        <Class IRI="#BrainRegion"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCell"/>
@@ -3024,10 +3060,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Preparation"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasBrainRegion"/>
-        <Class IRI="#Animal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#hasCageID"/>
         <Class IRI="#Animal"/>
     </DataPropertyDomain>
@@ -3182,10 +3214,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasBehavioralState"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasBrainRegion"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
