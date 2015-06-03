@@ -59,10 +59,10 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Analysis"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Animal"/>
+        <Class IRI="#AnatomicalStructure"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#Animal"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AnimalLogEntry"/>
@@ -81,6 +81,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <Class IRI="#Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Document"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Electrode"/>
@@ -266,7 +269,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesAnalogSignal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <ObjectProperty IRI="#usesAnatomicalStructure"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesCell"/>
@@ -276,6 +279,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesDocument"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -662,6 +668,24 @@ If you wish to make comments regarding this document, please send them to public
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AnatomicalStructure"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnatomicalStructure"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnatomicalStructure"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Animal"/>
         <Class abbreviatedIRI="prov:Agent"/>
     </SubClassOf>
@@ -771,12 +795,8 @@ If you wish to make comments regarding this document, please send them to public
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#AnimalAttribute"/>
-        <Class abbreviatedIRI="prov:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#Document"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLogEntry"/>
@@ -874,7 +894,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cell"/>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#AnatomicalStructure"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cell"/>
@@ -991,6 +1011,24 @@ If you wish to make comments regarding this document, please send them to public
                 <Class abbreviatedIRI="prov:Location"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isAboutAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Electrode"/>
@@ -1206,7 +1244,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#Document"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medication"/>
@@ -1242,7 +1280,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organ"/>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#AnatomicalStructure"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organ"/>
@@ -1253,7 +1291,7 @@ If you wish to make comments regarding this document, please send them to public
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
-        <Class IRI="#AnimalAttribute"/>
+        <Class IRI="#Document"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Permit"/>
@@ -1402,6 +1440,19 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#RecordingSession"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#usesAnatomicalStructure"/>
+                <Class IRI="#AnatomicalStructure"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#usesAnatomicalStructure"/>
+                <Class IRI="#AnatomicalStructure"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#usesProtocol"/>
                 <Class IRI="#Protocol"/>
             </ObjectSomeValuesFrom>
@@ -1449,19 +1500,19 @@ If you wish to make comments regarding this document, please send them to public
                 <Class IRI="#SetupEquipmentItem"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecordingSession"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#usesAnimalAttribute"/>
-            <Class IRI="#Medication"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RecordingSession"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#usesCell"/>
             <Class IRI="#Cell"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecordingSession"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#usesDocument"/>
+            <Class IRI="#Medication"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2314,7 +2365,7 @@ If you wish to make comments regarding this document, please send them to public
         <ObjectProperty IRI="#usesData"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <ObjectProperty IRI="#usesAnatomicalStructure"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2328,6 +2379,10 @@ If you wish to make comments regarding this document, please send them to public
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesData"/>
         <ObjectProperty abbreviatedIRI="prov:used"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesDocument"/>
+        <ObjectProperty IRI="#usesResource"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2533,7 +2588,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAboutAnimal"/>
-        <Class IRI="#AnimalAttribute"/>
+        <ObjectUnionOf>
+            <Class IRI="#AnatomicalStructure"/>
+            <Class IRI="#Document"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChannelOf"/>
@@ -2555,7 +2613,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#SpikeSorting"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAnimalAttribute"/>
+        <ObjectProperty IRI="#usesAnatomicalStructure"/>
         <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2569,6 +2627,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesData"/>
         <Class IRI="#Analysis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesDocument"/>
+        <Class IRI="#RecordingSession"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesProtocol"/>
@@ -2791,8 +2853,8 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#AnalogSignal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAnimalAttribute"/>
-        <Class IRI="#AnimalAttribute"/>
+        <ObjectProperty IRI="#usesAnatomicalStructure"/>
+        <Class IRI="#AnatomicalStructure"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesCell"/>
@@ -2805,6 +2867,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesData"/>
         <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesDocument"/>
+        <Class IRI="#Document"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesProtocol"/>
