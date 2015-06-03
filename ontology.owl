@@ -77,6 +77,9 @@ If you wish to make comments regarding this document, please send them to public
         <Class IRI="#Channel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ChannelGroup"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Data"/>
     </Declaration>
     <Declaration>
@@ -399,6 +402,9 @@ If you wish to make comments regarding this document, please send them to public
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberOfChannels"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasNumberOfElectrodes"/>
@@ -904,6 +910,16 @@ If you wish to make comments regarding this document, please send them to public
             <ObjectIntersectionOf>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#ChannelGroup"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
+                    <Class IRI="#ChannelGroup"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isChannelOf"/>
                     <Class IRI="#Electrode"/>
                 </ObjectSomeValuesFrom>
                 <ObjectAllValuesFrom>
@@ -925,6 +941,38 @@ If you wish to make comments regarding this document, please send them to public
         <DataExactCardinality cardinality="1">
             <DataProperty IRI="#hasChannelNumber"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelGroup"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isComposedOf"/>
+            <Class IRI="#Channel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelGroup"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isComposedOf"/>
+            <Class IRI="#Channel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelGroup"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasNumberOfChannels"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelGroup"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasNumberOfChannels"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -1813,6 +1861,14 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Amplifier"/>
+        <Class IRI="#Channel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Amplifier"/>
+        <Class IRI="#ChannelGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Amplifier"/>
         <Class IRI="#Electrode"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1840,6 +1896,14 @@ If you wish to make comments regarding this document, please send them to public
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Camera"/>
+        <Class IRI="#Channel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Camera"/>
+        <Class IRI="#ChannelGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Camera"/>
         <Class IRI="#Electrode"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1849,6 +1913,26 @@ If you wish to make comments regarding this document, please send them to public
     <DisjointClasses>
         <Class IRI="#Camera"/>
         <Class IRI="#Tetrode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Channel"/>
+        <Class IRI="#ChannelGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Channel"/>
+        <Class IRI="#Electrode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Channel"/>
+        <Class IRI="#ElectrodeGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChannelGroup"/>
+        <Class IRI="#Electrode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChannelGroup"/>
+        <Class IRI="#ElectrodeGroup"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Data"/>
@@ -2457,7 +2541,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isComposedOf"/>
-        <Class IRI="#ElectrodeGroup"/>
+        <ObjectUnionOf>
+            <Class IRI="#ChannelGroup"/>
+            <Class IRI="#ElectrodeGroup"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2684,12 +2771,16 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <ObjectProperty IRI="#isChannelOf"/>
         <ObjectUnionOf>
             <Class IRI="#Amplifier"/>
+            <Class IRI="#ChannelGroup"/>
             <Class IRI="#Electrode"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isComposedOf"/>
-        <Class IRI="#Electrode"/>
+        <ObjectUnionOf>
+            <Class IRI="#Channel"/>
+            <Class IRI="#Electrode"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -2937,6 +3028,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
         <Class IRI="#Permit"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#hasNumberOfChannels"/>
+        <Class IRI="#ChannelGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasNumberOfElectrodes"/>
         <Class IRI="#ElectrodeGroup"/>
     </DataPropertyDomain>
@@ -3086,6 +3181,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     <DataPropertyRange>
         <DataProperty IRI="#hasNumber"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNumberOfChannels"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasNumberOfElectrodes"/>
