@@ -27,7 +27,7 @@ def query_object_properties(class_domain, class_range):
       VALUES ?domain {onto:""" + class_domain + """ prov:""" + class_domain + """}
       { #for domains AND ranges with multiple classes (union of classes)
       ?prop a owl:ObjectProperty .
-      ?prop rdfs:domain ?u . 
+      ?prop rdfs:domain ?u .
       ?u owl:unionOf ?list .
       ?list rdf:rest* ?subList .
       ?subList rdf:first ?domain .
@@ -100,46 +100,39 @@ def dtp_box(graph, classname, out):
     PREFIX prov:<http://www.w3.org/ns/prov#>
     SELECT DISTINCT ?prop ?range
         WHERE {
-	        VALUES ?domain {onto:""" + classname + """ prov:""" + classname + """}
-            { #for domains AND ranges with multiple classes (union of classes)
-            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain ?u .
-            ?u owl:unionOf ?list .
-            ?list rdf:rest* ?subList .
-            ?subList rdf:first ?domain .
+            VALUES ?propertyType { owl:DatatypeProperty owl:AnnotationProperty }
+            VALUES ?domain { onto:""" + classname + """ prov:""" + classname + """ }
+
+            ?domain a owl:Class .
+
+            # return all ancestors (direct and indirect)
+            ?domain rdfs:subClassOf* ?a1 .
+            ?a1 a owl:Class .
+
+            ?prop a ?propertyType .
+            {?prop rdfs:range ?range }
+            UNION
+            {
             ?prop rdfs:range ?r .
             ?r owl:unionOf ?ur.
             ?ur rdf:rest* ?subList .
-            ?subList rdf:first ?range .
+            ?subList rdf:first ?range
             }
-            UNION
-            { #for domains with a single class AND ranges with multiple types(union of types)
-            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain ?domain .
-            ?prop rdfs:range ?r .
-            ?r owl:unionOf ?ur.
-            ?ur rdf:rest* ?subList .
-            ?subList rdf:first ?range .
-            }
-            UNION
-            { #for domains with multiple classes (union of classes) AND range with a single type
-            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain ?u .
-            ?u owl:unionOf ?list .
+
+            # consider the case when the domain is a union of multiple classes, i.e., the class we are looking for isn't
+            # alone in the domain
+            {
+            ?prop rdfs:domain* ?d .
+            ?d owl:unionOf ?list .
             ?list rdf:rest* ?subList .
-            ?subList rdf:first ?domain .
-            ?prop rdfs:range ?range .
+            ?subList rdf:first ?a1 .
             }
             UNION
-            { #for domains with a single class AND range with a single type
-            {?prop a owl:DatatypeProperty} UNION {?prop a owl:AnnotationProperty} .
-            ?prop rdfs:domain ?domain .
-            ?prop rdfs:range ?range .
-            }
-        }
-        VALUES (?range) {
-        (xsd:float) (xsd:integer) (xsd:nonNegativeInteger) (xsd:positiveInteger) (xsd:string) (xsd:dateTime)
-        }"""
+            # consider the simple case
+            {?prop rdfs:domain* ?a1}
+
+            FILTER ((?range = xsd:float) || (?range = xsd:integer) || (?range = xsd:nonNegativeInteger) || (?range = xsd:positiveInteger) || (?range = xsd:string) || (?range = xsd:dateTime))
+        } """
 
     dtp = graph.query(q)
 
