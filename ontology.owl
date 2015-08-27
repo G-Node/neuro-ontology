@@ -8,6 +8,15 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
+<!--
+Copyright (c) 2015, German Neuroinformatics Node (G-Node)
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted under the terms of the BSD License. See
+LICENSE file in the root of the Project.
+-->
 
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/ontology"
